@@ -1,0 +1,43 @@
+<!--
+  This example requires Tailwind CSS v2.0+ 
+  
+  This example requires some changes to your config:
+  
+  ```
+  // tailwind.config.js
+  module.exports = {
+    // ...
+    plugins: [
+      // ...
+      require('@tailwindcss/forms'),
+    ],
+  }
+  ```
+-->
+<div>
+  <div class="sm:hidden">
+    <label for="tabs" class="sr-only">Select a tab</label>
+    <!-- Use an "onChange" listener to redirect the user to the selected tab URL. -->
+    <select id="tabs" name="tabs" class="block w-full focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md">
+      <option>My Account</option>
+
+      <option>Company</option>
+
+      <option selected>Team Members</option>
+
+      <option>Billing</option>
+    </select>
+  </div>
+  <div class="hidden sm:block">
+    <nav class="flex space-x-4" aria-label="Tabs">
+      <!-- Current: "bg-gray-200 text-gray-800", Default: "text-gray-600 hover:text-gray-800" -->
+      <a href="#" class="text-gray-600 hover:text-gray-800 px-3 py-2 font-medium text-sm rounded-md"> My Account </a>
+
+      <a href="#" class="text-gray-600 hover:text-gray-800 px-3 py-2 font-medium text-sm rounded-md"> Company </a>
+
+      <a href="#" class="bg-gray-200 text-gray-800 px-3 py-2 font-medium text-sm rounded-md" aria-current="page"> Team Members </a>
+
+      <a href="#" class="text-gray-600 hover:text-gray-800 px-3 py-2 font-medium text-sm rounded-md"> Billing </a>
+    </nav>
+  </div>
+</div>

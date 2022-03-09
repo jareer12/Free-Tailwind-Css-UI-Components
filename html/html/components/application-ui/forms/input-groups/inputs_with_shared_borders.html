@@ -1,0 +1,54 @@
+<!--
+  This example requires Tailwind CSS v2.0+ 
+  
+  This example requires some changes to your config:
+  
+  ```
+  // tailwind.config.js
+  module.exports = {
+    // ...
+    plugins: [
+      // ...
+      require('@tailwindcss/forms'),
+    ],
+  }
+  ```
+-->
+<div>
+  <fieldset>
+    <legend class="block text-sm font-medium text-gray-700">Card Details</legend>
+    <div class="mt-1 bg-white rounded-md shadow-sm -space-y-px">
+      <div>
+        <label for="card-number" class="sr-only">Card number</label>
+        <input type="text" name="card-number" id="card-number" class="focus:ring-indigo-500 focus:border-indigo-500 relative block w-full rounded-none rounded-t-md bg-transparent focus:z-10 sm:text-sm border-gray-300" placeholder="Card number">
+      </div>
+      <div class="flex -space-x-px">
+        <div class="w-1/2 flex-1 min-w-0">
+          <label for="card-expiration-date" class="sr-only">Expiration date</label>
+          <input type="text" name="card-expiration-date" id="card-expiration-date" class="focus:ring-indigo-500 focus:border-indigo-500 relative block w-full rounded-none rounded-bl-md bg-transparent focus:z-10 sm:text-sm border-gray-300" placeholder="MM / YY">
+        </div>
+        <div class="flex-1 min-w-0">
+          <label for="card-cvc" class="sr-only">CVC</label>
+          <input type="text" name="card-cvc" id="card-cvc" class="focus:ring-indigo-500 focus:border-indigo-500 relative block w-full rounded-none rounded-br-md bg-transparent focus:z-10 sm:text-sm border-gray-300" placeholder="CVC">
+        </div>
+      </div>
+    </div>
+  </fieldset>
+  <fieldset class="mt-6 bg-white">
+    <legend class="block text-sm font-medium text-gray-700">Billing address</legend>
+    <div class="mt-1 rounded-md shadow-sm -space-y-px">
+      <div>
+        <label for="country" class="sr-only">Country</label>
+        <select id="country" name="country" autocomplete="country-name" class="focus:ring-indigo-500 focus:border-indigo-500 relative block w-full rounded-none rounded-t-md bg-transparent focus:z-10 sm:text-sm border-gray-300">
+          <option>United States</option>
+          <option>Canada</option>
+          <option>Mexico</option>
+        </select>
+      </div>
+      <div>
+        <label for="postal-code" class="sr-only">ZIP / Postal code</label>
+        <input type="text" name="postal-code" id="postal-code" autocomplete="postal-code" class="focus:ring-indigo-500 focus:border-indigo-500 relative block w-full rounded-none rounded-b-md bg-transparent focus:z-10 sm:text-sm border-gray-300" placeholder="ZIP / Postal code">
+      </div>
+    </div>
+  </fieldset>
+</div>

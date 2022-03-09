@@ -1,0 +1,72 @@
+<!-- This example requires Tailwind CSS v2.0+ -->
+<div>
+  <div class="flex items-center justify-between">
+    <h2 class="text-sm font-medium text-gray-900">RAM</h2>
+    <a href="#" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">See performance specs</a>
+  </div>
+
+  <fieldset class="mt-2">
+    <legend class="sr-only">Choose a memory option</legend>
+    <div class="grid grid-cols-3 gap-3 sm:grid-cols-6">
+      <!--
+        In Stock: "cursor-pointer", Out of Stock: "opacity-25 cursor-not-allowed"
+        Active: "ring-2 ring-offset-2 ring-indigo-500"
+        Checked: "bg-indigo-600 border-transparent text-white hover:bg-indigo-700", Not Checked: "bg-white border-gray-200 text-gray-900 hover:bg-gray-50"
+      -->
+      <label class="border rounded-md py-3 px-3 flex items-center justify-center text-sm font-medium uppercase sm:flex-1 cursor-pointer focus:outline-none">
+        <input type="radio" name="memory-option" value="4 GB" class="sr-only" aria-labelledby="memory-option-0-label">
+        <p id="memory-option-0-label">4 GB</p>
+      </label>
+
+      <!--
+        In Stock: "cursor-pointer", Out of Stock: "opacity-25 cursor-not-allowed"
+        Active: "ring-2 ring-offset-2 ring-indigo-500"
+        Checked: "bg-indigo-600 border-transparent text-white hover:bg-indigo-700", Not Checked: "bg-white border-gray-200 text-gray-900 hover:bg-gray-50"
+      -->
+      <label class="border rounded-md py-3 px-3 flex items-center justify-center text-sm font-medium uppercase sm:flex-1 cursor-pointer focus:outline-none">
+        <input type="radio" name="memory-option" value="8 GB" class="sr-only" aria-labelledby="memory-option-1-label">
+        <p id="memory-option-1-label">8 GB</p>
+      </label>
+
+      <!--
+        In Stock: "cursor-pointer", Out of Stock: "opacity-25 cursor-not-allowed"
+        Active: "ring-2 ring-offset-2 ring-indigo-500"
+        Checked: "bg-indigo-600 border-transparent text-white hover:bg-indigo-700", Not Checked: "bg-white border-gray-200 text-gray-900 hover:bg-gray-50"
+      -->
+      <label class="border rounded-md py-3 px-3 flex items-center justify-center text-sm font-medium uppercase sm:flex-1 cursor-pointer focus:outline-none">
+        <input type="radio" name="memory-option" value="16 GB" class="sr-only" aria-labelledby="memory-option-2-label">
+        <p id="memory-option-2-label">16 GB</p>
+      </label>
+
+      <!--
+        In Stock: "cursor-pointer", Out of Stock: "opacity-25 cursor-not-allowed"
+        Active: "ring-2 ring-offset-2 ring-indigo-500"
+        Checked: "bg-indigo-600 border-transparent text-white hover:bg-indigo-700", Not Checked: "bg-white border-gray-200 text-gray-900 hover:bg-gray-50"
+      -->
+      <label class="border rounded-md py-3 px-3 flex items-center justify-center text-sm font-medium uppercase sm:flex-1 cursor-pointer focus:outline-none">
+        <input type="radio" name="memory-option" value="32 GB" class="sr-only" aria-labelledby="memory-option-3-label">
+        <p id="memory-option-3-label">32 GB</p>
+      </label>
+
+      <!--
+        In Stock: "cursor-pointer", Out of Stock: "opacity-25 cursor-not-allowed"
+        Active: "ring-2 ring-offset-2 ring-indigo-500"
+        Checked: "bg-indigo-600 border-transparent text-white hover:bg-indigo-700", Not Checked: "bg-white border-gray-200 text-gray-900 hover:bg-gray-50"
+      -->
+      <label class="border rounded-md py-3 px-3 flex items-center justify-center text-sm font-medium uppercase sm:flex-1 cursor-pointer focus:outline-none">
+        <input type="radio" name="memory-option" value="64 GB" class="sr-only" aria-labelledby="memory-option-4-label">
+        <p id="memory-option-4-label">64 GB</p>
+      </label>
+
+      <!--
+        In Stock: "cursor-pointer", Out of Stock: "opacity-25 cursor-not-allowed"
+        Active: "ring-2 ring-offset-2 ring-indigo-500"
+        Checked: "bg-indigo-600 border-transparent text-white hover:bg-indigo-700", Not Checked: "bg-white border-gray-200 text-gray-900 hover:bg-gray-50"
+      -->
+      <label class="border rounded-md py-3 px-3 flex items-center justify-center text-sm font-medium uppercase sm:flex-1 opacity-25 cursor-not-allowed">
+        <input type="radio" name="memory-option" value="128 GB" disabled class="sr-only" aria-labelledby="memory-option-5-label">
+        <p id="memory-option-5-label">128 GB</p>
+      </label>
+    </div>
+  </fieldset>
+</div>

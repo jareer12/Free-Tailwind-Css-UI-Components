@@ -1,0 +1,39 @@
+<!--
+  This example requires Tailwind CSS v2.0+ 
+  
+  This example requires some changes to your config:
+  
+  ```
+  // tailwind.config.js
+  module.exports = {
+    // ...
+    plugins: [
+      // ...
+      require('@tailwindcss/forms'),
+    ],
+  }
+  ```
+-->
+<div>
+  <label class="text-base font-medium text-gray-900">Notifications</label>
+  <p class="text-sm leading-5 text-gray-500">How do you prefer to receive notifications?</p>
+  <fieldset class="mt-4">
+    <legend class="sr-only">Notification method</legend>
+    <div class="space-y-4">
+      <div class="flex items-center">
+        <input id="email" name="notification-method" type="radio" checked class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+        <label for="email" class="ml-3 block text-sm font-medium text-gray-700"> Email </label>
+      </div>
+
+      <div class="flex items-center">
+        <input id="sms" name="notification-method" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+        <label for="sms" class="ml-3 block text-sm font-medium text-gray-700"> Phone (SMS) </label>
+      </div>
+
+      <div class="flex items-center">
+        <input id="push" name="notification-method" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+        <label for="push" class="ml-3 block text-sm font-medium text-gray-700"> Push notification </label>
+      </div>
+    </div>
+  </fieldset>
+</div>

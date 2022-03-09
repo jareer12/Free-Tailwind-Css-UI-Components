@@ -1,0 +1,103 @@
+<!--
+  This example requires Tailwind CSS v3.0+ 
+  
+  This example requires some changes to your config:
+  
+  ```
+  // tailwind.config.js
+  module.exports = {
+    // ...
+    plugins: [
+      // ...
+      require('@tailwindcss/forms'),
+    ],
+  }
+  ```
+-->
+<div class="fixed inset-0 z-10 overflow-y-auto p-4 sm:p-6 md:p-20" role="dialog" aria-modal="true">
+  <!--
+    Background overlay, show/hide based on modal state.
+
+    Entering: "ease-out duration-300"
+      From: "opacity-0"
+      To: "opacity-100"
+    Leaving: "ease-in duration-200"
+      From: "opacity-100"
+      To: "opacity-0"
+  -->
+  <div class="fixed inset-0 bg-gray-500 bg-opacity-25 transition-opacity" aria-hidden="true"></div>
+
+  <!--
+    Command palette, show/hide based on modal state.
+
+    Entering: "ease-out duration-300"
+      From: "opacity-0 scale-95"
+      To: "opacity-100 scale-100"
+    Leaving: "ease-in duration-200"
+      From: "opacity-100 scale-100"
+      To: "opacity-0 scale-95"
+  -->
+  <div class="mx-auto max-w-xl transform divide-y divide-gray-100 overflow-hidden rounded-xl bg-white shadow-2xl ring-1 ring-black ring-opacity-5 transition-all">
+    <div class="relative">
+      <!-- Heroicon name: solid/search -->
+      <svg class="pointer-events-none absolute top-3.5 left-4 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+        <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+      </svg>
+      <input type="text" class="h-12 w-full border-0 bg-transparent pl-11 pr-4 text-sm text-gray-800 placeholder-gray-400 focus:ring-0" placeholder="Search..." role="combobox" aria-expanded="false" aria-controls="options">
+    </div>
+
+    <!-- Results, show/hide based on command palette state. -->
+    <ul class="max-h-80 scroll-py-10 scroll-pb-2 space-y-4 overflow-y-auto p-4 pb-2" id="options" role="listbox">
+      <li>
+        <h2 class="text-xs font-semibold text-gray-900">Projects</h2>
+        <ul class="-mx-4 mt-2 text-sm text-gray-700">
+          <!-- Active: "bg-indigo-600 text-white" -->
+          <li class="group flex cursor-default select-none items-center px-4 py-2" id="option-1" role="option" tabindex="-1">
+            <!-- Active: "text-white", Not Active: "text-gray-400" -->
+            <!-- Heroicon name: outline/folder -->
+            <svg class="h-6 w-6 flex-none text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+            </svg>
+            <span class="ml-3 flex-auto truncate">Workflow Inc. / Website Redesign</span>
+          </li>
+
+          <!-- More projects... -->
+        </ul>
+      </li>
+      <li>
+        <h2 class="text-xs font-semibold text-gray-900">Users</h2>
+        <ul class="-mx-4 mt-2 text-sm text-gray-700">
+          <!-- Active: "bg-indigo-600 text-white" -->
+          <li class="group flex cursor-default select-none items-center px-4 py-2" id="option-2" role="option" tabindex="-1">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="h-6 w-6 flex-none rounded-full">
+            <span class="ml-3 flex-auto truncate">Leslie Alexander</span>
+          </li>
+
+          <!-- More users... -->
+        </ul>
+      </li>
+    </ul>
+
+    <!-- Help, show/hide based on command palette state. -->
+    <div class="py-14 px-6 text-center text-sm sm:px-14">
+      <!-- Heroicon name: outline/support -->
+      <svg class="mx-auto h-6 w-6 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+      </svg>
+      <p class="mt-4 font-semibold text-gray-900">Help with searching</p>
+      <p class="mt-2 text-gray-500">Use this tool to quickly search for users and projects across our entire platform. You can also use the search modifiers found in the footer below to limit the results to just users or projects.</p>
+    </div>
+
+    <!-- Empty state, show/hide based on command palette state. -->
+    <div class="py-14 px-6 text-center text-sm sm:px-14">
+      <!-- Heroicon name: outline/exclamation -->
+      <svg class="mx-auto h-6 w-6 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+      </svg>
+      <p class="mt-4 font-semibold text-gray-900">No results found</p>
+      <p class="mt-2 text-gray-500">We couldn’t find anything with that term. Please try again.</p>
+    </div>
+
+    <div class="flex flex-wrap items-center bg-gray-50 py-2.5 px-4 text-xs text-gray-700">Type <kbd class="mx-1 flex h-5 w-5 items-center justify-center rounded border border-gray-400 bg-white font-semibold text-gray-900 sm:mx-2">#</kbd> <span class="sm:hidden">for projects,</span><span class="hidden sm:inline">to access projects,</span> <kbd class="mx-1 flex h-5 w-5 items-center justify-center rounded border border-gray-400 bg-white font-semibold text-gray-900 sm:mx-2">&gt;</kbd> for users, and <kbd class="mx-1 flex h-5 w-5 items-center justify-center rounded border border-gray-400 bg-white font-semibold text-gray-900 sm:mx-2">?</kbd> for help.</div>
+  </div>
+</div>
