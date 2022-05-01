@@ -1,0 +1,22 @@
+<!-- This example requires Tailwind CSS v2.0+ -->
+<template>
+  <span class="inline-flex items-center justify-center h-6 w-6 rounded-full bg-gray-500">
+    <span class="text-xs font-medium leading-none text-white">TW</span>
+  </span>
+
+  <span class="inline-flex items-center justify-center h-8 w-8 rounded-full bg-gray-500">
+    <span class="text-sm font-medium leading-none text-white">TW</span>
+  </span>
+
+  <span class="inline-flex items-center justify-center h-10 w-10 rounded-full bg-gray-500">
+    <span class="font-medium leading-none text-white">TW</span>
+  </span>
+
+  <span class="inline-flex items-center justify-center h-12 w-12 rounded-full bg-gray-500">
+    <span class="text-lg font-medium leading-none text-white">TW</span>
+  </span>
+
+  <span class="inline-flex items-center justify-center h-14 w-14 rounded-full bg-gray-500">
+    <span class="text-xl font-medium leading-none text-white">TW</span>
+  </span>
+</template>
