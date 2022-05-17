@@ -1,5 +1,7 @@
 # [Tailwind Css Cracked](https://tailwindui.com)
 
+Watch and start this repo for quick use and updates.
+
 ## Quick Search Pattern
 
 ```yaml
