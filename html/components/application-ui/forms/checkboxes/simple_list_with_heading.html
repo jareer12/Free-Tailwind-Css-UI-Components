@@ -1,0 +1,65 @@
+<!--
+  This example requires Tailwind CSS v2.0+ 
+  
+  This example requires some changes to your config:
+  
+  ```
+  // tailwind.config.js
+  module.exports = {
+    // ...
+    plugins: [
+      // ...
+      require('@tailwindcss/forms'),
+    ],
+  }
+  ```
+-->
+<fieldset>
+  <legend class="text-lg font-medium text-gray-900">Members</legend>
+  <div class="mt-4 border-t border-b border-gray-200 divide-y divide-gray-200">
+    <div class="relative flex items-start py-4">
+      <div class="min-w-0 flex-1 text-sm">
+        <label for="person-1" class="font-medium text-gray-700 select-none">Annette Black</label>
+      </div>
+      <div class="ml-3 flex items-center h-5">
+        <input id="person-1" name="person-1" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
+      </div>
+    </div>
+
+    <div class="relative flex items-start py-4">
+      <div class="min-w-0 flex-1 text-sm">
+        <label for="person-2" class="font-medium text-gray-700 select-none">Cody Fisher</label>
+      </div>
+      <div class="ml-3 flex items-center h-5">
+        <input id="person-2" name="person-2" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
+      </div>
+    </div>
+
+    <div class="relative flex items-start py-4">
+      <div class="min-w-0 flex-1 text-sm">
+        <label for="person-3" class="font-medium text-gray-700 select-none">Courtney Henry</label>
+      </div>
+      <div class="ml-3 flex items-center h-5">
+        <input id="person-3" name="person-3" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
+      </div>
+    </div>
+
+    <div class="relative flex items-start py-4">
+      <div class="min-w-0 flex-1 text-sm">
+        <label for="person-4" class="font-medium text-gray-700 select-none">Kathryn Murphy</label>
+      </div>
+      <div class="ml-3 flex items-center h-5">
+        <input id="person-4" name="person-4" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
+      </div>
+    </div>
+
+    <div class="relative flex items-start py-4">
+      <div class="min-w-0 flex-1 text-sm">
+        <label for="person-5" class="font-medium text-gray-700 select-none">Theresa Webb</label>
+      </div>
+      <div class="ml-3 flex items-center h-5">
+        <input id="person-5" name="person-5" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
+      </div>
+    </div>
+  </div>
+</fieldset>

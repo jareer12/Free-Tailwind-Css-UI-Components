@@ -1,0 +1,320 @@
+<!--
+  This example requires Tailwind CSS v2.0+
+
+  The alpine.js code is *NOT* production ready and is included to preview
+  possible interactivity
+-->
+<div class="bg-white">
+    
+  <nav x-data="{ open: false }" class="bg-sky-500" aria-label="Global">
+    <div class="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center px-2 lg:px-0">
+          <div class="flex-shrink-0 flex items-center">
+            <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-white.svg" alt="Workflow">
+          </div>
+          <div class="hidden lg:ml-8 lg:flex lg:space-x-4">
+            
+              <a href="#" class="rounded-md py-2 px-3 text-sm font-medium text-white hover:bg-sky-400">
+                Dashboard
+              </a>
+            
+              <a href="#" class="rounded-md py-2 px-3 text-sm font-medium text-white hover:bg-sky-400">
+                Jobs
+              </a>
+            
+              <a href="#" class="rounded-md py-2 px-3 text-sm font-medium text-white hover:bg-sky-400">
+                Applicants
+              </a>
+            
+              <a href="#" class="rounded-md py-2 px-3 text-sm font-medium text-white hover:bg-sky-400">
+                Company
+              </a>
+            
+          </div>
+        </div>
+        <div class="flex-1 flex items-center justify-center px-2 lg:ml-6 lg:justify-end">
+          <div class="max-w-lg w-full lg:max-w-xs">
+            <label for="search" class="sr-only">Search</label>
+            <div class="relative text-white focus-within:text-gray-400">
+              <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <svg class="flex-shrink-0 h-5 w-5" x-description="Heroicon name: solid/search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+  <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
+</svg>
+              </div>
+              <input id="search" name="search" class="block w-full bg-sky-400 border-transparent py-2 pl-10 pr-3 text-base leading-5 placeholder-white focus:outline-none focus:bg-white focus:ring-0 focus:border-white focus:text-gray-900 focus:placeholder-gray-400 sm:text-sm rounded-md" placeholder="Search" type="search">
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center lg:hidden">
+          <!-- Mobile menu button -->
+          <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-sky-200 hover:text-white hover:bg-sky-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" @click="open = !open" aria-expanded="false" x-bind:aria-expanded="open.toString()">
+            <span class="sr-only">Open menu</span>
+            <svg x-description="Icon when menu is closed.
+
+Heroicon name: outline/menu" x-state:on="Menu open" x-state:off="Menu closed" class="block h-6 w-6" :class="{ 'hidden': open, 'block': !(open) }" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+</svg>
+            <svg x-description="Icon when menu is open.
+
+Heroicon name: outline/x" x-state:on="Menu open" x-state:off="Menu closed" class="hidden h-6 w-6" :class="{ 'block': open, 'hidden': !(open) }" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+</svg>
+          </button>
+        </div>
+        <div class="hidden lg:ml-4 lg:flex lg:items-center">
+          <button type="button" class="flex-shrink-0 bg-sky-500 p-1 text-sky-200 rounded-full hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-sky-500 focus:ring-white">
+            <span class="sr-only">Notificaitons</span>
+            <svg class="h-6 w-6" x-description="Heroicon name: outline/bell" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
+</svg>
+          </button>
+
+          <!-- Profile dropdown -->
+          <div x-data="Components.menu({ open: false })" x-init="init()" @keydown.escape.stop="open = false; focusButton()" @click.away="onClickAway($event)" class="ml-4 relative flex-shrink-0">
+            <div>
+              <button type="button" class="bg-sky-500 rounded-full flex text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-sky-500 focus:ring-white" id="user-menu-button" x-ref="button" @click="onButtonClick()" @keyup.space.prevent="onButtonEnter()" @keydown.enter.prevent="onButtonEnter()" aria-expanded="false" aria-haspopup="true" x-bind:aria-expanded="open.toString()" @keydown.arrow-up.prevent="onArrowUp()" @keydown.arrow-down.prevent="onArrowDown()">
+                <span class="sr-only">Open user menu</span>
+                <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80" alt="">
+              </button>
+            </div>
+            
+              <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" x-ref="menu-items" x-description="Dropdown menu, show/hide based on menu state." x-bind:aria-activedescendant="activeDescendant" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1" @keydown.arrow-up.prevent="onArrowUp()" @keydown.arrow-down.prevent="onArrowDown()" @keydown.tab="open = false" @keydown.enter.prevent="open = false; focusButton()" @keyup.space.prevent="open = false; focusButton()">
+                
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700" x-state:on="Active" x-state:off="Not Active" :class="{ 'bg-gray-100': activeIndex === 0 }" role="menuitem" tabindex="-1" id="user-menu-item-0" @mouseenter="activeIndex = 0" @mouseleave="activeIndex = -1" @click="open = false; focusButton()">Your Profile</a>
+                
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700" :class="{ 'bg-gray-100': activeIndex === 1 }" role="menuitem" tabindex="-1" id="user-menu-item-1" @mouseenter="activeIndex = 1" @mouseleave="activeIndex = -1" @click="open = false; focusButton()">Settings</a>
+                
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700" :class="{ 'bg-gray-100': activeIndex === 2 }" role="menuitem" tabindex="-1" id="user-menu-item-2" @mouseenter="activeIndex = 2" @mouseleave="activeIndex = -1" @click="open = false; focusButton()">Sign out</a>
+                
+              </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div x-description="Mobile menu, show/hide based on menu state." class="lg:hidden" id="mobile-menu" x-show="open">
+      <div class="pt-2 pb-3 px-2 space-y-1">
+        
+          <a href="#" class="block rounded-md py-2 px-3 text-base font-medium text-white hover:text-white hover:bg-sky-400">Dashboard</a>
+        
+          <a href="#" class="block rounded-md py-2 px-3 text-base font-medium text-white hover:text-white hover:bg-sky-400">Jobs</a>
+        
+          <a href="#" class="block rounded-md py-2 px-3 text-base font-medium text-white hover:text-white hover:bg-sky-400">Applicants</a>
+        
+          <a href="#" class="block rounded-md py-2 px-3 text-base font-medium text-white hover:text-white hover:bg-sky-400">Company</a>
+        
+      </div>
+      <div class="pt-4 pb-3 border-t border-sky-500">
+        <div class="flex items-center px-4">
+          <div class="flex-shrink-0">
+            <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80" alt="">
+          </div>
+          <div class="ml-3">
+            <div class="text-base font-medium text-white">Floyd Miles</div>
+            <div class="text-sm font-medium text-sky-200">floydmiles@example.com</div>
+          </div>
+          <button type="button" class="ml-auto flex-shrink-0 bg-sky-500 rounded-full p-1 text-sky-200 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-sky-500 focus:ring-white">
+            <span class="sr-only">View notifications</span>
+            <svg class="h-6 w-6" x-description="Heroicon name: outline/bell" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
+</svg>
+          </button>
+        </div>
+        <div class="mt-3 px-2">
+          
+            <a href="#" class="block rounded-md py-2 px-3 text-base font-medium text-sky-200 hover:text-white hover:bg-sky-400">Your Profile</a>
+          
+            <a href="#" class="block rounded-md py-2 px-3 text-base font-medium text-sky-200 hover:text-white hover:bg-sky-400">Settings</a>
+          
+            <a href="#" class="block rounded-md py-2 px-3 text-base font-medium text-sky-200 hover:text-white hover:bg-sky-400">Sign out</a>
+          
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <nav class="hidden bg-white border-b border-gray-200 lg:flex" aria-label="Breadcrumb">
+    <ol role="list" class="max-w-screen-xl w-full mx-auto px-4 flex space-x-4 sm:px-6 lg:px-8">
+      <li class="flex">
+        <div class="flex items-center">
+          <a href="#" class="text-gray-400 hover:text-gray-500">
+            <svg class="flex-shrink-0 h-5 w-5" x-description="Heroicon name: solid/home" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+  <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
+</svg>
+            <span class="sr-only">Home</span>
+          </a>
+        </div>
+      </li>
+      
+        <li class="flex">
+          <div class="flex items-center">
+            <svg class="flex-shrink-0 w-6 h-full text-gray-200" preserveAspectRatio="none" viewBox="0 0 24 44" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M.293 0l22 22-22 22h1.414l22-22-22-22H.293z"></path>
+            </svg>
+            <a href="#" class="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700">Projects</a>
+          </div>
+        </li>
+      
+        <li class="flex">
+          <div class="flex items-center">
+            <svg class="flex-shrink-0 w-6 h-full text-gray-200" preserveAspectRatio="none" viewBox="0 0 24 44" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M.293 0l22 22-22 22h1.414l22-22-22-22H.293z"></path>
+            </svg>
+            <a href="#" class="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700" aria-current="page">Project Nero</a>
+          </div>
+        </li>
+      
+    </ol>
+  </nav>
+
+  <main class="max-w-lg mx-auto pt-10 pb-12 px-4 lg:pb-16">
+    <form>
+      <div class="space-y-6">
+        <div>
+          <h1 class="text-lg leading-6 font-medium text-gray-900">
+            Project Settings
+          </h1>
+          <p class="mt-1 text-sm text-gray-500">
+            Let’s get started by filling in the information below to create your new project.
+          </p>
+        </div>
+
+        <div>
+          <label for="project-name" class="block text-sm font-medium text-gray-700">
+            Project Name
+          </label>
+          <div class="mt-1">
+            <input type="text" name="project-name" id="project-name" class="block w-full shadow-sm focus:ring-sky-500 focus:border-sky-500 sm:text-sm border-gray-300 rounded-md" value="Project Nero">
+          </div>
+        </div>
+
+        <div>
+          <label for="description" class="block text-sm font-medium text-gray-700">
+            Description
+          </label>
+          <div class="mt-1">
+            <textarea id="description" name="description" rows="3" class="block w-full shadow-sm focus:ring-sky-500 focus:border-sky-500 sm:text-sm border border-gray-300 rounded-md"></textarea>
+          </div>
+        </div>
+
+        <div class="space-y-2">
+          <div class="space-y-1">
+            <label for="add-team-members" class="block text-sm font-medium text-gray-700">
+              Add Team Members
+            </label>
+            <p id="add-team-members-helper" class="sr-only">Search by email address</p>
+            <div class="flex">
+              <div class="flex-grow">
+                <input type="text" name="add-team-members" id="add-team-members" class="block w-full shadow-sm focus:ring-sky-500 focus:border-sky-500 sm:text-sm border-gray-300 rounded-md" placeholder="Email address" aria-describedby="add-team-members-helper">
+              </div>
+              <span class="ml-3">
+                <button type="button" class="bg-white inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500">
+                  <svg class="-ml-2 mr-1 h-5 w-5 text-gray-400" x-description="Heroicon name: solid/plus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+  <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd"></path>
+</svg>
+                  <span>Add</span>
+                </button>
+              </span>
+            </div>
+          </div>
+
+          <div class="border-b border-gray-200">
+            <ul role="list" class="divide-y divide-gray-200">
+              
+                <li class="py-4 flex">
+                  <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1513910367299-bce8d8a0ebf6?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80" alt="">
+                  <div class="ml-3 flex flex-col">
+                    <span class="text-sm font-medium text-gray-900">Calvin Hawkins</span>
+                    <span class="text-sm text-gray-500">calvin.hawkins@example.com</span>
+                  </div>
+                </li>
+              
+                <li class="py-4 flex">
+                  <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80" alt="">
+                  <div class="ml-3 flex flex-col">
+                    <span class="text-sm font-medium text-gray-900">Bessie Richards</span>
+                    <span class="text-sm text-gray-500">bessie.richards@example.com</span>
+                  </div>
+                </li>
+              
+                <li class="py-4 flex">
+                  <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80" alt="">
+                  <div class="ml-3 flex flex-col">
+                    <span class="text-sm font-medium text-gray-900">Floyd Black</span>
+                    <span class="text-sm text-gray-500">floyd.black@example.com</span>
+                  </div>
+                </li>
+              
+            </ul>
+          </div>
+        </div>
+
+        <fieldset x-data="window.Components.radioGroup({ initialCheckedIndex: 0 })" x-init="init()">
+          <legend class="text-sm font-medium text-gray-900">
+            Privacy
+          </legend>
+
+          <div class="mt-1 bg-white rounded-md shadow-sm -space-y-px">
+            
+              <label x-radio-group-option="" class="rounded-tl-md rounded-tr-md  relative border p-4 flex cursor-pointer focus:outline-none" x-description="Checked: &quot;bg-sky-50 border-sky-200 z-10&quot;, Not Checked: &quot;border-gray-200&quot;" :class="{ 'bg-sky-50 border-sky-200 z-10': (value === 'Public access'), 'border-gray-200': !(value === 'Public access') }">
+                <input type="radio" x-model="value" name="privacy-setting" value="Public access" class="h-4 w-4 mt-0.5 cursor-pointer text-sky-600 border-gray-300 focus:ring-sky-500" aria-labelledby="privacy-setting-0-label" aria-describedby="privacy-setting-0-description">
+                <div class="ml-3 flex flex-col">
+                  <span id="privacy-setting-0-label" class="block text-sm font-medium" x-description="Checked: &quot;text-sky-900&quot;, Not Checked: &quot;text-gray-900&quot;" :class="{ 'text-sky-900': (value === 'Public access'), 'text-gray-900': !(value === 'Public access') }">
+                    Public access
+                  </span>
+                  <span id="privacy-setting-0-description" class="block text-sm" x-description="Checked: &quot;text-sky-700&quot;, Not Checked: &quot;text-gray-500&quot;" :class="{ 'text-sky-700': (value === 'Public access'), 'text-gray-500': !(value === 'Public access') }">
+                    This project would be available to anyone who has the link
+                  </span>
+                </div>
+              </label>
+            
+              <label x-radio-group-option="" class="  relative border p-4 flex cursor-pointer focus:outline-none" x-description="Checked: &quot;bg-sky-50 border-sky-200 z-10&quot;, Not Checked: &quot;border-gray-200&quot;" :class="{ 'bg-sky-50 border-sky-200 z-10': (value === 'Private to Project Members'), 'border-gray-200': !(value === 'Private to Project Members') }">
+                <input type="radio" x-model="value" name="privacy-setting" value="Private to Project Members" class="h-4 w-4 mt-0.5 cursor-pointer text-sky-600 border-gray-300 focus:ring-sky-500" aria-labelledby="privacy-setting-1-label" aria-describedby="privacy-setting-1-description">
+                <div class="ml-3 flex flex-col">
+                  <span id="privacy-setting-1-label" class="block text-sm font-medium" x-description="Checked: &quot;text-sky-900&quot;, Not Checked: &quot;text-gray-900&quot;" :class="{ 'text-sky-900': (value === 'Private to Project Members'), 'text-gray-900': !(value === 'Private to Project Members') }">
+                    Private to Project Members
+                  </span>
+                  <span id="privacy-setting-1-description" class="block text-sm" x-description="Checked: &quot;text-sky-700&quot;, Not Checked: &quot;text-gray-500&quot;" :class="{ 'text-sky-700': (value === 'Private to Project Members'), 'text-gray-500': !(value === 'Private to Project Members') }">
+                    Only members of this project would be able to access
+                  </span>
+                </div>
+              </label>
+            
+              <label x-radio-group-option="" class=" rounded-bl-md rounded-br-md relative border p-4 flex cursor-pointer focus:outline-none" x-description="Checked: &quot;bg-sky-50 border-sky-200 z-10&quot;, Not Checked: &quot;border-gray-200&quot;" :class="{ 'bg-sky-50 border-sky-200 z-10': (value === 'Private to you'), 'border-gray-200': !(value === 'Private to you') }">
+                <input type="radio" x-model="value" name="privacy-setting" value="Private to you" class="h-4 w-4 mt-0.5 cursor-pointer text-sky-600 border-gray-300 focus:ring-sky-500" aria-labelledby="privacy-setting-2-label" aria-describedby="privacy-setting-2-description">
+                <div class="ml-3 flex flex-col">
+                  <span id="privacy-setting-2-label" class="block text-sm font-medium" x-description="Checked: &quot;text-sky-900&quot;, Not Checked: &quot;text-gray-900&quot;" :class="{ 'text-sky-900': (value === 'Private to you'), 'text-gray-900': !(value === 'Private to you') }">
+                    Private to you
+                  </span>
+                  <span id="privacy-setting-2-description" class="block text-sm" x-description="Checked: &quot;text-sky-700&quot;, Not Checked: &quot;text-gray-500&quot;" :class="{ 'text-sky-700': (value === 'Private to you'), 'text-gray-500': !(value === 'Private to you') }">
+                    You are the only one able to access this project
+                  </span>
+                </div>
+              </label>
+            
+          </div>
+        </fieldset>
+
+        <div>
+          <label for="tags" class="block text-sm font-medium text-gray-700">
+            Tags
+          </label>
+          <input type="text" name="tags" id="tags" class="mt-1 block w-full shadow-sm focus:ring-sky-500 focus:border-sky-500 sm:text-sm border-gray-300 rounded-md">
+        </div>
+
+        <div class="flex justify-end">
+          <button type="button" class="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500">
+            Cancel
+          </button>
+          <button type="submit" class="ml-3 inline-flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-sky-500 hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500">
+            Create this project
+          </button>
+        </div>
+      </div>
+    </form>
+  </main>
+
+  </div>

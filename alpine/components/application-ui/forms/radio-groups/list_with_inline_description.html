@@ -1,0 +1,46 @@
+<!--
+  This example requires Tailwind CSS v2.0+
+
+  The alpine.js code is *NOT* production ready and is included to preview
+  possible interactivity
+-->
+<div class="px-4 py-12 flex justify-center bg-white">
+    
+  <fieldset>
+    <legend class="sr-only">Plan</legend>
+    <div class="space-y-5">
+      
+        <div class="relative flex items-start">
+          <div class="flex items-center h-5">
+            <input id="small" aria-describedby="small-description" name="plan" type="radio" checked="" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+          </div>
+          <div class="ml-3 text-sm">
+            <label for="small" class="font-medium text-gray-700">Small</label>
+            <span id="small-description" class="text-gray-500">4 GB RAM / 2 CPUS / 80 GB SSD Storage</span>
+          </div>
+        </div>
+      
+        <div class="relative flex items-start">
+          <div class="flex items-center h-5">
+            <input id="medium" aria-describedby="medium-description" name="plan" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+          </div>
+          <div class="ml-3 text-sm">
+            <label for="medium" class="font-medium text-gray-700">Medium</label>
+            <span id="medium-description" class="text-gray-500">8 GB RAM / 4 CPUS / 160 GB SSD Storage</span>
+          </div>
+        </div>
+      
+        <div class="relative flex items-start">
+          <div class="flex items-center h-5">
+            <input id="large" aria-describedby="large-description" name="plan" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+          </div>
+          <div class="ml-3 text-sm">
+            <label for="large" class="font-medium text-gray-700">Large</label>
+            <span id="large-description" class="text-gray-500">16 GB RAM / 8 CPUS / 320 GB SSD Storage</span>
+          </div>
+        </div>
+      
+    </div>
+  </fieldset>
+
+  </div>

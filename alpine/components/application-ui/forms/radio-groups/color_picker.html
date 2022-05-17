@@ -1,0 +1,46 @@
+<!--
+  This example requires Tailwind CSS v2.0+
+
+  The alpine.js code is *NOT* production ready and is included to preview
+  possible interactivity
+-->
+<div class="px-8 py-12 flex justify-center bg-white">
+    
+  <fieldset x-data="window.Components.radioGroup({ initialCheckedIndex: 1 })" x-init="init()">
+    <legend class="block text-sm font-medium text-gray-700">Choose a label color</legend>
+    <div class="mt-4 flex items-center space-x-3">
+      
+        <label x-radio-group-option="" class="-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none ring-pink-500" x-description="Active and Checked: &quot;ring ring-offset-1&quot;	Not Active and Checked: &quot;ring-2&quot;" :class="{ 'ring ring-offset-1': (active === 'Pink') &amp;&amp; (value === 'Pink'), 'undefined': !(active === 'Pink') || !(value === 'Pink'), 'ring-2': !(active === 'Pink') &amp;&amp; (value === 'Pink'), 'undefined': (active === 'Pink') || !(value === 'Pink') }">
+<input type="radio" x-model="value" name="color-choice" value="Pink" class="sr-only" aria-labelledby="color-choice-0-label">
+          <p id="color-choice-0-label" class="sr-only">Pink</p>
+          <span aria-hidden="true" class="h-8 w-8 bg-pink-500 border border-black border-opacity-10 rounded-full"></span>
+        </label>
+      
+        <label x-radio-group-option="" class="-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none ring-purple-500" x-description="Active and Checked: &quot;ring ring-offset-1&quot;	Not Active and Checked: &quot;ring-2&quot;" :class="{ 'ring ring-offset-1': (active === 'Purple') &amp;&amp; (value === 'Purple'), 'undefined': !(active === 'Purple') || !(value === 'Purple'), 'ring-2': !(active === 'Purple') &amp;&amp; (value === 'Purple'), 'undefined': (active === 'Purple') || !(value === 'Purple') }">
+<input type="radio" x-model="value" name="color-choice" value="Purple" class="sr-only" aria-labelledby="color-choice-1-label">
+          <p id="color-choice-1-label" class="sr-only">Purple</p>
+          <span aria-hidden="true" class="h-8 w-8 bg-purple-500 border border-black border-opacity-10 rounded-full"></span>
+        </label>
+      
+        <label x-radio-group-option="" class="-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none ring-blue-500" x-description="Active and Checked: &quot;ring ring-offset-1&quot;	Not Active and Checked: &quot;ring-2&quot;" :class="{ 'ring ring-offset-1': (active === 'Blue') &amp;&amp; (value === 'Blue'), 'undefined': !(active === 'Blue') || !(value === 'Blue'), 'ring-2': !(active === 'Blue') &amp;&amp; (value === 'Blue'), 'undefined': (active === 'Blue') || !(value === 'Blue') }">
+<input type="radio" x-model="value" name="color-choice" value="Blue" class="sr-only" aria-labelledby="color-choice-2-label">
+          <p id="color-choice-2-label" class="sr-only">Blue</p>
+          <span aria-hidden="true" class="h-8 w-8 bg-blue-500 border border-black border-opacity-10 rounded-full"></span>
+        </label>
+      
+        <label x-radio-group-option="" class="-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none ring-green-500" x-description="Active and Checked: &quot;ring ring-offset-1&quot;	Not Active and Checked: &quot;ring-2&quot;" :class="{ 'ring ring-offset-1': (active === 'Green') &amp;&amp; (value === 'Green'), 'undefined': !(active === 'Green') || !(value === 'Green'), 'ring-2': !(active === 'Green') &amp;&amp; (value === 'Green'), 'undefined': (active === 'Green') || !(value === 'Green') }">
+<input type="radio" x-model="value" name="color-choice" value="Green" class="sr-only" aria-labelledby="color-choice-3-label">
+          <p id="color-choice-3-label" class="sr-only">Green</p>
+          <span aria-hidden="true" class="h-8 w-8 bg-green-500 border border-black border-opacity-10 rounded-full"></span>
+        </label>
+      
+        <label x-radio-group-option="" class="-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none ring-yellow-500" x-description="Active and Checked: &quot;ring ring-offset-1&quot;	Not Active and Checked: &quot;ring-2&quot;" :class="{ 'ring ring-offset-1': (active === 'Yellow') &amp;&amp; (value === 'Yellow'), 'undefined': !(active === 'Yellow') || !(value === 'Yellow'), 'ring-2': !(active === 'Yellow') &amp;&amp; (value === 'Yellow'), 'undefined': (active === 'Yellow') || !(value === 'Yellow') }">
+<input type="radio" x-model="value" name="color-choice" value="Yellow" class="sr-only" aria-labelledby="color-choice-4-label">
+          <p id="color-choice-4-label" class="sr-only">Yellow</p>
+          <span aria-hidden="true" class="h-8 w-8 bg-yellow-500 border border-black border-opacity-10 rounded-full"></span>
+        </label>
+      
+    </div>
+  </fieldset>
+
+  </div>

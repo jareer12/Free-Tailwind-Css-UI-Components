@@ -1,0 +1,40 @@
+<!--
+  This example requires Tailwind CSS v2.0+
+
+  The alpine.js code is *NOT* production ready and is included to preview
+  possible interactivity
+-->
+<div class="bg-gray-100" style="min-height: 320px;">
+    
+  <!-- Global notification live region, render this permanently at the end of the document -->
+  <div x-data="{ show: true }" aria-live="assertive" class="fixed inset-0 flex items-end px-4 py-6 pointer-events-none sm:p-6 sm:items-start">
+    <div class="w-full flex flex-col items-center space-y-4 sm:items-end">
+      <!-- Notification panel, dynamically insert this into the live region when it needs to be displayed -->
+      
+        <div x-show="show" x-transition:enter="transform ease-out duration-300 transition" x-transition:enter-start="translate-y-2 opacity-0 sm:translate-y-0 sm:translate-x-2" x-transition:enter-end="translate-y-0 opacity-100 sm:translate-x-0" x-transition:leave="transition ease-in duration-100" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="max-w-md w-full bg-white shadow-lg rounded-lg pointer-events-auto flex ring-1 ring-black ring-opacity-5">
+          <div class="w-0 flex-1 p-4">
+            <div class="flex items-start">
+              <div class="flex-shrink-0 pt-0.5">
+                <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2.2&amp;w=160&amp;h=160&amp;q=80" alt="">
+              </div>
+              <div class="ml-3 w-0 flex-1">
+                <p class="text-sm font-medium text-gray-900">
+                  Emilia Gates
+                </p>
+                <p class="mt-1 text-sm text-gray-500">
+                  Sure! 8:30pm works great!
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="flex border-l border-gray-200">
+            <button @click="show = false; setTimeout(() => show = true, 1000)" class="w-full border border-transparent rounded-none rounded-r-lg p-4 flex items-center justify-center text-sm font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+              Reply
+            </button>
+          </div>
+        </div>
+      
+    </div>
+  </div>
+
+  </div>

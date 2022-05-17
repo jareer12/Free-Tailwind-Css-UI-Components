@@ -1,0 +1,780 @@
+<!--
+  This example requires Tailwind CSS v2.0+
+
+  The alpine.js code is *NOT* production ready and is included to preview
+  possible interactivity
+-->
+<div x-data="{ open: false }" @keydown.window.escape="open = false" class="bg-white">
+    <!-- Mobile menu -->
+    
+      <div x-show="open" class="fixed inset-0 flex z-40 lg:hidden" x-description="Off-canvas menu for mobile, show/hide based on off-canvas menu state." x-ref="dialog" aria-modal="true">
+        
+          <div x-show="open" x-transition:enter="transition-opacity ease-linear duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition-opacity ease-linear duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" x-description="Off-canvas menu overlay, show/hide based on off-canvas menu state." class="fixed inset-0 bg-black bg-opacity-25" @click="open = false" aria-hidden="true">
+        </div>
+
+        
+          <div x-show="open" x-transition:enter="transition ease-in-out duration-300 transform" x-transition:enter-start="-translate-x-full" x-transition:enter-end="translate-x-0" x-transition:leave="transition ease-in-out duration-300 transform" x-transition:leave-start="translate-x-0" x-transition:leave-end="-translate-x-full" x-description="Off-canvas menu, show/hide based on off-canvas menu state." class="relative max-w-xs w-full bg-white shadow-xl pb-12 flex flex-col overflow-y-auto">
+            <div class="px-4 pt-5 pb-2 flex">
+              <button type="button" class="-m-2 p-2 rounded-md inline-flex items-center justify-center text-gray-400" @click="open = false">
+                <span class="sr-only">Close menu</span>
+                <svg class="h-6 w-6" x-description="Heroicon name: outline/x" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+</svg>
+              </button>
+            </div>
+
+            <!-- Links -->
+            <div class="mt-2" x-data="Components.tabs()" @tab-click.window="onTabClick" @tab-keydown.window="onTabKeydown">
+              <div class="border-b border-gray-200">
+                <div class="-mb-px flex px-4 space-x-8" aria-orientation="horizontal" role="tablist">
+                  
+                    <button id="tabs-1-tab-1" class="text-gray-900 border-transparent flex-1 whitespace-nowrap py-4 px-1 border-b-2 text-base font-medium" x-state:on="Selected" x-state:off="Not Selected" :class="{ 'text-indigo-600 border-indigo-600': selected, 'text-gray-900 border-transparent': !(selected) }" x-data="Components.tab(0)" aria-controls="tabs-1-panel-1" role="tab" x-init="init()" @click="onClick" @keydown="onKeydown" @tab-select.window="onTabSelect" :tabindex="selected ? 0 : -1" :aria-selected="selected ? 'true' : 'false'" type="button">
+                      Women
+                    </button>
+                  
+                    <button id="tabs-1-tab-2" class="text-gray-900 border-transparent flex-1 whitespace-nowrap py-4 px-1 border-b-2 text-base font-medium" x-state:on="Selected" x-state:off="Not Selected" :class="{ 'text-indigo-600 border-indigo-600': selected, 'text-gray-900 border-transparent': !(selected) }" x-data="Components.tab(0)" aria-controls="tabs-1-panel-2" role="tab" x-init="init()" @click="onClick" @keydown="onKeydown" @tab-select.window="onTabSelect" :tabindex="selected ? 0 : -1" :aria-selected="selected ? 'true' : 'false'" type="button">
+                      Men
+                    </button>
+                  
+                </div>
+              </div>
+              
+                
+                  <div id="tabs-1-panel-1" class="px-4 py-6 space-y-12" x-description="'Women' tab panel, show/hide based on tab state." x-data="Components.tabPanel(0)" aria-labelledby="tabs-1-tab-1" x-init="init()" x-show="selected" @tab-select.window="onTabSelect" role="tabpanel" tabindex="0">
+                    <div class="grid grid-cols-2 gap-x-4 gap-y-10">
+                      
+                        <div class="group relative">
+                          <div class="aspect-w-1 aspect-h-1 rounded-md bg-gray-100 overflow-hidden group-hover:opacity-75">
+                            <img src="https://tailwindui.com/img/ecommerce-images/mega-menu-category-01.jpg" alt="Models sitting back to back, wearing Basic Tee in black and bone." class="object-center object-cover">
+                          </div>
+                          <a href="#" class="mt-6 block text-sm font-medium text-gray-900">
+                            <span class="absolute z-10 inset-0" aria-hidden="true"></span>
+                            New Arrivals
+                          </a>
+                          <p aria-hidden="true" class="mt-1 text-sm text-gray-500">Shop now</p>
+                        </div>
+                      
+                        <div class="group relative">
+                          <div class="aspect-w-1 aspect-h-1 rounded-md bg-gray-100 overflow-hidden group-hover:opacity-75">
+                            <img src="https://tailwindui.com/img/ecommerce-images/mega-menu-category-02.jpg" alt="Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees." class="object-center object-cover">
+                          </div>
+                          <a href="#" class="mt-6 block text-sm font-medium text-gray-900">
+                            <span class="absolute z-10 inset-0" aria-hidden="true"></span>
+                            Basic Tees
+                          </a>
+                          <p aria-hidden="true" class="mt-1 text-sm text-gray-500">Shop now</p>
+                        </div>
+                      
+                        <div class="group relative">
+                          <div class="aspect-w-1 aspect-h-1 rounded-md bg-gray-100 overflow-hidden group-hover:opacity-75">
+                            <img src="https://tailwindui.com/img/ecommerce-images/mega-menu-category-03.jpg" alt="Model wearing minimalist watch with black wristband and white watch face." class="object-center object-cover">
+                          </div>
+                          <a href="#" class="mt-6 block text-sm font-medium text-gray-900">
+                            <span class="absolute z-10 inset-0" aria-hidden="true"></span>
+                            Accessories
+                          </a>
+                          <p aria-hidden="true" class="mt-1 text-sm text-gray-500">Shop now</p>
+                        </div>
+                      
+                        <div class="group relative">
+                          <div class="aspect-w-1 aspect-h-1 rounded-md bg-gray-100 overflow-hidden group-hover:opacity-75">
+                            <img src="https://tailwindui.com/img/ecommerce-images/mega-menu-category-04.jpg" alt="Model opening tan leather long wallet with credit card pockets and cash pouch." class="object-center object-cover">
+                          </div>
+                          <a href="#" class="mt-6 block text-sm font-medium text-gray-900">
+                            <span class="absolute z-10 inset-0" aria-hidden="true"></span>
+                            Carry
+                          </a>
+                          <p aria-hidden="true" class="mt-1 text-sm text-gray-500">Shop now</p>
+                        </div>
+                      
+                    </div>
+                  </div>
+                
+                  <div id="tabs-1-panel-2" class="px-4 py-6 space-y-12" x-description="'Men' tab panel, show/hide based on tab state." x-data="Components.tabPanel(0)" aria-labelledby="tabs-1-tab-2" x-init="init()" x-show="selected" @tab-select.window="onTabSelect" role="tabpanel" tabindex="0">
+                    <div class="grid grid-cols-2 gap-x-4 gap-y-10">
+                      
+                        <div class="group relative">
+                          <div class="aspect-w-1 aspect-h-1 rounded-md bg-gray-100 overflow-hidden group-hover:opacity-75">
+                            <img src="https://tailwindui.com/img/ecommerce-images/mega-menu-01-men-category-01.jpg" alt="Hats and sweaters on wood shelves next to various colors of t-shirts on hangers." class="object-center object-cover">
+                          </div>
+                          <a href="#" class="mt-6 block text-sm font-medium text-gray-900">
+                            <span class="absolute z-10 inset-0" aria-hidden="true"></span>
+                            New Arrivals
+                          </a>
+                          <p aria-hidden="true" class="mt-1 text-sm text-gray-500">Shop now</p>
+                        </div>
+                      
+                        <div class="group relative">
+                          <div class="aspect-w-1 aspect-h-1 rounded-md bg-gray-100 overflow-hidden group-hover:opacity-75">
+                            <img src="https://tailwindui.com/img/ecommerce-images/mega-menu-01-men-category-02.jpg" alt="Model wearing light heather gray t-shirt." class="object-center object-cover">
+                          </div>
+                          <a href="#" class="mt-6 block text-sm font-medium text-gray-900">
+                            <span class="absolute z-10 inset-0" aria-hidden="true"></span>
+                            Basic Tees
+                          </a>
+                          <p aria-hidden="true" class="mt-1 text-sm text-gray-500">Shop now</p>
+                        </div>
+                      
+                        <div class="group relative">
+                          <div class="aspect-w-1 aspect-h-1 rounded-md bg-gray-100 overflow-hidden group-hover:opacity-75">
+                            <img src="https://tailwindui.com/img/ecommerce-images/mega-menu-01-men-category-03.jpg" alt="Grey 6-panel baseball hat with black brim, black mountain graphic on front, and light heather gray body." class="object-center object-cover">
+                          </div>
+                          <a href="#" class="mt-6 block text-sm font-medium text-gray-900">
+                            <span class="absolute z-10 inset-0" aria-hidden="true"></span>
+                            Accessories
+                          </a>
+                          <p aria-hidden="true" class="mt-1 text-sm text-gray-500">Shop now</p>
+                        </div>
+                      
+                        <div class="group relative">
+                          <div class="aspect-w-1 aspect-h-1 rounded-md bg-gray-100 overflow-hidden group-hover:opacity-75">
+                            <img src="https://tailwindui.com/img/ecommerce-images/mega-menu-01-men-category-04.jpg" alt="Model putting folded cash into slim card holder olive leather wallet with hand stitching." class="object-center object-cover">
+                          </div>
+                          <a href="#" class="mt-6 block text-sm font-medium text-gray-900">
+                            <span class="absolute z-10 inset-0" aria-hidden="true"></span>
+                            Carry
+                          </a>
+                          <p aria-hidden="true" class="mt-1 text-sm text-gray-500">Shop now</p>
+                        </div>
+                      
+                    </div>
+                  </div>
+                
+              
+            </div>
+
+            <div class="border-t border-gray-200 py-6 px-4 space-y-6">
+              
+                <div class="flow-root">
+                  <a href="#" class="-m-2 p-2 block font-medium text-gray-900">Company</a>
+                </div>
+              
+                <div class="flow-root">
+                  <a href="#" class="-m-2 p-2 block font-medium text-gray-900">Stores</a>
+                </div>
+              
+            </div>
+
+            <div class="border-t border-gray-200 py-6 px-4 space-y-6">
+              <div class="flow-root">
+                <a href="#" class="-m-2 p-2 block font-medium text-gray-900">Create an account</a>
+              </div>
+              <div class="flow-root">
+                <a href="#" class="-m-2 p-2 block font-medium text-gray-900">Sign in</a>
+              </div>
+            </div>
+
+            <div class="border-t border-gray-200 py-6 px-4 space-y-6">
+              <!-- Currency selector -->
+              <form>
+                <div class="inline-block">
+                  <label for="mobile-currency" class="sr-only">Currency</label>
+                  <div class="-ml-2 group relative border-transparent rounded-md focus-within:ring-2 focus-within:ring-white">
+                    <select id="mobile-currency" name="currency" class="bg-none border-transparent rounded-md py-0.5 pl-2 pr-5 flex items-center text-sm font-medium text-gray-700 group-hover:text-gray-800 focus:outline-none focus:ring-0 focus:border-transparent">
+                      
+                        <option>CAD</option>
+                      
+                        <option>USD</option>
+                      
+                        <option>AUD</option>
+                      
+                        <option>EUR</option>
+                      
+                        <option>GBP</option>
+                      
+                    </select>
+                    <div class="absolute right-0 inset-y-0 flex items-center pointer-events-none">
+                      <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20" class="w-5 h-5 text-gray-500">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 8l4 4 4-4"></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        
+      </div>
+    
+
+    <!-- Hero section -->
+    <div class="relative bg-gray-900">
+      <!-- Decorative image and overlay -->
+      <div aria-hidden="true" class="absolute inset-0 overflow-hidden">
+        <img src="https://tailwindui.com/img/ecommerce-images/home-page-01-hero-full-width.jpg" alt="" class="w-full h-full object-center object-cover">
+      </div>
+      <div aria-hidden="true" class="absolute inset-0 bg-gray-900 opacity-50"></div>
+
+      <!-- Navigation -->
+      <header class="relative z-10">
+        <nav aria-label="Top">
+          <!-- Top navigation -->
+          <div class="bg-gray-900">
+            <div class="max-w-7xl mx-auto h-10 px-4 flex items-center justify-between sm:px-6 lg:px-8">
+              <!-- Currency selector -->
+              <form>
+                <div>
+                  <label for="desktop-currency" class="sr-only">Currency</label>
+                  <div class="-ml-2 group relative bg-gray-900 border-transparent rounded-md focus-within:ring-2 focus-within:ring-white">
+                    <select id="desktop-currency" name="currency" class="bg-none bg-gray-900 border-transparent rounded-md py-0.5 pl-2 pr-5 flex items-center text-sm font-medium text-white group-hover:text-gray-100 focus:outline-none focus:ring-0 focus:border-transparent">
+                      
+                        <option>CAD</option>
+                      
+                        <option>USD</option>
+                      
+                        <option>AUD</option>
+                      
+                        <option>EUR</option>
+                      
+                        <option>GBP</option>
+                      
+                    </select>
+                    <div class="absolute right-0 inset-y-0 flex items-center pointer-events-none">
+                      <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20" class="w-5 h-5 text-gray-300">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 8l4 4 4-4"></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </form>
+
+              <div class="flex items-center space-x-6">
+                <a href="#" class="text-sm font-medium text-white hover:text-gray-100">Sign in</a>
+                <a href="#" class="text-sm font-medium text-white hover:text-gray-100">Create an account</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Secondary navigation -->
+          <div class="backdrop-blur-md backdrop-filter bg-opacity-10 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div>
+                <div class="h-16 flex items-center justify-between">
+                  <!-- Logo (lg+) -->
+                  <div class="hidden lg:flex-1 lg:flex lg:items-center">
+                    <a href="#">
+                      <span class="sr-only">Workflow</span>
+                      <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark.svg?color=white" alt="">
+                    </a>
+                  </div>
+
+                  <div class="hidden h-full lg:flex">
+                    <!-- Flyout menus -->
+                    <div class="px-4 bottom-0 inset-x-0" x-data="Components.popoverGroup()" x-init="init()">
+                      <div class="h-full flex justify-center space-x-8">
+                        
+                          <div class="flex" x-data="Components.popover({ open: false, focus: false })" x-init="init()" @keydown.escape="onEscape" @close-popover-group.window="onClosePopoverGroup">
+                            <div class="relative flex">
+                              <button type="button" x-state:on="Item active" x-state:off="Item inactive" class="relative z-10 flex items-center justify-center transition-colors ease-out duration-200 text-sm font-medium text-white" @click="toggle" @mousedown="if (open) $event.preventDefault()" aria-expanded="false" :aria-expanded="open.toString()">
+                                Women
+                                <span class="absolute -bottom-px inset-x-0 h-0.5 transition ease-out duration-200" aria-hidden="true" x-state:on="Open" x-state:off="Closed" :class="{ 'bg-white': open }"></span>
+                              </button>
+                            </div>
+
+                            
+                              <div x-show="open" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" x-description="'Women' flyout menu, show/hide based on flyout menu state." class="absolute top-full inset-x-0 text-sm text-gray-500" x-ref="panel" @click.away="open = false">
+                                <!-- Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow -->
+                                <div class="absolute inset-0 top-1/2 bg-white shadow" aria-hidden="true"></div>
+
+                                <div class="relative bg-white">
+                                  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                                    <div class="grid grid-cols-4 gap-y-10 gap-x-8 py-16">
+                                      
+                                        <div class="group relative">
+                                          <div class="aspect-w-1 aspect-h-1 rounded-md bg-gray-100 overflow-hidden group-hover:opacity-75">
+                                            <img src="https://tailwindui.com/img/ecommerce-images/mega-menu-category-01.jpg" alt="Models sitting back to back, wearing Basic Tee in black and bone." class="object-center object-cover">
+                                          </div>
+                                          <a href="#" class="mt-4 block font-medium text-gray-900">
+                                            <span class="absolute z-10 inset-0" aria-hidden="true"></span>
+                                            New Arrivals
+                                          </a>
+                                          <p aria-hidden="true" class="mt-1">Shop now</p>
+                                        </div>
+                                      
+                                        <div class="group relative">
+                                          <div class="aspect-w-1 aspect-h-1 rounded-md bg-gray-100 overflow-hidden group-hover:opacity-75">
+                                            <img src="https://tailwindui.com/img/ecommerce-images/mega-menu-category-02.jpg" alt="Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees." class="object-center object-cover">
+                                          </div>
+                                          <a href="#" class="mt-4 block font-medium text-gray-900">
+                                            <span class="absolute z-10 inset-0" aria-hidden="true"></span>
+                                            Basic Tees
+                                          </a>
+                                          <p aria-hidden="true" class="mt-1">Shop now</p>
+                                        </div>
+                                      
+                                        <div class="group relative">
+                                          <div class="aspect-w-1 aspect-h-1 rounded-md bg-gray-100 overflow-hidden group-hover:opacity-75">
+                                            <img src="https://tailwindui.com/img/ecommerce-images/mega-menu-category-03.jpg" alt="Model wearing minimalist watch with black wristband and white watch face." class="object-center object-cover">
+                                          </div>
+                                          <a href="#" class="mt-4 block font-medium text-gray-900">
+                                            <span class="absolute z-10 inset-0" aria-hidden="true"></span>
+                                            Accessories
+                                          </a>
+                                          <p aria-hidden="true" class="mt-1">Shop now</p>
+                                        </div>
+                                      
+                                        <div class="group relative">
+                                          <div class="aspect-w-1 aspect-h-1 rounded-md bg-gray-100 overflow-hidden group-hover:opacity-75">
+                                            <img src="https://tailwindui.com/img/ecommerce-images/mega-menu-category-04.jpg" alt="Model opening tan leather long wallet with credit card pockets and cash pouch." class="object-center object-cover">
+                                          </div>
+                                          <a href="#" class="mt-4 block font-medium text-gray-900">
+                                            <span class="absolute z-10 inset-0" aria-hidden="true"></span>
+                                            Carry
+                                          </a>
+                                          <p aria-hidden="true" class="mt-1">Shop now</p>
+                                        </div>
+                                      
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            
+                          </div>
+                        
+                          <div class="flex" x-data="Components.popover({ open: false, focus: false })" x-init="init()" @keydown.escape="onEscape" @close-popover-group.window="onClosePopoverGroup">
+                            <div class="relative flex">
+                              <button type="button" x-state:on="Item active" x-state:off="Item inactive" class="relative z-10 flex items-center justify-center transition-colors ease-out duration-200 text-sm font-medium text-white" @click="toggle" @mousedown="if (open) $event.preventDefault()" aria-expanded="false" :aria-expanded="open.toString()">
+                                Men
+                                <span class="absolute -bottom-px inset-x-0 h-0.5 transition ease-out duration-200" aria-hidden="true" x-state:on="Open" x-state:off="Closed" :class="{ 'bg-white': open }"></span>
+                              </button>
+                            </div>
+
+                            
+                              <div x-show="open" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" x-description="'Women' flyout menu, show/hide based on flyout menu state." class="absolute top-full inset-x-0 text-sm text-gray-500" x-ref="panel" @click.away="open = false">
+                                <!-- Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow -->
+                                <div class="absolute inset-0 top-1/2 bg-white shadow" aria-hidden="true"></div>
+
+                                <div class="relative bg-white">
+                                  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                                    <div class="grid grid-cols-4 gap-y-10 gap-x-8 py-16">
+                                      
+                                        <div class="group relative">
+                                          <div class="aspect-w-1 aspect-h-1 rounded-md bg-gray-100 overflow-hidden group-hover:opacity-75">
+                                            <img src="https://tailwindui.com/img/ecommerce-images/mega-menu-01-men-category-01.jpg" alt="Hats and sweaters on wood shelves next to various colors of t-shirts on hangers." class="object-center object-cover">
+                                          </div>
+                                          <a href="#" class="mt-4 block font-medium text-gray-900">
+                                            <span class="absolute z-10 inset-0" aria-hidden="true"></span>
+                                            New Arrivals
+                                          </a>
+                                          <p aria-hidden="true" class="mt-1">Shop now</p>
+                                        </div>
+                                      
+                                        <div class="group relative">
+                                          <div class="aspect-w-1 aspect-h-1 rounded-md bg-gray-100 overflow-hidden group-hover:opacity-75">
+                                            <img src="https://tailwindui.com/img/ecommerce-images/mega-menu-01-men-category-02.jpg" alt="Model wearing light heather gray t-shirt." class="object-center object-cover">
+                                          </div>
+                                          <a href="#" class="mt-4 block font-medium text-gray-900">
+                                            <span class="absolute z-10 inset-0" aria-hidden="true"></span>
+                                            Basic Tees
+                                          </a>
+                                          <p aria-hidden="true" class="mt-1">Shop now</p>
+                                        </div>
+                                      
+                                        <div class="group relative">
+                                          <div class="aspect-w-1 aspect-h-1 rounded-md bg-gray-100 overflow-hidden group-hover:opacity-75">
+                                            <img src="https://tailwindui.com/img/ecommerce-images/mega-menu-01-men-category-03.jpg" alt="Grey 6-panel baseball hat with black brim, black mountain graphic on front, and light heather gray body." class="object-center object-cover">
+                                          </div>
+                                          <a href="#" class="mt-4 block font-medium text-gray-900">
+                                            <span class="absolute z-10 inset-0" aria-hidden="true"></span>
+                                            Accessories
+                                          </a>
+                                          <p aria-hidden="true" class="mt-1">Shop now</p>
+                                        </div>
+                                      
+                                        <div class="group relative">
+                                          <div class="aspect-w-1 aspect-h-1 rounded-md bg-gray-100 overflow-hidden group-hover:opacity-75">
+                                            <img src="https://tailwindui.com/img/ecommerce-images/mega-menu-01-men-category-04.jpg" alt="Model putting folded cash into slim card holder olive leather wallet with hand stitching." class="object-center object-cover">
+                                          </div>
+                                          <a href="#" class="mt-4 block font-medium text-gray-900">
+                                            <span class="absolute z-10 inset-0" aria-hidden="true"></span>
+                                            Carry
+                                          </a>
+                                          <p aria-hidden="true" class="mt-1">Shop now</p>
+                                        </div>
+                                      
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            
+                          </div>
+                        
+
+                        
+                          <a href="#" class="flex items-center text-sm font-medium text-white">Company</a>
+                        
+                          <a href="#" class="flex items-center text-sm font-medium text-white">Stores</a>
+                        
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Mobile menu and search (lg-) -->
+                  <div class="flex-1 flex items-center lg:hidden">
+                    <button type="button" x-description="Mobile menu toggle, controls the 'mobileMenuOpen' state." class="-ml-2 p-2 text-white" @click="open = true">
+                      <span class="sr-only">Open menu</span>
+                      <svg class="h-6 w-6" x-description="Heroicon name: outline/menu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+</svg>
+                    </button>
+
+                    <!-- Search -->
+                    <a href="#" class="ml-2 p-2 text-white">
+                      <span class="sr-only">Search</span>
+                      <svg class="w-6 h-6" x-description="Heroicon name: outline/search" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+</svg>
+                    </a>
+                  </div>
+
+                  <!-- Logo (lg-) -->
+                  <a href="#" class="lg:hidden">
+                    <span class="sr-only">Workflow</span>
+                    <img src="https://tailwindui.com/img/logos/workflow-mark.svg?color=white" alt="" class="h-8 w-auto">
+                  </a>
+
+                  <div class="flex-1 flex items-center justify-end">
+                    <a href="#" class="hidden text-sm font-medium text-white lg:block">
+                      Search
+                    </a>
+
+                    <div class="flex items-center lg:ml-8">
+                      <!-- Help -->
+                      <a href="#" class="p-2 text-white lg:hidden">
+                        <span class="sr-only">Help</span>
+                        <svg class="w-6 h-6" x-description="Heroicon name: outline/question-mark-circle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+</svg>
+                      </a>
+                      <a href="#" class="hidden text-sm font-medium text-white lg:block">Help</a>
+
+                      <!-- Cart -->
+                      <div class="ml-4 flow-root lg:ml-8">
+                        <a href="#" class="group -m-2 p-2 flex items-center">
+                          <svg class="flex-shrink-0 h-6 w-6 text-white" x-description="Heroicon name: outline/shopping-bag" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+</svg>
+                          <span class="ml-2 text-sm font-medium text-white">0</span>
+                          <span class="sr-only">items in cart, view bag</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <div class="relative max-w-3xl mx-auto py-32 px-6 flex flex-col items-center text-center sm:py-64 lg:px-0">
+        <h1 class="text-4xl font-extrabold tracking-tight text-white lg:text-6xl">New arrivals are here</h1>
+        <p class="mt-4 text-xl text-white">The new arrivals have, well, newly arrived. Check out the latest options from our summer small-batch release while they're still in stock.</p>
+        <a href="#" class="mt-8 inline-block bg-white border border-transparent rounded-md py-3 px-8 text-base font-medium text-gray-900 hover:bg-gray-100">Shop New Arrivals</a>
+      </div>
+    </div>
+
+    <main>
+      <!-- Category section -->
+      <section aria-labelledby="category-heading" class="pt-24 sm:pt-32 xl:max-w-7xl xl:mx-auto xl:px-8">
+        <div class="px-4 sm:px-6 sm:flex sm:items-center sm:justify-between lg:px-8 xl:px-0">
+          <h2 id="category-heading" class="text-2xl font-extrabold tracking-tight text-gray-900">Shop by Category</h2>
+          <a href="#" class="hidden text-sm font-semibold text-indigo-600 hover:text-indigo-500 sm:block">Browse all categories<span aria-hidden="true"> →</span></a>
+        </div>
+
+        <div class="mt-4 flow-root">
+          <div class="-my-2">
+            <div class="box-content py-2 relative h-80 overflow-x-auto xl:overflow-visible">
+              <div class="absolute min-w-screen-xl px-4 flex space-x-8 sm:px-6 lg:px-8 xl:relative xl:px-0 xl:space-x-0 xl:grid xl:grid-cols-5 xl:gap-x-8">
+                
+                  <a href="#" class="relative w-56 h-80 rounded-lg p-6 flex flex-col overflow-hidden hover:opacity-75 xl:w-auto">
+                    <span aria-hidden="true" class="absolute inset-0">
+                      <img src="https://tailwindui.com/img/ecommerce-images/home-page-01-category-01.jpg" alt="" class="w-full h-full object-center object-cover">
+                    </span>
+                    <span aria-hidden="true" class="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-gray-800 opacity-50"></span>
+                    <span class="relative mt-auto text-center text-xl font-bold text-white">New Arrivals</span>
+                  </a>
+                
+                  <a href="#" class="relative w-56 h-80 rounded-lg p-6 flex flex-col overflow-hidden hover:opacity-75 xl:w-auto">
+                    <span aria-hidden="true" class="absolute inset-0">
+                      <img src="https://tailwindui.com/img/ecommerce-images/home-page-01-category-02.jpg" alt="" class="w-full h-full object-center object-cover">
+                    </span>
+                    <span aria-hidden="true" class="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-gray-800 opacity-50"></span>
+                    <span class="relative mt-auto text-center text-xl font-bold text-white">Productivity</span>
+                  </a>
+                
+                  <a href="#" class="relative w-56 h-80 rounded-lg p-6 flex flex-col overflow-hidden hover:opacity-75 xl:w-auto">
+                    <span aria-hidden="true" class="absolute inset-0">
+                      <img src="https://tailwindui.com/img/ecommerce-images/home-page-01-category-04.jpg" alt="" class="w-full h-full object-center object-cover">
+                    </span>
+                    <span aria-hidden="true" class="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-gray-800 opacity-50"></span>
+                    <span class="relative mt-auto text-center text-xl font-bold text-white">Workspace</span>
+                  </a>
+                
+                  <a href="#" class="relative w-56 h-80 rounded-lg p-6 flex flex-col overflow-hidden hover:opacity-75 xl:w-auto">
+                    <span aria-hidden="true" class="absolute inset-0">
+                      <img src="https://tailwindui.com/img/ecommerce-images/home-page-01-category-05.jpg" alt="" class="w-full h-full object-center object-cover">
+                    </span>
+                    <span aria-hidden="true" class="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-gray-800 opacity-50"></span>
+                    <span class="relative mt-auto text-center text-xl font-bold text-white">Accessories</span>
+                  </a>
+                
+                  <a href="#" class="relative w-56 h-80 rounded-lg p-6 flex flex-col overflow-hidden hover:opacity-75 xl:w-auto">
+                    <span aria-hidden="true" class="absolute inset-0">
+                      <img src="https://tailwindui.com/img/ecommerce-images/home-page-01-category-03.jpg" alt="" class="w-full h-full object-center object-cover">
+                    </span>
+                    <span aria-hidden="true" class="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-gray-800 opacity-50"></span>
+                    <span class="relative mt-auto text-center text-xl font-bold text-white">Sale</span>
+                  </a>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6 px-4 sm:hidden">
+          <a href="#" class="block text-sm font-semibold text-indigo-600 hover:text-indigo-500">Browse all categories<span aria-hidden="true"> →</span></a>
+        </div>
+      </section>
+
+      <!-- Featured section -->
+      <section aria-labelledby="social-impact-heading" class="max-w-7xl mx-auto pt-24 px-4 sm:pt-32 sm:px-6 lg:px-8">
+        <div class="relative rounded-lg overflow-hidden">
+          <div class="absolute inset-0">
+            <img src="https://tailwindui.com/img/ecommerce-images/home-page-01-feature-section-01.jpg" alt="" class="w-full h-full object-center object-cover">
+          </div>
+          <div class="relative bg-gray-900 bg-opacity-75 py-32 px-6 sm:py-40 sm:px-12 lg:px-16">
+            <div class="relative max-w-3xl mx-auto flex flex-col items-center text-center">
+              <h2 id="social-impact-heading" class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+                <span class="block sm:inline">Level up</span>
+                <span class="block sm:inline">your desk</span>
+              </h2>
+              <p class="mt-3 text-xl text-white">Make your desk beautiful and organized. Post a picture to social media and watch it get more likes than life-changing announcements. Reflect on the shallow nature of existence. At least you have a really nice desk setup.</p>
+              <a href="#" class="mt-8 w-full block bg-white border border-transparent rounded-md py-3 px-8 text-base font-medium text-gray-900 hover:bg-gray-100 sm:w-auto">Shop Workspace</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Collection section -->
+      <section aria-labelledby="collection-heading" class="max-w-xl mx-auto pt-24 px-4 sm:pt-32 sm:px-6 lg:max-w-7xl lg:px-8">
+        <h2 id="collection-heading" class="text-2xl font-extrabold tracking-tight text-gray-900">Shop by Collection</h2>
+        <p class="mt-4 text-base text-gray-500">Each season, we collaborate with world-class designers to create a collection inspired by the natural world.</p>
+
+        <div class="mt-10 space-y-12 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-x-8">
+          
+            <a href="#" class="group block">
+              <div aria-hidden="true" class="aspect-w-3 aspect-h-2 rounded-lg overflow-hidden group-hover:opacity-75 lg:aspect-w-5 lg:aspect-h-6">
+                <img src="https://tailwindui.com/img/ecommerce-images/home-page-01-collection-01.jpg" alt="Brown leather key ring with brass metal loops and rivets on wood table." class="w-full h-full object-center object-cover">
+              </div>
+              <h3 class="mt-4 text-base font-semibold text-gray-900">Handcrafted Collection</h3>
+              <p class="mt-2 text-sm text-gray-500">Keep your phone, keys, and wallet together, so you can lose everything at once.</p>
+            </a>
+          
+            <a href="#" class="group block">
+              <div aria-hidden="true" class="aspect-w-3 aspect-h-2 rounded-lg overflow-hidden group-hover:opacity-75 lg:aspect-w-5 lg:aspect-h-6">
+                <img src="https://tailwindui.com/img/ecommerce-images/home-page-01-collection-02.jpg" alt="Natural leather mouse pad on white desk next to porcelain mug and keyboard." class="w-full h-full object-center object-cover">
+              </div>
+              <h3 class="mt-4 text-base font-semibold text-gray-900">Organized Desk Collection</h3>
+              <p class="mt-2 text-sm text-gray-500">The rest of the house will still be a mess, but your desk will look great.</p>
+            </a>
+          
+            <a href="#" class="group block">
+              <div aria-hidden="true" class="aspect-w-3 aspect-h-2 rounded-lg overflow-hidden group-hover:opacity-75 lg:aspect-w-5 lg:aspect-h-6">
+                <img src="https://tailwindui.com/img/ecommerce-images/home-page-01-collection-03.jpg" alt="Person placing task list card into walnut card holder next to felt carrying case on leather desk pad." class="w-full h-full object-center object-cover">
+              </div>
+              <h3 class="mt-4 text-base font-semibold text-gray-900">Focus Collection</h3>
+              <p class="mt-2 text-sm text-gray-500">Be more productive than enterprise project managers with a single piece of paper.</p>
+            </a>
+          
+        </div>
+      </section>
+
+      <!-- Featured section -->
+      <section aria-labelledby="comfort-heading" class="max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
+        <div class="relative rounded-lg overflow-hidden">
+          <div class="absolute inset-0">
+            <img src="https://tailwindui.com/img/ecommerce-images/home-page-01-feature-section-02.jpg" alt="" class="w-full h-full object-center object-cover">
+          </div>
+          <div class="relative bg-gray-900 bg-opacity-75 py-32 px-6 sm:py-40 sm:px-12 lg:px-16">
+            <div class="relative max-w-3xl mx-auto flex flex-col items-center text-center">
+              <h2 id="comfort-heading" class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">Simple productivity</h2>
+              <p class="mt-3 text-xl text-white">Endless tasks, limited hours, a single piece of paper. Not really a haiku, but we're doing our best here. No kanban boards, burndown charts, or tangled flowcharts with our Focus system. Just the undeniable urge to fill empty circles.</p>
+              <a href="#" class="mt-8 w-full block bg-white border border-transparent rounded-md py-3 px-8 text-base font-medium text-gray-900 hover:bg-gray-100 sm:w-auto">Shop Focus</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer aria-labelledby="footer-heading" class="bg-gray-900">
+      <h2 id="footer-heading" class="sr-only">Footer</h2>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="py-20 xl:grid xl:grid-cols-3 xl:gap-8">
+          <div class="grid grid-cols-2 gap-8 xl:col-span-2">
+            <div class="space-y-12 md:space-y-0 md:grid md:grid-cols-2 md:gap-8">
+              <div>
+                <h3 class="text-sm font-medium text-white">
+                  Shop
+                </h3>
+                <ul role="list" class="mt-6 space-y-6">
+                  
+                    <li class="text-sm">
+                      <a href="#" class="text-gray-300 hover:text-white">
+                        Bags
+                      </a>
+                    </li>
+                  
+                    <li class="text-sm">
+                      <a href="#" class="text-gray-300 hover:text-white">
+                        Tees
+                      </a>
+                    </li>
+                  
+                    <li class="text-sm">
+                      <a href="#" class="text-gray-300 hover:text-white">
+                        Objects
+                      </a>
+                    </li>
+                  
+                    <li class="text-sm">
+                      <a href="#" class="text-gray-300 hover:text-white">
+                        Home Goods
+                      </a>
+                    </li>
+                  
+                    <li class="text-sm">
+                      <a href="#" class="text-gray-300 hover:text-white">
+                        Accessories
+                      </a>
+                    </li>
+                  
+                </ul>
+              </div>
+              <div>
+                <h3 class="text-sm font-medium text-white">
+                  Company
+                </h3>
+                <ul role="list" class="mt-6 space-y-6">
+                  
+                    <li class="text-sm">
+                      <a href="#" class="text-gray-300 hover:text-white">
+                        Who we are
+                      </a>
+                    </li>
+                  
+                    <li class="text-sm">
+                      <a href="#" class="text-gray-300 hover:text-white">
+                        Sustainability
+                      </a>
+                    </li>
+                  
+                    <li class="text-sm">
+                      <a href="#" class="text-gray-300 hover:text-white">
+                        Press
+                      </a>
+                    </li>
+                  
+                    <li class="text-sm">
+                      <a href="#" class="text-gray-300 hover:text-white">
+                        Careers
+                      </a>
+                    </li>
+                  
+                    <li class="text-sm">
+                      <a href="#" class="text-gray-300 hover:text-white">
+                        Terms &amp; Conditions
+                      </a>
+                    </li>
+                  
+                    <li class="text-sm">
+                      <a href="#" class="text-gray-300 hover:text-white">
+                        Privacy
+                      </a>
+                    </li>
+                  
+                </ul>
+              </div>
+            </div>
+            <div class="space-y-12 md:space-y-0 md:grid md:grid-cols-2 md:gap-8">
+              <div>
+                <h3 class="text-sm font-medium text-white">
+                  Account
+                </h3>
+                <ul role="list" class="mt-6 space-y-6">
+                  
+                    <li class="text-sm">
+                      <a href="#" class="text-gray-300 hover:text-white">
+                        Manage Account
+                      </a>
+                    </li>
+                  
+                    <li class="text-sm">
+                      <a href="#" class="text-gray-300 hover:text-white">
+                        Returns &amp; Exchanges
+                      </a>
+                    </li>
+                  
+                    <li class="text-sm">
+                      <a href="#" class="text-gray-300 hover:text-white">
+                        Redeem a Gift Card
+                      </a>
+                    </li>
+                  
+                </ul>
+              </div>
+              <div>
+                <h3 class="text-sm font-medium text-white">
+                  Connect
+                </h3>
+                <ul role="list" class="mt-6 space-y-6">
+                  
+                    <li class="text-sm">
+                      <a href="#" class="text-gray-300 hover:text-white">
+                        Contact Us
+                      </a>
+                    </li>
+                  
+                    <li class="text-sm">
+                      <a href="#" class="text-gray-300 hover:text-white">
+                        Twitter
+                      </a>
+                    </li>
+                  
+                    <li class="text-sm">
+                      <a href="#" class="text-gray-300 hover:text-white">
+                        Instagram
+                      </a>
+                    </li>
+                  
+                    <li class="text-sm">
+                      <a href="#" class="text-gray-300 hover:text-white">
+                        Pinterest
+                      </a>
+                    </li>
+                  
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="mt-12 md:mt-16 xl:mt-0">
+            <h3 class="text-sm font-medium text-white">Sign up for our newsletter</h3>
+            <p class="mt-6 text-sm text-gray-300">The latest deals and savings, sent to your inbox weekly.</p>
+            <form class="mt-2 flex sm:max-w-md">
+              <label for="email-address" class="sr-only">Email address</label>
+              <input id="email-address" type="text" autocomplete="email" required="" class="appearance-none min-w-0 w-full bg-white border border-white rounded-md shadow-sm py-2 px-4 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:border-white focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-white">
+              <div class="ml-4 flex-shrink-0">
+                <button type="submit" class="w-full bg-indigo-600 border border-transparent rounded-md shadow-sm py-2 px-4 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-indigo-500">
+                  Sign up
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="border-t border-gray-800 py-10">
+          <p class="text-sm text-gray-400">Copyright © 2021 Clothing Company Inc.</p>
+        </div>
+      </div>
+    </footer>
+  </div>

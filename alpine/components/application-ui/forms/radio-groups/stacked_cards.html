@@ -1,0 +1,112 @@
+<!--
+  This example requires Tailwind CSS v2.0+
+
+  The alpine.js code is *NOT* production ready and is included to preview
+  possible interactivity
+-->
+<div class="px-8 py-12 flex justify-center bg-white">
+    <div class="w-full max-w-xl mx-auto">
+      
+  <fieldset x-data="window.Components.radioGroup({ initialCheckedIndex: 0 })" x-init="init()">
+    <legend class="sr-only">
+      Server size
+    </legend>
+    <div class="space-y-4">
+      
+        <label x-radio-group-option="" class="relative block bg-white border rounded-lg shadow-sm px-6 py-4 cursor-pointer sm:flex sm:justify-between focus:outline-none" x-description="Checked: &quot;border-transparent&quot;, Not Checked: &quot;border-gray-300&quot;	Active: &quot;ring-2 ring-indigo-500&quot;" :class="{ 'border-transparent': (value === 'Hobby'), 'border-gray-300': !(value === 'Hobby'), 'ring-2 ring-indigo-500': (active === 'Hobby'), 'undefined': !(active === 'Hobby') }">
+<input type="radio" x-model="value" name="server-size" value="Hobby" class="sr-only" aria-labelledby="server-size-0-label" aria-describedby="server-size-0-description-0 server-size-0-description-1">
+          <div class="flex items-center">
+            <div class="text-sm">
+              <p id="server-size-0-label" class="font-medium text-gray-900">
+                Hobby
+              </p>
+              <div id="server-size-0-description-0" class="text-gray-500">
+                <p class="sm:inline">8GB / 4 CPUs</p>
+                <!-- space -->
+                <span class="hidden sm:inline sm:mx-1" aria-hidden="true">·</span>
+                <!-- space -->
+                <p class="sm:inline">160 GB SSD disk</p>
+              </div>
+            </div>
+          </div>
+          <div id="server-size-0-description-1" class="mt-2 flex text-sm sm:mt-0 sm:block sm:ml-4 sm:text-right">
+            <div class="font-medium text-gray-900">$40</div>
+            <div class="ml-1 text-gray-500 sm:ml-0">/mo</div>
+          </div>
+          <div class="absolute -inset-px rounded-lg border-2 pointer-events-none" aria-hidden="true" x-description="Active: &quot;border&quot;, Not Active: &quot;border-2&quot;	Checked: &quot;border-indigo-500&quot;, Not Checked: &quot;border-transparent&quot;" :class="{ 'border': (active === 'Hobby'), 'border-2': !(active === 'Hobby'), 'border-indigo-500': (value === 'Hobby'), 'border-transparent': !(value === 'Hobby') }"></div>
+        </label>
+      
+        <label x-radio-group-option="" class="relative block bg-white border rounded-lg shadow-sm px-6 py-4 cursor-pointer sm:flex sm:justify-between focus:outline-none" x-description="Checked: &quot;border-transparent&quot;, Not Checked: &quot;border-gray-300&quot;	Active: &quot;ring-2 ring-indigo-500&quot;" :class="{ 'border-transparent': (value === 'Startup'), 'border-gray-300': !(value === 'Startup'), 'ring-2 ring-indigo-500': (active === 'Startup'), 'undefined': !(active === 'Startup') }">
+<input type="radio" x-model="value" name="server-size" value="Startup" class="sr-only" aria-labelledby="server-size-1-label" aria-describedby="server-size-1-description-0 server-size-1-description-1">
+          <div class="flex items-center">
+            <div class="text-sm">
+              <p id="server-size-1-label" class="font-medium text-gray-900">
+                Startup
+              </p>
+              <div id="server-size-1-description-0" class="text-gray-500">
+                <p class="sm:inline">12GB / 6 CPUs</p>
+                <!-- space -->
+                <span class="hidden sm:inline sm:mx-1" aria-hidden="true">·</span>
+                <!-- space -->
+                <p class="sm:inline">256 GB SSD disk</p>
+              </div>
+            </div>
+          </div>
+          <div id="server-size-1-description-1" class="mt-2 flex text-sm sm:mt-0 sm:block sm:ml-4 sm:text-right">
+            <div class="font-medium text-gray-900">$80</div>
+            <div class="ml-1 text-gray-500 sm:ml-0">/mo</div>
+          </div>
+          <div class="absolute -inset-px rounded-lg border-2 pointer-events-none" aria-hidden="true" x-description="Active: &quot;border&quot;, Not Active: &quot;border-2&quot;	Checked: &quot;border-indigo-500&quot;, Not Checked: &quot;border-transparent&quot;" :class="{ 'border': (active === 'Startup'), 'border-2': !(active === 'Startup'), 'border-indigo-500': (value === 'Startup'), 'border-transparent': !(value === 'Startup') }"></div>
+        </label>
+      
+        <label x-radio-group-option="" class="relative block bg-white border rounded-lg shadow-sm px-6 py-4 cursor-pointer sm:flex sm:justify-between focus:outline-none" x-description="Checked: &quot;border-transparent&quot;, Not Checked: &quot;border-gray-300&quot;	Active: &quot;ring-2 ring-indigo-500&quot;" :class="{ 'border-transparent': (value === 'Business'), 'border-gray-300': !(value === 'Business'), 'ring-2 ring-indigo-500': (active === 'Business'), 'undefined': !(active === 'Business') }">
+<input type="radio" x-model="value" name="server-size" value="Business" class="sr-only" aria-labelledby="server-size-2-label" aria-describedby="server-size-2-description-0 server-size-2-description-1">
+          <div class="flex items-center">
+            <div class="text-sm">
+              <p id="server-size-2-label" class="font-medium text-gray-900">
+                Business
+              </p>
+              <div id="server-size-2-description-0" class="text-gray-500">
+                <p class="sm:inline">16GB / 8 CPUs</p>
+                <!-- space -->
+                <span class="hidden sm:inline sm:mx-1" aria-hidden="true">·</span>
+                <!-- space -->
+                <p class="sm:inline">512 GB SSD disk</p>
+              </div>
+            </div>
+          </div>
+          <div id="server-size-2-description-1" class="mt-2 flex text-sm sm:mt-0 sm:block sm:ml-4 sm:text-right">
+            <div class="font-medium text-gray-900">$160</div>
+            <div class="ml-1 text-gray-500 sm:ml-0">/mo</div>
+          </div>
+          <div class="absolute -inset-px rounded-lg border-2 pointer-events-none" aria-hidden="true" x-description="Active: &quot;border&quot;, Not Active: &quot;border-2&quot;	Checked: &quot;border-indigo-500&quot;, Not Checked: &quot;border-transparent&quot;" :class="{ 'border': (active === 'Business'), 'border-2': !(active === 'Business'), 'border-indigo-500': (value === 'Business'), 'border-transparent': !(value === 'Business') }"></div>
+        </label>
+      
+        <label x-radio-group-option="" class="relative block bg-white border rounded-lg shadow-sm px-6 py-4 cursor-pointer sm:flex sm:justify-between focus:outline-none" x-description="Checked: &quot;border-transparent&quot;, Not Checked: &quot;border-gray-300&quot;	Active: &quot;ring-2 ring-indigo-500&quot;" :class="{ 'border-transparent': (value === 'Enterprise'), 'border-gray-300': !(value === 'Enterprise'), 'ring-2 ring-indigo-500': (active === 'Enterprise'), 'undefined': !(active === 'Enterprise') }">
+<input type="radio" x-model="value" name="server-size" value="Enterprise" class="sr-only" aria-labelledby="server-size-3-label" aria-describedby="server-size-3-description-0 server-size-3-description-1">
+          <div class="flex items-center">
+            <div class="text-sm">
+              <p id="server-size-3-label" class="font-medium text-gray-900">
+                Enterprise
+              </p>
+              <div id="server-size-3-description-0" class="text-gray-500">
+                <p class="sm:inline">32GB / 12 CPUs</p>
+                <!-- space -->
+                <span class="hidden sm:inline sm:mx-1" aria-hidden="true">·</span>
+                <!-- space -->
+                <p class="sm:inline">1024 GB SSD disk</p>
+              </div>
+            </div>
+          </div>
+          <div id="server-size-3-description-1" class="mt-2 flex text-sm sm:mt-0 sm:block sm:ml-4 sm:text-right">
+            <div class="font-medium text-gray-900">$240</div>
+            <div class="ml-1 text-gray-500 sm:ml-0">/mo</div>
+          </div>
+          <div class="absolute -inset-px rounded-lg border-2 pointer-events-none" aria-hidden="true" x-description="Active: &quot;border&quot;, Not Active: &quot;border-2&quot;	Checked: &quot;border-indigo-500&quot;, Not Checked: &quot;border-transparent&quot;" :class="{ 'border': (active === 'Enterprise'), 'border-2': !(active === 'Enterprise'), 'border-indigo-500': (value === 'Enterprise'), 'border-transparent': !(value === 'Enterprise') }"></div>
+        </label>
+      
+    </div>
+  </fieldset>
+
+    </div>
+  </div>

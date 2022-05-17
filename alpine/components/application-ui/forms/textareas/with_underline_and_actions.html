@@ -1,0 +1,157 @@
+<!--
+  This example requires Tailwind CSS v2.0+
+
+  The alpine.js code is *NOT* production ready and is included to preview
+  possible interactivity
+-->
+<div class="p-8 bg-white h-[485px]">
+    <div class="w-full max-w-xl mx-auto">
+      
+  <div class="flex items-start space-x-4">
+    <div class="flex-shrink-0">
+      <img class="inline-block h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80" alt="">
+    </div>
+    <div class="min-w-0 flex-1">
+      <form action="#">
+        <div class="border-b border-gray-200 focus-within:border-indigo-600">
+          <label for="comment" class="sr-only">Add your comment</label>
+          <textarea rows="3" name="comment" id="comment" class="block w-full border-0 border-b border-transparent p-0 pb-2 resize-none focus:ring-0 focus:border-indigo-600 sm:text-sm" placeholder="Add your comment..."></textarea>
+        </div>
+        <div class="pt-2 flex justify-between">
+          <div class="flex items-center space-x-5">
+            <div class="flow-root">
+              <button type="button" class="-m-2 w-10 h-10 rounded-full inline-flex items-center justify-center text-gray-400 hover:text-gray-500">
+                <svg class="h-6 w-6" x-description="Heroicon name: outline/paper-clip" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"></path>
+</svg>
+                <span class="sr-only">Attach a file</span>
+              </button>
+            </div>
+            <div class="flow-root">
+              <div x-data="Components.listbox({ modelName: 'selected', open: false, selectedIndex: 5, activeIndex: 5, items: [{&quot;name&quot;:&quot;Excited&quot;,&quot;value&quot;:&quot;excited&quot;,&quot;icon&quot;:&quot;<path _id=\&quot;__heroicon:solid/fire\&quot; fill-rule=\&quot;evenodd\&quot; d=\&quot;M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z\&quot; clip-rule=\&quot;evenodd\&quot;/>&quot;,&quot;iconColor&quot;:&quot;text-white&quot;,&quot;bgColor&quot;:&quot;bg-red-500&quot;},{&quot;name&quot;:&quot;Loved&quot;,&quot;value&quot;:&quot;loved&quot;,&quot;icon&quot;:&quot;<path _id=\&quot;__heroicon:solid/heart\&quot; fill-rule=\&quot;evenodd\&quot; d=\&quot;M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z\&quot; clip-rule=\&quot;evenodd\&quot;/>&quot;,&quot;iconColor&quot;:&quot;text-white&quot;,&quot;bgColor&quot;:&quot;bg-pink-400&quot;},{&quot;name&quot;:&quot;Happy&quot;,&quot;value&quot;:&quot;happy&quot;,&quot;icon&quot;:&quot;<path _id=\&quot;__heroicon:solid/emoji-happy\&quot; fill-rule=\&quot;evenodd\&quot; d=\&quot;M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zm-.464 5.535a1 1 0 10-1.415-1.414 3 3 0 01-4.242 0 1 1 0 00-1.415 1.414 5 5 0 007.072 0z\&quot; clip-rule=\&quot;evenodd\&quot;/>&quot;,&quot;iconColor&quot;:&quot;text-white&quot;,&quot;bgColor&quot;:&quot;bg-green-400&quot;},{&quot;name&quot;:&quot;Sad&quot;,&quot;value&quot;:&quot;sad&quot;,&quot;icon&quot;:&quot;<path _id=\&quot;__heroicon:solid/emoji-sad\&quot; fill-rule=\&quot;evenodd\&quot; d=\&quot;M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zm-7.536 5.879a1 1 0 001.415 0 3 3 0 014.242 0 1 1 0 001.415-1.415 5 5 0 00-7.072 0 1 1 0 000 1.415z\&quot; clip-rule=\&quot;evenodd\&quot;/>&quot;,&quot;iconColor&quot;:&quot;text-white&quot;,&quot;bgColor&quot;:&quot;bg-yellow-400&quot;},{&quot;name&quot;:&quot;Thumbsy&quot;,&quot;value&quot;:&quot;thumbsy&quot;,&quot;icon&quot;:&quot;<path _id=\&quot;__heroicon:solid/thumb-up\&quot; d=\&quot;M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z\&quot;/>&quot;,&quot;iconColor&quot;:&quot;text-white&quot;,&quot;bgColor&quot;:&quot;bg-blue-500&quot;},{&quot;name&quot;:&quot;I feel nothing&quot;,&quot;value&quot;:null,&quot;icon&quot;:&quot;<path _id=\&quot;__heroicon:solid/x\&quot; fill-rule=\&quot;evenodd\&quot; d=\&quot;M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z\&quot; clip-rule=\&quot;evenodd\&quot;/>&quot;,&quot;iconColor&quot;:&quot;text-gray-400&quot;,&quot;bgColor&quot;:&quot;bg-transparent&quot;}] })" x-init="init()">
+                <label id="listbox-label" class="sr-only" @click="$refs.button.focus()">
+                  Your mood
+                </label>
+                <div class="relative">
+                  <button type="button" class="relative -m-2 w-10 h-10 rounded-full inline-flex items-center justify-center text-gray-400 hover:text-gray-500" x-ref="button" @keydown.arrow-up.stop.prevent="onButtonClick()" @keydown.arrow-down.stop.prevent="onButtonClick()" @click="onButtonClick()" aria-haspopup="listbox" :aria-expanded="open" aria-expanded="true" aria-labelledby="listbox-label">
+                    <span class="flex items-center justify-center">
+                      <span x-show="selected.value === null" x-description="Placeholder label, show/hide based on listbox state.">
+                        <svg class="flex-shrink-0 h-6 w-6" x-description="Heroicon name: outline/emoji-happy" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+</svg>
+                        <span class="sr-only">
+                          Add your mood
+                        </span>
+                      </span>
+                      <span x-show="!(selected.value === null)" x-description="Selected item label, show/hide based on listbox state.">
+                        <div :class="selected.bgColor" class="w-8 h-8 rounded-full flex items-center justify-center">
+                          <svg class="flex-shrink-0 h-5 w-5 text-white" x-html="selected.icon" x-description="Heroicon name: solid/fire" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+  <path fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clip-rule="evenodd"></path>
+</svg>
+                        </div>
+                        <span x-text="selected.name" class="sr-only">
+                          Excited
+                        </span>
+                      </span>
+                    </span>
+                  </button>
+
+                  
+                    <ul x-show="open" x-transition:leave="transition ease-in duration-100" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="absolute z-10 -ml-6 w-60 bg-white shadow rounded-lg py-3 text-base ring-1 ring-black ring-opacity-5 focus:outline-none sm:ml-auto sm:w-64 sm:text-sm" @click.away="open = false" x-description="Select popover, show/hide based on select state." @keydown.enter.stop.prevent="onOptionSelect()" @keydown.space.stop.prevent="onOptionSelect()" @keydown.escape="onEscape()" @keydown.arrow-up.prevent="onArrowUp()" @keydown.arrow-down.prevent="onArrowDown()" x-ref="listbox" tabindex="-1" role="listbox" aria-labelledby="listbox-label" :aria-activedescendant="activeDescendant" aria-activedescendant="listbox-option-5">
+                      
+                        <li x-state:on="Highlighted" x-state:off="Not Highlighted" class="bg-white cursor-default select-none relative py-2 px-3" x-description="Select option, manage highlight styles based on mouseenter/mouseleave and keyboard navigation." id="listbox-option-0" role="option" @click="choose(0)" @mouseenter="activeIndex = 0" @mouseleave="activeIndex = null" :class="{ 'bg-gray-100': activeIndex === 0, 'bg-white': !(activeIndex === 0) }">
+                          <div class="flex items-center">
+                            <div class="bg-red-500 w-8 h-8 rounded-full flex items-center justify-center">
+                              <svg class="text-white flex-shrink-0 h-5 w-5" x-description="Heroicon name: solid/fire" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+  <path fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clip-rule="evenodd"></path>
+</svg>
+                            </div>
+                            <span x-state:on="Selected" x-state:off="Not Selected" class="ml-3 block font-medium truncate">
+                              Excited
+                            </span>
+                          </div>
+                        </li>
+                      
+                        <li x-state:on="Highlighted" x-state:off="Not Highlighted" class="bg-white cursor-default select-none relative py-2 px-3" x-description="Select option, manage highlight styles based on mouseenter/mouseleave and keyboard navigation." id="listbox-option-1" role="option" @click="choose(1)" @mouseenter="activeIndex = 1" @mouseleave="activeIndex = null" :class="{ 'bg-gray-100': activeIndex === 1, 'bg-white': !(activeIndex === 1) }">
+                          <div class="flex items-center">
+                            <div class="bg-pink-400 w-8 h-8 rounded-full flex items-center justify-center">
+                              <svg class="text-white flex-shrink-0 h-5 w-5" x-description="Heroicon name: solid/heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+  <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path>
+</svg>
+                            </div>
+                            <span x-state:on="Selected" x-state:off="Not Selected" class="ml-3 block font-medium truncate">
+                              Loved
+                            </span>
+                          </div>
+                        </li>
+                      
+                        <li x-state:on="Highlighted" x-state:off="Not Highlighted" class="bg-white cursor-default select-none relative py-2 px-3" x-description="Select option, manage highlight styles based on mouseenter/mouseleave and keyboard navigation." id="listbox-option-2" role="option" @click="choose(2)" @mouseenter="activeIndex = 2" @mouseleave="activeIndex = null" :class="{ 'bg-gray-100': activeIndex === 2, 'bg-white': !(activeIndex === 2) }">
+                          <div class="flex items-center">
+                            <div class="bg-green-400 w-8 h-8 rounded-full flex items-center justify-center">
+                              <svg class="text-white flex-shrink-0 h-5 w-5" x-description="Heroicon name: solid/emoji-happy" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zm-.464 5.535a1 1 0 10-1.415-1.414 3 3 0 01-4.242 0 1 1 0 00-1.415 1.414 5 5 0 007.072 0z" clip-rule="evenodd"></path>
+</svg>
+                            </div>
+                            <span x-state:on="Selected" x-state:off="Not Selected" class="ml-3 block font-medium truncate">
+                              Happy
+                            </span>
+                          </div>
+                        </li>
+                      
+                        <li x-state:on="Highlighted" x-state:off="Not Highlighted" class="bg-white cursor-default select-none relative py-2 px-3" x-description="Select option, manage highlight styles based on mouseenter/mouseleave and keyboard navigation." id="listbox-option-3" role="option" @click="choose(3)" @mouseenter="activeIndex = 3" @mouseleave="activeIndex = null" :class="{ 'bg-gray-100': activeIndex === 3, 'bg-white': !(activeIndex === 3) }">
+                          <div class="flex items-center">
+                            <div class="bg-yellow-400 w-8 h-8 rounded-full flex items-center justify-center">
+                              <svg class="text-white flex-shrink-0 h-5 w-5" x-description="Heroicon name: solid/emoji-sad" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zm-7.536 5.879a1 1 0 001.415 0 3 3 0 014.242 0 1 1 0 001.415-1.415 5 5 0 00-7.072 0 1 1 0 000 1.415z" clip-rule="evenodd"></path>
+</svg>
+                            </div>
+                            <span x-state:on="Selected" x-state:off="Not Selected" class="ml-3 block font-medium truncate">
+                              Sad
+                            </span>
+                          </div>
+                        </li>
+                      
+                        <li x-state:on="Highlighted" x-state:off="Not Highlighted" class="bg-white cursor-default select-none relative py-2 px-3" x-description="Select option, manage highlight styles based on mouseenter/mouseleave and keyboard navigation." id="listbox-option-4" role="option" @click="choose(4)" @mouseenter="activeIndex = 4" @mouseleave="activeIndex = null" :class="{ 'bg-gray-100': activeIndex === 4, 'bg-white': !(activeIndex === 4) }">
+                          <div class="flex items-center">
+                            <div class="bg-blue-500 w-8 h-8 rounded-full flex items-center justify-center">
+                              <svg class="text-white flex-shrink-0 h-5 w-5" x-description="Heroicon name: solid/thumb-up" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+  <path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z"></path>
+</svg>
+                            </div>
+                            <span x-state:on="Selected" x-state:off="Not Selected" class="ml-3 block font-medium truncate">
+                              Thumbsy
+                            </span>
+                          </div>
+                        </li>
+                      
+                        <li x-state:on="Highlighted" x-state:off="Not Highlighted" class="bg-white cursor-default select-none relative py-2 px-3" x-description="Select option, manage highlight styles based on mouseenter/mouseleave and keyboard navigation." id="listbox-option-5" role="option" @click="choose(5)" @mouseenter="activeIndex = 5" @mouseleave="activeIndex = null" :class="{ 'bg-gray-100': activeIndex === 5, 'bg-white': !(activeIndex === 5) }">
+                          <div class="flex items-center">
+                            <div class="bg-transparent w-8 h-8 rounded-full flex items-center justify-center">
+                              <svg class="text-gray-400 flex-shrink-0 h-5 w-5" x-description="Heroicon name: solid/x" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+  <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+</svg>
+                            </div>
+                            <span x-state:on="Selected" x-state:off="Not Selected" class="ml-3 block font-medium truncate">
+                              I feel nothing
+                            </span>
+                          </div>
+                        </li>
+                      
+                    </ul>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex-shrink-0">
+            <button type="submit" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+              Post
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+    </div>
+  </div>

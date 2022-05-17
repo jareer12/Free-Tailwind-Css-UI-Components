@@ -1,0 +1,107 @@
+<!--
+  This example requires Tailwind CSS v2.0+
+
+  The alpine.js code is *NOT* production ready and is included to preview
+  possible interactivity
+-->
+<div class="bg-white min-h-[564px]">
+    
+  <header class="relative bg-white">
+    <nav aria-label="Top" class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+      <div class="relative border-b border-gray-200 px-4 pb-14 sm:static sm:px-0 sm:pb-0">
+        <div class="h-16 flex items-center justify-between">
+          <!-- Logo -->
+          <div class="flex-1 flex">
+            <a href="#">
+              <span class="sr-only">Workflow</span>
+              <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark.svg?color=indigo&amp;shade=600" alt="">
+            </a>
+          </div>
+
+          <div class="absolute bottom-0 inset-x-0 border-t overflow-x-auto sm:static sm:border-t-0">
+            <div class="h-14 flex items-center px-4 space-x-8 sm:h-auto">
+              
+                <a href="#" class="text-sm font-medium text-gray-700 hover:text-gray-800">Women</a>
+              
+                <a href="#" class="text-sm font-medium text-gray-700 hover:text-gray-800">Men</a>
+              
+                <a href="#" class="text-sm font-medium text-gray-700 hover:text-gray-800">Company</a>
+              
+                <a href="#" class="text-sm font-medium text-gray-700 hover:text-gray-800">Stores</a>
+              
+            </div>
+          </div>
+
+          <div class="flex-1 flex items-center justify-end">
+            <!-- Search -->
+            <a href="#" class="p-2 text-gray-400 hover:text-gray-500">
+              <span class="sr-only">Search</span>
+              <svg class="w-6 h-6" x-description="Heroicon name: outline/search" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+</svg>
+            </a>
+
+            <!-- Cart -->
+            <div class="ml-4 flow-root text-sm lg:relative lg:ml-8" x-data="Components.popover({ open: true, focus: false })" x-init="init()" @keydown.escape="onEscape" @close-popover-group.window="onClosePopoverGroup">
+              <button type="button" class="group -m-2 p-2 flex items-center" @click="toggle" @mousedown="if (open) $event.preventDefault()" aria-expanded="false" :aria-expanded="open.toString()">
+                <svg class="flex-shrink-0 h-6 w-6 text-gray-400 group-hover:text-gray-500" x-description="Heroicon name: outline/shopping-bag" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+</svg>
+                <span class="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">0</span>
+                <span class="sr-only">items in cart, view bag</span>
+              </button>
+              
+                <div x-show="open" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="absolute top-16 inset-x-0 mt-px pb-6 bg-white shadow-lg sm:px-2 lg:top-full lg:left-auto lg:right-0 lg:mt-3 lg:-mr-1.5 lg:w-80 lg:rounded-lg lg:ring-1 lg:ring-black lg:ring-opacity-5" x-ref="panel" @click.away="open = false">
+                  <h2 class="sr-only">Shopping Cart</h2>
+
+                  <form class="max-w-2xl mx-auto px-4">
+                    <ul role="list" class="divide-y divide-gray-200">
+                      
+                        <li class="py-6 flex items-center">
+                          <img src="https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg" alt="Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt." class="flex-none w-16 h-16 rounded-md border border-gray-200">
+                          <div class="ml-4 flex-auto">
+                            <h3 class="font-medium text-gray-900">
+                              <a href="#">Throwback Hip Bag</a>
+                            </h3>
+                            <p class="text-gray-500">Salmon</p>
+                          </div>
+                        </li>
+                      
+                        <li class="py-6 flex items-center">
+                          <img src="https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg" alt="Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch." class="flex-none w-16 h-16 rounded-md border border-gray-200">
+                          <div class="ml-4 flex-auto">
+                            <h3 class="font-medium text-gray-900">
+                              <a href="#">Medium Stuff Satchel</a>
+                            </h3>
+                            <p class="text-gray-500">Blue</p>
+                          </div>
+                        </li>
+                      
+                        <li class="py-6 flex items-center">
+                          <img src="https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-03.jpg" alt="Front of zip tote bag with white canvas, black canvas straps and handle, and black zipper pulls." class="flex-none w-16 h-16 rounded-md border border-gray-200">
+                          <div class="ml-4 flex-auto">
+                            <h3 class="font-medium text-gray-900">
+                              <a href="#">Zip Tote Basket</a>
+                            </h3>
+                            <p class="text-gray-500">White and black</p>
+                          </div>
+                        </li>
+                      
+                    </ul>
+
+                    <button type="submit" class="w-full bg-indigo-600 border border-transparent rounded-md shadow-sm py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500">Checkout</button>
+
+                    <p class="mt-6 text-center">
+                      <a href="#" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">View Shopping Bag</a>
+                    </p>
+                  </form>
+                </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  </div>

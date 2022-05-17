@@ -1,0 +1,238 @@
+<!--
+  This example requires Tailwind CSS v2.0+
+
+  The alpine.js code is *NOT* production ready and is included to preview
+  possible interactivity
+-->
+<div class="p-8 bg-white h-[415px]">
+    <div class="w-full max-w-xl mx-auto">
+      
+  <form action="#" class="relative">
+    <div class="border border-gray-300 rounded-lg shadow-sm overflow-hidden focus-within:border-indigo-500 focus-within:ring-1 focus-within:ring-indigo-500">
+      <label for="title" class="sr-only">Title</label>
+      <input type="text" name="title" id="title" class="block w-full border-0 pt-2.5 text-lg font-medium placeholder-gray-500 focus:ring-0" placeholder="Title">
+      <label for="description" class="sr-only">Description</label>
+      <textarea rows="2" name="description" id="description" class="block w-full border-0 py-0 resize-none placeholder-gray-500 focus:ring-0 sm:text-sm" placeholder="Write a description..."></textarea>
+
+      <!-- Spacer element to match the height of the toolbar -->
+      <div aria-hidden="true">
+        <div class="py-2">
+          <div class="h-9"></div>
+        </div>
+        <div class="h-px"></div>
+        <div class="py-2">
+          <div class="py-px">
+            <div class="h-9"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="absolute bottom-0 inset-x-px">
+      <!-- Actions: These are just examples to demonstrate the concept, replace/wire these up however makes sense for your project. -->
+      <div class="flex flex-nowrap justify-end py-2 px-2 space-x-2 sm:px-3">
+        <div x-data="Components.listbox({ modelName: 'assigned', open: false, selectedIndex: 0, activeIndex: 0, items: [{&quot;name&quot;:&quot;Unassigned&quot;,&quot;value&quot;:null},{&quot;name&quot;:&quot;Wade Cooper&quot;,&quot;value&quot;:&quot;wade-cooper&quot;,&quot;avatar&quot;:&quot;https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80&quot;},{&quot;name&quot;:&quot;Arlene Mccoy&quot;,&quot;value&quot;:&quot;arlene-mccoy&quot;,&quot;avatar&quot;:&quot;https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80&quot;},{&quot;name&quot;:&quot;Devon Webb&quot;,&quot;value&quot;:&quot;devon-webb&quot;,&quot;avatar&quot;:&quot;https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2.25&amp;w=256&amp;h=256&amp;q=80&quot;}] })" x-init="init()" class="flex-shrink-0">
+          <label id="listbox-label" class="sr-only" @click="$refs.button.focus()">
+            Assign
+          </label>
+          <div class="relative">
+            <button type="button" class="relative inline-flex items-center rounded-full py-2 px-2 bg-gray-50 text-sm font-medium text-gray-500 whitespace-nowrap hover:bg-gray-100 sm:px-3" x-ref="button" @keydown.arrow-up.stop.prevent="onButtonClick()" @keydown.arrow-down.stop.prevent="onButtonClick()" @click="onButtonClick()" aria-haspopup="listbox" :aria-expanded="open" aria-expanded="true" aria-labelledby="listbox-label">
+              <svg x-show="assigned.value === null" class="flex-shrink-0 h-5 w-5 text-gray-300 sm:-ml-1" x-description="Placeholder icon, show/hide based on listbox state.
+
+Heroicon name: solid/user-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+  <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd"></path>
+</svg>
+
+              <img x-show="!(assigned.value === null)" src="https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80" :src="assigned.avatar" alt="" class="flex-shrink-0 h-5 w-5 rounded-full" x-description="Selected user avatar, show/hide based on listbox state.">
+
+              <span x-state:off="Selected" class="hidden truncate sm:ml-2 sm:block" :class="{ '': assigned.value === null, 'text-gray-900': !(assigned.value === null) }" x-text="assigned.value === null ? 'Assign' : assigned.name">
+                Assign
+              </span>
+            </button>
+
+            
+              <ul x-show="open" x-transition:leave="transition ease-in duration-100" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="absolute right-0 z-10 mt-1 w-52 bg-white shadow max-h-56 rounded-lg py-3 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm" @click.away="open = false" x-description="Select popover, show/hide based on select state." @keydown.enter.stop.prevent="onOptionSelect()" @keydown.space.stop.prevent="onOptionSelect()" @keydown.escape="onEscape()" @keydown.arrow-up.prevent="onArrowUp()" @keydown.arrow-down.prevent="onArrowDown()" x-ref="listbox" tabindex="-1" role="listbox" aria-labelledby="listbox-label" :aria-activedescendant="activeDescendant" aria-activedescendant="listbox-option-0">
+                
+                  <li x-state:on="Highlighted" x-state:off="Not Highlighted" class="bg-white cursor-default select-none relative py-2 px-3" x-description="Select option, manage highlight styles based on mouseenter/mouseleave and keyboard navigation." id="listbox-option-0" role="option" @click="choose(0)" @mouseenter="activeIndex = 0" @mouseleave="activeIndex = null" :class="{ 'bg-gray-100': activeIndex === 0, 'bg-white': !(activeIndex === 0) }">
+                    <div class="flex items-center">
+                      
+                        <svg class="flex-shrink-0 h-5 w-5 text-gray-400" x-description="Heroicon name: solid/user-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+  <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd"></path>
+</svg>
+                      <span class="ml-3 block font-medium truncate">
+                        Unassigned
+                      </span>
+                    </div>
+                  </li>
+                
+                  <li x-state:on="Highlighted" x-state:off="Not Highlighted" class="bg-white cursor-default select-none relative py-2 px-3" x-description="Select option, manage highlight styles based on mouseenter/mouseleave and keyboard navigation." id="listbox-option-1" role="option" @click="choose(1)" @mouseenter="activeIndex = 1" @mouseleave="activeIndex = null" :class="{ 'bg-gray-100': activeIndex === 1, 'bg-white': !(activeIndex === 1) }">
+                    <div class="flex items-center">
+                      
+                        <img src="https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80" alt="" class="flex-shrink-0 h-5 w-5 rounded-full">
+                      <span class="ml-3 block font-medium truncate">
+                        Wade Cooper
+                      </span>
+                    </div>
+                  </li>
+                
+                  <li x-state:on="Highlighted" x-state:off="Not Highlighted" class="bg-white cursor-default select-none relative py-2 px-3" x-description="Select option, manage highlight styles based on mouseenter/mouseleave and keyboard navigation." id="listbox-option-2" role="option" @click="choose(2)" @mouseenter="activeIndex = 2" @mouseleave="activeIndex = null" :class="{ 'bg-gray-100': activeIndex === 2, 'bg-white': !(activeIndex === 2) }">
+                    <div class="flex items-center">
+                      
+                        <img src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80" alt="" class="flex-shrink-0 h-5 w-5 rounded-full">
+                      <span class="ml-3 block font-medium truncate">
+                        Arlene Mccoy
+                      </span>
+                    </div>
+                  </li>
+                
+                  <li x-state:on="Highlighted" x-state:off="Not Highlighted" class="bg-white cursor-default select-none relative py-2 px-3" x-description="Select option, manage highlight styles based on mouseenter/mouseleave and keyboard navigation." id="listbox-option-3" role="option" @click="choose(3)" @mouseenter="activeIndex = 3" @mouseleave="activeIndex = null" :class="{ 'bg-gray-100': activeIndex === 3, 'bg-white': !(activeIndex === 3) }">
+                    <div class="flex items-center">
+                      
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2.25&amp;w=256&amp;h=256&amp;q=80" alt="" class="flex-shrink-0 h-5 w-5 rounded-full">
+                      <span class="ml-3 block font-medium truncate">
+                        Devon Webb
+                      </span>
+                    </div>
+                  </li>
+                
+              </ul>
+            
+          </div>
+        </div>
+
+        <div x-data="Components.listbox({ modelName: 'labelled', open: false, selectedIndex: 0, activeIndex: 0, items: [{&quot;name&quot;:&quot;Unlabelled&quot;,&quot;value&quot;:null},{&quot;name&quot;:&quot;Engineering&quot;,&quot;value&quot;:&quot;engineering&quot;},{&quot;name&quot;:&quot;Marketing&quot;,&quot;value&quot;:&quot;marketing&quot;},{&quot;name&quot;:&quot;Design&quot;,&quot;value&quot;:&quot;design&quot;},{&quot;name&quot;:&quot;Human Resources&quot;,&quot;value&quot;:&quot;human-resources&quot;}] })" x-init="init()" class="flex-shrink-0">
+          <label id="listbox-label" class="sr-only" @click="$refs.button.focus()">
+            Add a label
+          </label>
+          <div class="relative">
+            <button type="button" class="relative inline-flex items-center rounded-full py-2 px-2 bg-gray-50 text-sm font-medium text-gray-500 whitespace-nowrap hover:bg-gray-100 sm:px-3" x-ref="button" @keydown.arrow-up.stop.prevent="onButtonClick()" @keydown.arrow-down.stop.prevent="onButtonClick()" @click="onButtonClick()" aria-haspopup="listbox" :aria-expanded="open" aria-expanded="true" aria-labelledby="listbox-label">
+              <svg x-state:on="Selected" x-state:off="Default" class="text-gray-300 flex-shrink-0 h-5 w-5 sm:-ml-1" :class="{ 'text-gray-300': labelled.value === null, 'text-gray-500': !(labelled.value === null) }" x-description="Heroicon name: solid/tag" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+  <path fill-rule="evenodd" d="M17.707 9.293a1 1 0 010 1.414l-7 7a1 1 0 01-1.414 0l-7-7A.997.997 0 012 10V5a3 3 0 013-3h5c.256 0 .512.098.707.293l7 7zM5 6a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path>
+</svg>
+              <span x-state:off="Selected" class="hidden truncate sm:ml-2 sm:block" :class="{ '': labelled.value === null, 'text-gray-900': !(labelled.value === null) }" x-text="labelled.value === null ? 'Label' : labelled.name">
+                Label
+              </span>
+            </button>
+
+            
+              <ul x-show="open" x-transition:leave="transition ease-in duration-100" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="absolute right-0 z-10 mt-1 w-52 bg-white shadow max-h-56 rounded-lg py-3 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm" @click.away="open = false" x-description="Select popover, show/hide based on select state." @keydown.enter.stop.prevent="onOptionSelect()" @keydown.space.stop.prevent="onOptionSelect()" @keydown.escape="onEscape()" @keydown.arrow-up.prevent="onArrowUp()" @keydown.arrow-down.prevent="onArrowDown()" x-ref="listbox" tabindex="-1" role="listbox" aria-labelledby="listbox-label" :aria-activedescendant="activeDescendant" aria-activedescendant="listbox-option-0">
+                
+                  <li x-state:on="Highlighted" x-state:off="Not Highlighted" class="bg-white cursor-default select-none relative py-2 px-3" x-description="Select option, manage highlight styles based on mouseenter/mouseleave and keyboard navigation." id="listbox-option-0" role="option" @click="choose(0)" @mouseenter="activeIndex = 0" @mouseleave="activeIndex = null" :class="{ 'bg-gray-100': activeIndex === 0, 'bg-white': !(activeIndex === 0) }">
+                    <div class="flex items-center">
+                      <span class="block font-medium truncate">
+                        Unlabelled
+                      </span>
+                    </div>
+                  </li>
+                
+                  <li x-state:on="Highlighted" x-state:off="Not Highlighted" class="bg-white cursor-default select-none relative py-2 px-3" x-description="Select option, manage highlight styles based on mouseenter/mouseleave and keyboard navigation." id="listbox-option-1" role="option" @click="choose(1)" @mouseenter="activeIndex = 1" @mouseleave="activeIndex = null" :class="{ 'bg-gray-100': activeIndex === 1, 'bg-white': !(activeIndex === 1) }">
+                    <div class="flex items-center">
+                      <span class="block font-medium truncate">
+                        Engineering
+                      </span>
+                    </div>
+                  </li>
+                
+                  <li x-state:on="Highlighted" x-state:off="Not Highlighted" class="bg-white cursor-default select-none relative py-2 px-3" x-description="Select option, manage highlight styles based on mouseenter/mouseleave and keyboard navigation." id="listbox-option-2" role="option" @click="choose(2)" @mouseenter="activeIndex = 2" @mouseleave="activeIndex = null" :class="{ 'bg-gray-100': activeIndex === 2, 'bg-white': !(activeIndex === 2) }">
+                    <div class="flex items-center">
+                      <span class="block font-medium truncate">
+                        Marketing
+                      </span>
+                    </div>
+                  </li>
+                
+                  <li x-state:on="Highlighted" x-state:off="Not Highlighted" class="bg-white cursor-default select-none relative py-2 px-3" x-description="Select option, manage highlight styles based on mouseenter/mouseleave and keyboard navigation." id="listbox-option-3" role="option" @click="choose(3)" @mouseenter="activeIndex = 3" @mouseleave="activeIndex = null" :class="{ 'bg-gray-100': activeIndex === 3, 'bg-white': !(activeIndex === 3) }">
+                    <div class="flex items-center">
+                      <span class="block font-medium truncate">
+                        Design
+                      </span>
+                    </div>
+                  </li>
+                
+                  <li x-state:on="Highlighted" x-state:off="Not Highlighted" class="bg-white cursor-default select-none relative py-2 px-3" x-description="Select option, manage highlight styles based on mouseenter/mouseleave and keyboard navigation." id="listbox-option-4" role="option" @click="choose(4)" @mouseenter="activeIndex = 4" @mouseleave="activeIndex = null" :class="{ 'bg-gray-100': activeIndex === 4, 'bg-white': !(activeIndex === 4) }">
+                    <div class="flex items-center">
+                      <span class="block font-medium truncate">
+                        Human Resources
+                      </span>
+                    </div>
+                  </li>
+                
+              </ul>
+            
+          </div>
+        </div>
+
+        <div x-data="Components.listbox({ modelName: 'dated', open: false, selectedIndex: 0, activeIndex: 0, items: [{&quot;name&quot;:&quot;No due date&quot;,&quot;value&quot;:null},{&quot;name&quot;:&quot;Today&quot;,&quot;value&quot;:&quot;today&quot;},{&quot;name&quot;:&quot;Tomorrow&quot;,&quot;value&quot;:&quot;tomorrow&quot;},{&quot;name&quot;:&quot;This week&quot;,&quot;value&quot;:&quot;this-week&quot;}] })" x-init="init()" class="flex-shrink-0">
+          <label id="listbox-label" class="sr-only" @click="$refs.button.focus()">
+            Add a due date
+          </label>
+          <div class="relative">
+            <button type="button" class="relative inline-flex items-center rounded-full py-2 px-2 bg-gray-50 text-sm font-medium text-gray-500 whitespace-nowrap hover:bg-gray-100 sm:px-3" x-ref="button" @keydown.arrow-up.stop.prevent="onButtonClick()" @keydown.arrow-down.stop.prevent="onButtonClick()" @click="onButtonClick()" aria-haspopup="listbox" :aria-expanded="open" aria-expanded="true" aria-labelledby="listbox-label">
+              <svg x-state:on="Selected" x-state:off="Default" class="text-gray-300 flex-shrink-0 h-5 w-5 sm:-ml-1" :class="{ 'text-gray-300': dated.value === null, 'text-gray-500': !(dated.value === null) }" x-description="Heroicon name: solid/calendar" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+  <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
+</svg>
+              <span x-state:off="Selected" class="hidden truncate sm:ml-2 sm:block" :class="{ '': dated.value === null, 'text-gray-900': !(dated.value === null) }" x-text="dated.value === null ? 'Due date' : dated.name">
+                Due date
+              </span>
+            </button>
+
+            
+              <ul x-show="open" x-transition:leave="transition ease-in duration-100" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="absolute right-0 z-10 mt-1 w-52 bg-white shadow max-h-56 rounded-lg py-3 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm" @click.away="open = false" x-description="Select popover, show/hide based on select state." @keydown.enter.stop.prevent="onOptionSelect()" @keydown.space.stop.prevent="onOptionSelect()" @keydown.escape="onEscape()" @keydown.arrow-up.prevent="onArrowUp()" @keydown.arrow-down.prevent="onArrowDown()" x-ref="listbox" tabindex="-1" role="listbox" aria-labelledby="listbox-label" :aria-activedescendant="activeDescendant" aria-activedescendant="listbox-option-0">
+                
+                  <li x-state:on="Highlighted" x-state:off="Not Highlighted" class="bg-white cursor-default select-none relative py-2 px-3" x-description="Select option, manage highlight styles based on mouseenter/mouseleave and keyboard navigation." id="listbox-option-0" role="option" @click="choose(0)" @mouseenter="activeIndex = 0" @mouseleave="activeIndex = null" :class="{ 'bg-gray-100': activeIndex === 0, 'bg-white': !(activeIndex === 0) }">
+                    <div class="flex items-center">
+                      <span class="block font-medium truncate">
+                        No due date
+                      </span>
+                    </div>
+                  </li>
+                
+                  <li x-state:on="Highlighted" x-state:off="Not Highlighted" class="bg-white cursor-default select-none relative py-2 px-3" x-description="Select option, manage highlight styles based on mouseenter/mouseleave and keyboard navigation." id="listbox-option-1" role="option" @click="choose(1)" @mouseenter="activeIndex = 1" @mouseleave="activeIndex = null" :class="{ 'bg-gray-100': activeIndex === 1, 'bg-white': !(activeIndex === 1) }">
+                    <div class="flex items-center">
+                      <span class="block font-medium truncate">
+                        Today
+                      </span>
+                    </div>
+                  </li>
+                
+                  <li x-state:on="Highlighted" x-state:off="Not Highlighted" class="bg-white cursor-default select-none relative py-2 px-3" x-description="Select option, manage highlight styles based on mouseenter/mouseleave and keyboard navigation." id="listbox-option-2" role="option" @click="choose(2)" @mouseenter="activeIndex = 2" @mouseleave="activeIndex = null" :class="{ 'bg-gray-100': activeIndex === 2, 'bg-white': !(activeIndex === 2) }">
+                    <div class="flex items-center">
+                      <span class="block font-medium truncate">
+                        Tomorrow
+                      </span>
+                    </div>
+                  </li>
+                
+                  <li x-state:on="Highlighted" x-state:off="Not Highlighted" class="bg-white cursor-default select-none relative py-2 px-3" x-description="Select option, manage highlight styles based on mouseenter/mouseleave and keyboard navigation." id="listbox-option-3" role="option" @click="choose(3)" @mouseenter="activeIndex = 3" @mouseleave="activeIndex = null" :class="{ 'bg-gray-100': activeIndex === 3, 'bg-white': !(activeIndex === 3) }">
+                    <div class="flex items-center">
+                      <span class="block font-medium truncate">
+                        This week
+                      </span>
+                    </div>
+                  </li>
+                
+              </ul>
+            
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-200 px-2 py-2 flex justify-between items-center space-x-3 sm:px-3">
+        <div class="flex">
+          <button type="button" class="-ml-2 -my-2 rounded-full px-3 py-2 inline-flex items-center text-left text-gray-400 group">
+            <svg class="-ml-1 h-5 w-5 mr-2 group-hover:text-gray-500" x-description="Heroicon name: solid/paper-clip" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+  <path fill-rule="evenodd" d="M8 4a3 3 0 00-3 3v4a5 5 0 0010 0V7a1 1 0 112 0v4a7 7 0 11-14 0V7a5 5 0 0110 0v4a3 3 0 11-6 0V7a1 1 0 012 0v4a1 1 0 102 0V7a3 3 0 00-3-3z" clip-rule="evenodd"></path>
+</svg>
+            <span class="text-sm text-gray-500 group-hover:text-gray-600 italic">Attach a file</span>
+          </button>
+        </div>
+        <div class="flex-shrink-0">
+          <button type="submit" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            Create
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+
+    </div>
+  </div>

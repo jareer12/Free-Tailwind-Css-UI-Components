@@ -1,0 +1,59 @@
+<!--
+  This example requires Tailwind CSS v2.0+
+
+  The alpine.js code is *NOT* production ready and is included to preview
+  possible interactivity
+-->
+<div class="bg-gray-100 py-12 px-4 flex justify-center sm:px-6 lg:py-16 lg:px-8">
+    <div class="w-full max-w-3xl mx-auto">
+      
+  <fieldset x-data="window.Components.radioGroup({ initialCheckedIndex: 0 })" x-init="init()">
+    <legend class="sr-only">
+      Pricing plans
+    </legend>
+    <div class="relative bg-white rounded-md -space-y-px">
+      
+        <label x-radio-group-option="" class="rounded-tl-md rounded-tr-md  relative border p-4 flex flex-col cursor-pointer md:pl-4 md:pr-6 md:grid md:grid-cols-3 focus:outline-none" x-description="Checked: &quot;bg-indigo-50 border-indigo-200 z-10&quot;, Not Checked: &quot;border-gray-200&quot;" :class="{ 'bg-indigo-50 border-indigo-200 z-10': (value === 'Startup'), 'border-gray-200': !(value === 'Startup') }">
+          <div class="flex items-center text-sm">
+            <input type="radio" x-model="value" name="pricing-plan" value="Startup" class="h-4 w-4 text-indigo-600 border-gray-300 focus:ring-indigo-500" aria-labelledby="pricing-plans-0-label" aria-describedby="pricing-plans-0-description-0 pricing-plans-0-description-1">
+            <span id="pricing-plans-0-label" class="ml-3 font-medium" x-description="Checked: &quot;text-indigo-900&quot;, Not Checked: &quot;text-gray-900&quot;" :class="{ 'text-indigo-900': (value === 'Startup'), 'text-gray-900': !(value === 'Startup') }">Startup</span>
+          </div>
+          <p id="pricing-plans-0-description-0" class="ml-6 pl-1 text-sm md:ml-0 md:pl-0 md:text-center">
+            <span class="font-medium" x-description="Checked: &quot;text-indigo-900&quot;, Not Checked: &quot;text-gray-900&quot;" :class="{ 'text-indigo-900': (value === 'Startup'), 'text-gray-900': !(value === 'Startup') }">$29 / mo</span>
+            <!-- space -->
+            <span x-description="Checked: &quot;text-indigo-700&quot;, Not Checked: &quot;text-gray-500&quot;" :class="{ 'text-indigo-700': (value === 'Startup'), 'text-gray-500': !(value === 'Startup') }">($290 / yr)</span>
+          </p>
+          <p id="pricing-plans-0-description-1" class="ml-6 pl-1 text-sm md:ml-0 md:pl-0 md:text-right" x-description="Checked: &quot;text-indigo-700&quot;, Not Checked: &quot;text-gray-500&quot;" :class="{ 'text-indigo-700': (value === 'Startup'), 'text-gray-500': !(value === 'Startup') }">Up to 5 active job postings</p>
+        </label>
+      
+        <label x-radio-group-option="" class="  relative border p-4 flex flex-col cursor-pointer md:pl-4 md:pr-6 md:grid md:grid-cols-3 focus:outline-none" x-description="Checked: &quot;bg-indigo-50 border-indigo-200 z-10&quot;, Not Checked: &quot;border-gray-200&quot;" :class="{ 'bg-indigo-50 border-indigo-200 z-10': (value === 'Business'), 'border-gray-200': !(value === 'Business') }">
+          <div class="flex items-center text-sm">
+            <input type="radio" x-model="value" name="pricing-plan" value="Business" class="h-4 w-4 text-indigo-600 border-gray-300 focus:ring-indigo-500" aria-labelledby="pricing-plans-1-label" aria-describedby="pricing-plans-1-description-0 pricing-plans-1-description-1">
+            <span id="pricing-plans-1-label" class="ml-3 font-medium" x-description="Checked: &quot;text-indigo-900&quot;, Not Checked: &quot;text-gray-900&quot;" :class="{ 'text-indigo-900': (value === 'Business'), 'text-gray-900': !(value === 'Business') }">Business</span>
+          </div>
+          <p id="pricing-plans-1-description-0" class="ml-6 pl-1 text-sm md:ml-0 md:pl-0 md:text-center">
+            <span class="font-medium" x-description="Checked: &quot;text-indigo-900&quot;, Not Checked: &quot;text-gray-900&quot;" :class="{ 'text-indigo-900': (value === 'Business'), 'text-gray-900': !(value === 'Business') }">$99 / mo</span>
+            <!-- space -->
+            <span x-description="Checked: &quot;text-indigo-700&quot;, Not Checked: &quot;text-gray-500&quot;" :class="{ 'text-indigo-700': (value === 'Business'), 'text-gray-500': !(value === 'Business') }">($990 / yr)</span>
+          </p>
+          <p id="pricing-plans-1-description-1" class="ml-6 pl-1 text-sm md:ml-0 md:pl-0 md:text-right" x-description="Checked: &quot;text-indigo-700&quot;, Not Checked: &quot;text-gray-500&quot;" :class="{ 'text-indigo-700': (value === 'Business'), 'text-gray-500': !(value === 'Business') }">Up to 25 active job postings</p>
+        </label>
+      
+        <label x-radio-group-option="" class=" rounded-bl-md rounded-br-md relative border p-4 flex flex-col cursor-pointer md:pl-4 md:pr-6 md:grid md:grid-cols-3 focus:outline-none" x-description="Checked: &quot;bg-indigo-50 border-indigo-200 z-10&quot;, Not Checked: &quot;border-gray-200&quot;" :class="{ 'bg-indigo-50 border-indigo-200 z-10': (value === 'Enterprise'), 'border-gray-200': !(value === 'Enterprise') }">
+          <div class="flex items-center text-sm">
+            <input type="radio" x-model="value" name="pricing-plan" value="Enterprise" class="h-4 w-4 text-indigo-600 border-gray-300 focus:ring-indigo-500" aria-labelledby="pricing-plans-2-label" aria-describedby="pricing-plans-2-description-0 pricing-plans-2-description-1">
+            <span id="pricing-plans-2-label" class="ml-3 font-medium" x-description="Checked: &quot;text-indigo-900&quot;, Not Checked: &quot;text-gray-900&quot;" :class="{ 'text-indigo-900': (value === 'Enterprise'), 'text-gray-900': !(value === 'Enterprise') }">Enterprise</span>
+          </div>
+          <p id="pricing-plans-2-description-0" class="ml-6 pl-1 text-sm md:ml-0 md:pl-0 md:text-center">
+            <span class="font-medium" x-description="Checked: &quot;text-indigo-900&quot;, Not Checked: &quot;text-gray-900&quot;" :class="{ 'text-indigo-900': (value === 'Enterprise'), 'text-gray-900': !(value === 'Enterprise') }">$249 / mo</span>
+            <!-- space -->
+            <span x-description="Checked: &quot;text-indigo-700&quot;, Not Checked: &quot;text-gray-500&quot;" :class="{ 'text-indigo-700': (value === 'Enterprise'), 'text-gray-500': !(value === 'Enterprise') }">($2490 / yr)</span>
+          </p>
+          <p id="pricing-plans-2-description-1" class="ml-6 pl-1 text-sm md:ml-0 md:pl-0 md:text-right" x-description="Checked: &quot;text-indigo-700&quot;, Not Checked: &quot;text-gray-500&quot;" :class="{ 'text-indigo-700': (value === 'Enterprise'), 'text-gray-500': !(value === 'Enterprise') }">Unlimited active job postings</p>
+        </label>
+      
+    </div>
+  </fieldset>
+
+    </div>
+  </div>

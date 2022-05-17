@@ -1,0 +1,110 @@
+<!--
+  This example requires Tailwind CSS v2.0+
+
+  The alpine.js code is *NOT* production ready and is included to preview
+  possible interactivity
+-->
+<div class="bg-white">
+    <section aria-labelledby="features-heading" class="max-w-7xl mx-auto py-32 sm:px-2 lg:px-8">
+      <div class="max-w-2xl mx-auto px-4 lg:px-0 lg:max-w-none">
+        <div class="max-w-3xl">
+          <h2 id="features-heading" class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">Technical Specifications</h2>
+          <p class="mt-4 text-gray-500">The Organize modular system offers endless options for arranging your favorite and most used items. Keep everything at reach and in its place, while dressing up your workspace.</p>
+        </div>
+
+        <div class="mt-4" x-data="Components.tabs()" @tab-click.window="onTabClick" @tab-keydown.window="onTabKeydown">
+          <div class="-mx-4 flex overflow-x-auto sm:mx-0">
+            <div class="flex-auto px-4 border-b border-gray-200 sm:px-0">
+              <div class="-mb-px flex space-x-10" aria-orientation="horizontal" role="tablist">
+                
+                  <button id="features-tab-1" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-6 border-b-2 font-medium text-sm" x-state:on="Current" x-state:off="Default" :class="{ 'border-indigo-500 text-indigo-600': selected, 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300': !(selected) }" x-data="Components.tab(0)" aria-controls="features-panel-1" role="tab" x-init="init()" @click="onClick" @keydown="onKeydown" @tab-select.window="onTabSelect" :tabindex="selected ? 0 : -1" :aria-selected="selected ? 'true' : 'false'" type="button">
+                    Design
+                  </button>
+                
+                  <button id="features-tab-2" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-6 border-b-2 font-medium text-sm" :class="{ 'border-indigo-500 text-indigo-600': selected, 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300': !(selected) }" x-data="Components.tab(0)" aria-controls="features-panel-2" role="tab" x-init="init()" @click="onClick" @keydown="onKeydown" @tab-select.window="onTabSelect" :tabindex="selected ? 0 : -1" :aria-selected="selected ? 'true' : 'false'" type="button">
+                    Material
+                  </button>
+                
+                  <button id="features-tab-3" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-6 border-b-2 font-medium text-sm" :class="{ 'border-indigo-500 text-indigo-600': selected, 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300': !(selected) }" x-data="Components.tab(0)" aria-controls="features-panel-3" role="tab" x-init="init()" @click="onClick" @keydown="onKeydown" @tab-select.window="onTabSelect" :tabindex="selected ? 0 : -1" :aria-selected="selected ? 'true' : 'false'" type="button">
+                    Considerations
+                  </button>
+                
+                  <button id="features-tab-4" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-6 border-b-2 font-medium text-sm" :class="{ 'border-indigo-500 text-indigo-600': selected, 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300': !(selected) }" x-data="Components.tab(0)" aria-controls="features-panel-4" role="tab" x-init="init()" @click="onClick" @keydown="onKeydown" @tab-select.window="onTabSelect" :tabindex="selected ? 0 : -1" :aria-selected="selected ? 'true' : 'false'" type="button">
+                    Included
+                  </button>
+                
+              </div>
+            </div>
+          </div>
+
+          
+            
+              <div id="features-panel-1" class="space-y-16 pt-10 lg:pt-16" x-data="Components.tabPanel(0)" aria-labelledby="features-tab-1" x-init="init()" x-show="selected" @tab-select.window="onTabSelect" role="tabpanel" tabindex="0">
+                
+                  <div class="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:gap-x-8">
+                    <div class="mt-6 lg:mt-0 lg:col-span-5">
+                      <h3 class="text-lg font-medium text-gray-900">Adaptive and modular</h3>
+                      <p class="mt-2 text-sm text-gray-500">The Organize base set allows you to configure and evolve your setup as your items and habits change. The included trays and optional add-ons are easily rearranged to achieve that perfect setup.</p>
+                    </div>
+                    <div class="lg:col-span-7">
+                      <div class="aspect-w-2 aspect-h-1 rounded-lg bg-gray-100 overflow-hidden sm:aspect-w-5 sm:aspect-h-2">
+                        <img src="https://tailwindui.com/img/ecommerce-images/product-feature-06-detail-01.jpg" alt="Maple organizer base with slots, supporting white polycarbonate trays of various sizes." class="object-center object-cover">
+                      </div>
+                    </div>
+                  </div>
+                
+              </div>
+            
+              <div id="features-panel-2" class="space-y-16 pt-10 lg:pt-16" x-data="Components.tabPanel(0)" aria-labelledby="features-tab-2" x-init="init()" x-show="selected" @tab-select.window="onTabSelect" role="tabpanel" tabindex="0">
+                
+                  <div class="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:gap-x-8">
+                    <div class="mt-6 lg:mt-0 lg:col-span-5">
+                      <h3 class="text-lg font-medium text-gray-900">Natural wood options</h3>
+                      <p class="mt-2 text-sm text-gray-500">Organize has options for rich walnut and bright maple base materials. Accent your desk with a contrasting material, or match similar woods for a calm and cohesive look. Every base is hand sanded and finished.</p>
+                    </div>
+                    <div class="lg:col-span-7">
+                      <div class="aspect-w-2 aspect-h-1 rounded-lg bg-gray-100 overflow-hidden sm:aspect-w-5 sm:aspect-h-2">
+                        <img src="https://tailwindui.com/img/ecommerce-images/product-feature-06-detail-02.jpg" alt="Walnut organizer base with pen, sticky note, phone, and bin trays, next to modular drink coaster attachment." class="object-center object-cover">
+                      </div>
+                    </div>
+                  </div>
+                
+              </div>
+            
+              <div id="features-panel-3" class="space-y-16 pt-10 lg:pt-16" x-data="Components.tabPanel(0)" aria-labelledby="features-tab-3" x-init="init()" x-show="selected" @tab-select.window="onTabSelect" role="tabpanel" tabindex="0">
+                
+                  <div class="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:gap-x-8">
+                    <div class="mt-6 lg:mt-0 lg:col-span-5">
+                      <h3 class="text-lg font-medium text-gray-900">Helpful around the home</h3>
+                      <p class="mt-2 text-sm text-gray-500">Our customers use Organize throughout the house to bring efficiency to many daily routines. Enjoy Organize in your workspace, kitchen, living room, entry way, garage, and more. We can't wait to see how you'll use it!</p>
+                    </div>
+                    <div class="lg:col-span-7">
+                      <div class="aspect-w-2 aspect-h-1 rounded-lg bg-gray-100 overflow-hidden sm:aspect-w-5 sm:aspect-h-2">
+                        <img src="https://tailwindui.com/img/ecommerce-images/product-feature-06-detail-03.jpg" alt="Walnut organizer base with white polycarbonate trays in the kitchen with various kitchen utensils." class="object-center object-cover">
+                      </div>
+                    </div>
+                  </div>
+                
+              </div>
+            
+              <div id="features-panel-4" class="space-y-16 pt-10 lg:pt-16" x-data="Components.tabPanel(0)" aria-labelledby="features-tab-4" x-init="init()" x-show="selected" @tab-select.window="onTabSelect" role="tabpanel" tabindex="0">
+                
+                  <div class="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:gap-x-8">
+                    <div class="mt-6 lg:mt-0 lg:col-span-5">
+                      <h3 class="text-lg font-medium text-gray-900">Everything you'll need</h3>
+                      <p class="mt-2 text-sm text-gray-500">The Organize base set includes the pen, phone, small, and large trays to help you group all your essential items. Expand your set with the drink coaster and headphone stand add-ons.</p>
+                    </div>
+                    <div class="lg:col-span-7">
+                      <div class="aspect-w-2 aspect-h-1 rounded-lg bg-gray-100 overflow-hidden sm:aspect-w-5 sm:aspect-h-2">
+                        <img src="https://tailwindui.com/img/ecommerce-images/product-feature-06-detail-04.jpg" alt="Walnut organizer system on black leather desk mat on top of white desk." class="object-center object-cover">
+                      </div>
+                    </div>
+                  </div>
+                
+              </div>
+            
+          
+        </div>
+      </div>
+    </section>
+  </div>

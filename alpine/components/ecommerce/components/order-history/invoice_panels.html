@@ -1,0 +1,278 @@
+<!--
+  This example requires Tailwind CSS v2.0+
+
+  The alpine.js code is *NOT* production ready and is included to preview
+  possible interactivity
+-->
+<div class="bg-white">
+    <div class="py-16 sm:py-24">
+      <div class="max-w-7xl mx-auto sm:px-2 lg:px-8">
+        <div class="max-w-2xl mx-auto px-4 lg:max-w-4xl lg:px-0">
+          <h1 class="text-2xl font-extrabold tracking-tight text-gray-900 sm:text-3xl">Order history</h1>
+          <p class="mt-2 text-sm text-gray-500">Check the status of recent orders, manage returns, and discover similar products.</p>
+        </div>
+      </div>
+
+      <div class="mt-16">
+        <h2 class="sr-only">Recent orders</h2>
+        <div class="max-w-7xl mx-auto sm:px-2 lg:px-8">
+          <div class="max-w-2xl mx-auto space-y-8 sm:px-4 lg:max-w-4xl lg:px-0">
+            
+              <div class="bg-white border-t border-b border-gray-200 shadow-sm sm:rounded-lg sm:border">
+                <h3 class="sr-only">Order placed on <time datetime="2021-07-06">Jul 6, 2021</time></h3>
+
+                <div class="flex items-center p-4 border-b border-gray-200 sm:p-6 sm:grid sm:grid-cols-4 sm:gap-x-6">
+                  <dl class="flex-1 grid grid-cols-2 gap-x-6 text-sm sm:col-span-3 sm:grid-cols-3 lg:col-span-2">
+                    <div>
+                      <dt class="font-medium text-gray-900">Order number</dt>
+                      <dd class="mt-1 text-gray-500">
+                        WU88191111
+                      </dd>
+                    </div>
+                    <div class="hidden sm:block">
+                      <dt class="font-medium text-gray-900">Date placed</dt>
+                      <dd class="mt-1 text-gray-500">
+                        <time datetime="2021-07-06">Jul 6, 2021</time>
+                      </dd>
+                    </div>
+                    <div>
+                      <dt class="font-medium text-gray-900">Total amount</dt>
+                      <dd class="mt-1 font-medium text-gray-900">
+                        $160.00
+                      </dd>
+                    </div>
+                  </dl>
+
+                  <div x-data="Components.menu({ open: false })" x-init="init()" @keydown.escape.stop="open = false; focusButton()" @click.away="onClickAway($event)" class="relative flex justify-end lg:hidden">
+                    <div class="flex items-center">
+                      <button type="button" class="-m-2 p-2 flex items-center text-gray-400 hover:text-gray-500" id="menu-0-button" x-ref="button" @click="onButtonClick()" @keyup.space.prevent="onButtonEnter()" @keydown.enter.prevent="onButtonEnter()" aria-expanded="false" aria-haspopup="true" x-bind:aria-expanded="open.toString()" @keydown.arrow-up.prevent="onArrowUp()" @keydown.arrow-down.prevent="onArrowDown()">
+                        <span class="sr-only">Options for order WU88191111</span>
+                        <svg class="w-6 h-6" x-description="Heroicon name: outline/dots-vertical" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"></path>
+</svg>
+                      </button>
+                    </div>
+
+                    
+                      <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="origin-bottom-right absolute right-0 mt-2 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" x-ref="menu-items" x-description="Dropdown menu, show/hide based on menu state." x-bind:aria-activedescendant="activeDescendant" role="menu" aria-orientation="vertical" aria-labelledby="menu-0-button" tabindex="-1" @keydown.arrow-up.prevent="onArrowUp()" @keydown.arrow-down.prevent="onArrowDown()" @keydown.tab="open = false" @keydown.enter.prevent="open = false; focusButton()" @keyup.space.prevent="open = false; focusButton()">
+                        <div class="py-1" role="none">
+                          <a href="#" class="text-gray-700 block px-4 py-2 text-sm" x-state:on="Active" x-state:off="Not Active" :class="{ 'bg-gray-100 text-gray-900': activeIndex === 0, 'text-gray-700': !(activeIndex === 0) }" role="menuitem" tabindex="-1" id="menu-0-item-0" @mouseenter="activeIndex = 0" @mouseleave="activeIndex = -1" @click="open = false; focusButton()">
+                              View
+                            </a>
+                          <a href="#" class="text-gray-700 block px-4 py-2 text-sm" :class="{ 'bg-gray-100 text-gray-900': activeIndex === 1, 'text-gray-700': !(activeIndex === 1) }" role="menuitem" tabindex="-1" id="menu-0-item-1" @mouseenter="activeIndex = 1" @mouseleave="activeIndex = -1" @click="open = false; focusButton()">
+                              Invoice
+                            </a>
+                        </div>
+                      </div>
+                    
+                  </div>
+
+                  <div class="hidden lg:col-span-2 lg:flex lg:items-center lg:justify-end lg:space-x-4">
+                    <a href="#" class="flex items-center justify-center bg-white py-2 px-2.5 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                      <span>View Order</span>
+                      <span class="sr-only">WU88191111</span>
+                    </a>
+                    <a href="#" class="flex items-center justify-center bg-white py-2 px-2.5 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                      <span>View Invoice</span>
+                      <span class="sr-only">for order WU88191111</span>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Products -->
+                <h4 class="sr-only">Items</h4>
+                <ul role="list" class="divide-y divide-gray-200">
+                  
+                    <li class="p-4 sm:p-6">
+                      <div class="flex items-center sm:items-start">
+                        <div class="flex-shrink-0 w-20 h-20 bg-gray-200 rounded-lg overflow-hidden sm:w-40 sm:h-40">
+                          <img src="https://tailwindui.com/img/ecommerce-images/order-history-page-03-product-01.jpg" alt="Moss green canvas compact backpack with double top zipper, zipper front pouch, and matching carry handle and backpack straps." class="w-full h-full object-center object-cover">
+                        </div>
+                        <div class="flex-1 ml-6 text-sm">
+                          <div class="font-medium text-gray-900 sm:flex sm:justify-between">
+                            <h5>
+                              Micro Backpack
+                            </h5>
+                            <p class="mt-2 sm:mt-0">
+                              $70.00
+                            </p>
+                          </div>
+                          <p class="hidden text-gray-500 sm:block sm:mt-2">
+                            Are you a minimalist looking for a compact carry option? The Micro Backpack is the perfect size for your essential everyday carry items. Wear it like a backpack or carry it like a satchel for all-day use.
+                          </p>
+                        </div>
+                      </div>
+
+                      <div class="mt-6 sm:flex sm:justify-between">
+                        <div class="flex items-center">
+                          <svg class="w-5 h-5 text-green-500" x-description="Heroicon name: solid/check-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+</svg>
+                          <p class="ml-2 text-sm font-medium text-gray-500">Delivered on <time datetime="2021-07-12">July 12, 2021</time></p>
+                        </div>
+
+                        <div class="mt-6 border-t border-gray-200 pt-4 flex items-center space-x-4 divide-x divide-gray-200 text-sm font-medium sm:mt-0 sm:ml-4 sm:border-none sm:pt-0">
+                          <div class="flex-1 flex justify-center">
+                            <a href="#" class="text-indigo-600 whitespace-nowrap hover:text-indigo-500">View product</a>
+                          </div>
+                          <div class="flex-1 pl-4 flex justify-center">
+                            <a href="#" class="text-indigo-600 whitespace-nowrap hover:text-indigo-500">Buy again</a>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  
+                    <li class="p-4 sm:p-6">
+                      <div class="flex items-center sm:items-start">
+                        <div class="flex-shrink-0 w-20 h-20 bg-gray-200 rounded-lg overflow-hidden sm:w-40 sm:h-40">
+                          <img src="https://tailwindui.com/img/ecommerce-images/order-history-page-03-product-02.jpg" alt="Bright yellow canvas tote with double-stitched straps, handle, and matching zipper." class="w-full h-full object-center object-cover">
+                        </div>
+                        <div class="flex-1 ml-6 text-sm">
+                          <div class="font-medium text-gray-900 sm:flex sm:justify-between">
+                            <h5>
+                              Nomad Shopping Tote
+                            </h5>
+                            <p class="mt-2 sm:mt-0">
+                              $90.00
+                            </p>
+                          </div>
+                          <p class="hidden text-gray-500 sm:block sm:mt-2">
+                            This durable shopping tote is perfect for the world traveler. Its yellow canvas construction is water, fray, tear resistant. The matching handle, backpack straps, and shoulder loops provide multiple carry options for a day out on your next adventure.
+                          </p>
+                        </div>
+                      </div>
+
+                      <div class="mt-6 sm:flex sm:justify-between">
+                        <div class="flex items-center">
+                          <svg class="w-5 h-5 text-green-500" x-description="Heroicon name: solid/check-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+</svg>
+                          <p class="ml-2 text-sm font-medium text-gray-500">Delivered on <time datetime="2021-07-12">July 12, 2021</time></p>
+                        </div>
+
+                        <div class="mt-6 border-t border-gray-200 pt-4 flex items-center space-x-4 divide-x divide-gray-200 text-sm font-medium sm:mt-0 sm:ml-4 sm:border-none sm:pt-0">
+                          <div class="flex-1 flex justify-center">
+                            <a href="#" class="text-indigo-600 whitespace-nowrap hover:text-indigo-500">View product</a>
+                          </div>
+                          <div class="flex-1 pl-4 flex justify-center">
+                            <a href="#" class="text-indigo-600 whitespace-nowrap hover:text-indigo-500">Buy again</a>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  
+                </ul>
+              </div>
+            
+              <div class="bg-white border-t border-b border-gray-200 shadow-sm sm:rounded-lg sm:border">
+                <h3 class="sr-only">Order placed on <time datetime="2020-12-22">Dec 22, 2020</time></h3>
+
+                <div class="flex items-center p-4 border-b border-gray-200 sm:p-6 sm:grid sm:grid-cols-4 sm:gap-x-6">
+                  <dl class="flex-1 grid grid-cols-2 gap-x-6 text-sm sm:col-span-3 sm:grid-cols-3 lg:col-span-2">
+                    <div>
+                      <dt class="font-medium text-gray-900">Order number</dt>
+                      <dd class="mt-1 text-gray-500">
+                        AT48441546
+                      </dd>
+                    </div>
+                    <div class="hidden sm:block">
+                      <dt class="font-medium text-gray-900">Date placed</dt>
+                      <dd class="mt-1 text-gray-500">
+                        <time datetime="2020-12-22">Dec 22, 2020</time>
+                      </dd>
+                    </div>
+                    <div>
+                      <dt class="font-medium text-gray-900">Total amount</dt>
+                      <dd class="mt-1 font-medium text-gray-900">
+                        $40.00
+                      </dd>
+                    </div>
+                  </dl>
+
+                  <div x-data="Components.menu({ open: false })" x-init="init()" @keydown.escape.stop="open = false; focusButton()" @click.away="onClickAway($event)" class="relative flex justify-end lg:hidden">
+                    <div class="flex items-center">
+                      <button type="button" class="-m-2 p-2 flex items-center text-gray-400 hover:text-gray-500" id="menu-1-button" x-ref="button" @click="onButtonClick()" @keyup.space.prevent="onButtonEnter()" @keydown.enter.prevent="onButtonEnter()" aria-expanded="false" aria-haspopup="true" x-bind:aria-expanded="open.toString()" @keydown.arrow-up.prevent="onArrowUp()" @keydown.arrow-down.prevent="onArrowDown()">
+                        <span class="sr-only">Options for order AT48441546</span>
+                        <svg class="w-6 h-6" x-description="Heroicon name: outline/dots-vertical" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"></path>
+</svg>
+                      </button>
+                    </div>
+
+                    
+                      <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="origin-bottom-right absolute right-0 mt-2 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" x-ref="menu-items" x-description="Dropdown menu, show/hide based on menu state." x-bind:aria-activedescendant="activeDescendant" role="menu" aria-orientation="vertical" aria-labelledby="menu-1-button" tabindex="-1" @keydown.arrow-up.prevent="onArrowUp()" @keydown.arrow-down.prevent="onArrowDown()" @keydown.tab="open = false" @keydown.enter.prevent="open = false; focusButton()" @keyup.space.prevent="open = false; focusButton()">
+                        <div class="py-1" role="none">
+                          <a href="#" class="text-gray-700 block px-4 py-2 text-sm" x-state:on="Active" x-state:off="Not Active" :class="{ 'bg-gray-100 text-gray-900': activeIndex === 0, 'text-gray-700': !(activeIndex === 0) }" role="menuitem" tabindex="-1" id="menu-1-item-0" @mouseenter="activeIndex = 0" @mouseleave="activeIndex = -1" @click="open = false; focusButton()">
+                              View
+                            </a>
+                          <a href="#" class="text-gray-700 block px-4 py-2 text-sm" :class="{ 'bg-gray-100 text-gray-900': activeIndex === 1, 'text-gray-700': !(activeIndex === 1) }" role="menuitem" tabindex="-1" id="menu-1-item-1" @mouseenter="activeIndex = 1" @mouseleave="activeIndex = -1" @click="open = false; focusButton()">
+                              Invoice
+                            </a>
+                        </div>
+                      </div>
+                    
+                  </div>
+
+                  <div class="hidden lg:col-span-2 lg:flex lg:items-center lg:justify-end lg:space-x-4">
+                    <a href="#" class="flex items-center justify-center bg-white py-2 px-2.5 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                      <span>View Order</span>
+                      <span class="sr-only">AT48441546</span>
+                    </a>
+                    <a href="#" class="flex items-center justify-center bg-white py-2 px-2.5 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                      <span>View Invoice</span>
+                      <span class="sr-only">for order AT48441546</span>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Products -->
+                <h4 class="sr-only">Items</h4>
+                <ul role="list" class="divide-y divide-gray-200">
+                  
+                    <li class="p-4 sm:p-6">
+                      <div class="flex items-center sm:items-start">
+                        <div class="flex-shrink-0 w-20 h-20 bg-gray-200 rounded-lg overflow-hidden sm:w-40 sm:h-40">
+                          <img src="https://tailwindui.com/img/ecommerce-images/order-history-page-03-product-03.jpg" alt="Garment bag with two layers of grey and tan zipper pouches for folded shirts and pants." class="w-full h-full object-center object-cover">
+                        </div>
+                        <div class="flex-1 ml-6 text-sm">
+                          <div class="font-medium text-gray-900 sm:flex sm:justify-between">
+                            <h5>
+                              Double Stack Clothing Bag
+                            </h5>
+                            <p class="mt-2 sm:mt-0">
+                              $40.00
+                            </p>
+                          </div>
+                          <p class="hidden text-gray-500 sm:block sm:mt-2">
+                            Save space and protect your favorite clothes in this double-layer garment bag. Each compartment easily holds multiple pairs of jeans or tops, while keeping your items neatly folded throughout your trip.
+                          </p>
+                        </div>
+                      </div>
+
+                      <div class="mt-6 sm:flex sm:justify-between">
+                        <div class="flex items-center">
+                          <svg class="w-5 h-5 text-green-500" x-description="Heroicon name: solid/check-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+</svg>
+                          <p class="ml-2 text-sm font-medium text-gray-500">Delivered on <time datetime="2021-01-05">January 5, 2021</time></p>
+                        </div>
+
+                        <div class="mt-6 border-t border-gray-200 pt-4 flex items-center space-x-4 divide-x divide-gray-200 text-sm font-medium sm:mt-0 sm:ml-4 sm:border-none sm:pt-0">
+                          <div class="flex-1 flex justify-center">
+                            <a href="#" class="text-indigo-600 whitespace-nowrap hover:text-indigo-500">View product</a>
+                          </div>
+                          <div class="flex-1 pl-4 flex justify-center">
+                            <a href="#" class="text-indigo-600 whitespace-nowrap hover:text-indigo-500">Buy again</a>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  
+                </ul>
+              </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,79 @@
+<!--
+  This example requires Tailwind CSS v2.0+
+
+  The alpine.js code is *NOT* production ready and is included to preview
+  possible interactivity
+-->
+<div class="p-8 flex justify-center bg-gray-100" style="min-height: 600px;">
+    <div class="w-full max-w-xs mx-auto flex justify-end">
+      
+  <div x-data="Components.listbox({ modelName: 'selected', open: true, selectedIndex: 0, activeIndex: 0, items: [{&quot;title&quot;:&quot;Published&quot;,&quot;description&quot;:&quot;This job posting can be viewed by anyone who has the link.&quot;,&quot;current&quot;:true},{&quot;title&quot;:&quot;Draft&quot;,&quot;description&quot;:&quot;This job posting will no longer be publicly accessible.&quot;,&quot;current&quot;:false}] })" x-init="init()">
+    <label id="listbox-label" class="sr-only" @click="$refs.button.focus()">
+      Change published status
+    </label>
+    <div class="relative">
+      <div class="inline-flex shadow-sm rounded-md divide-x divide-indigo-600">
+        <div class="relative z-0 inline-flex shadow-sm rounded-md divide-x divide-indigo-600">
+          <div class="relative inline-flex items-center bg-indigo-500 py-2 pl-3 pr-4 border border-transparent rounded-l-md shadow-sm text-white">
+            <svg class="h-5 w-5" x-description="Heroicon name: solid/check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+</svg>
+            <p x-text="selected.title" class="ml-2.5 text-sm font-medium">
+              Published
+            </p>
+          </div>
+          <button type="button" class="relative inline-flex items-center bg-indigo-500 p-2 rounded-l-none rounded-r-md text-sm font-medium text-white hover:bg-indigo-600 focus:outline-none focus:z-10 focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500" x-ref="button" @keydown.arrow-up.stop.prevent="onButtonClick()" @keydown.arrow-down.stop.prevent="onButtonClick()" @click="onButtonClick()" aria-haspopup="listbox" :aria-expanded="open" aria-expanded="true" aria-labelledby="listbox-label">
+            <span class="sr-only">Change published status</span>
+            <svg class="h-5 w-5 text-white" x-description="Heroicon name: solid/chevron-down" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+  <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+</svg>
+          </button>
+        </div>
+      </div>
+
+      
+        <ul x-show="open" x-transition:leave="transition ease-in duration-100" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="origin-top-right absolute z-10 right-0 mt-2 w-72 rounded-md shadow-lg overflow-hidden bg-white divide-y divide-gray-200 ring-1 ring-black ring-opacity-5 focus:outline-none" x-max="1" @click.away="open = false" x-description="Select popover, show/hide based on select state." @keydown.enter.stop.prevent="onOptionSelect()" @keydown.space.stop.prevent="onOptionSelect()" @keydown.escape="onEscape()" @keydown.arrow-up.prevent="onArrowUp()" @keydown.arrow-down.prevent="onArrowDown()" x-ref="listbox" tabindex="-1" role="listbox" aria-labelledby="listbox-label" :aria-activedescendant="activeDescendant" aria-activedescendant="listbox-option-0">
+          
+            <li x-state:on="Highlighted" x-state:off="Not Highlighted" class="text-gray-900 cursor-default select-none relative p-4 text-sm" x-description="Select option, manage highlight styles based on mouseenter/mouseleave and keyboard navigation." id="listbox-option-0" role="option" @click="choose(0)" @mouseenter="activeIndex = 0" @mouseleave="activeIndex = null" :class="{ 'text-white bg-indigo-500': activeIndex === 0, 'text-gray-900': !(activeIndex === 0) }">
+              <div class="flex flex-col">
+                <div class="flex justify-between">
+                  <p x-state:on="Selected" x-state:off="Not Selected" class="font-normal" :class="{ 'font-semibold': selectedIndex === 0, 'font-normal': !(selectedIndex === 0) }">
+                    Published
+                  </p>
+                  <span x-description="Checkmark, only display for selected option." x-state:on="Highlighted" x-state:off="Not Highlighted" class="text-indigo-500" :class="{ 'text-white': activeIndex === 0, 'text-indigo-500': !(activeIndex === 0) }" x-show="selectedIndex === 0">
+                    <svg class="h-5 w-5" x-description="Heroicon name: solid/check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+</svg>
+                  </span>
+                </div>
+                <p x-state:on="Highlighted" x-state:off="Not Highlighted" class="text-gray-500 mt-2" :class="{ 'text-indigo-200': activeIndex === 0, 'text-gray-500': !(activeIndex === 0) }">
+                  This job posting can be viewed by anyone who has the link.
+                </p>
+              </div>
+            </li>
+          
+            <li x-state:on="Highlighted" x-state:off="Not Highlighted" class="text-gray-900 cursor-default select-none relative p-4 text-sm" x-description="Select option, manage highlight styles based on mouseenter/mouseleave and keyboard navigation." id="listbox-option-1" role="option" @click="choose(1)" @mouseenter="activeIndex = 1" @mouseleave="activeIndex = null" :class="{ 'text-white bg-indigo-500': activeIndex === 1, 'text-gray-900': !(activeIndex === 1) }">
+              <div class="flex flex-col">
+                <div class="flex justify-between">
+                  <p x-state:on="Selected" x-state:off="Not Selected" class="font-normal" :class="{ 'font-semibold': selectedIndex === 1, 'font-normal': !(selectedIndex === 1) }">
+                    Draft
+                  </p>
+                  <span x-description="Checkmark, only display for selected option." x-state:on="Highlighted" x-state:off="Not Highlighted" class="text-indigo-500" :class="{ 'text-white': activeIndex === 1, 'text-indigo-500': !(activeIndex === 1) }" x-show="selectedIndex === 1">
+                    <svg class="h-5 w-5" x-description="Heroicon name: solid/check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+</svg>
+                  </span>
+                </div>
+                <p x-state:on="Highlighted" x-state:off="Not Highlighted" class="text-gray-500 mt-2" :class="{ 'text-indigo-200': activeIndex === 1, 'text-gray-500': !(activeIndex === 1) }">
+                  This job posting will no longer be publicly accessible.
+                </p>
+              </div>
+            </li>
+          
+        </ul>
+      
+    </div>
+  </div>
+
+    </div>
+  </div>

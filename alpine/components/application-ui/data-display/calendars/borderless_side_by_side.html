@@ -1,0 +1,404 @@
+<!--
+  This example requires Tailwind CSS v2.0+
+
+  The alpine.js code is *NOT* production ready and is included to preview
+  possible interactivity
+-->
+<div class="bg-white py-16">
+    <div class="mx-auto max-w-md px-4 sm:px-7 md:max-w-4xl md:px-6">
+      
+  <div class="md:grid md:grid-cols-2 md:divide-x md:divide-gray-200">
+    <div class="md:pr-14">
+      <div class="flex items-center">
+        <h2 class="flex-auto font-semibold text-gray-900">January 2022</h2>
+        <button type="button" class="-my-1.5 flex flex-none items-center justify-center p-1.5 text-gray-400 hover:text-gray-500">
+          <span class="sr-only">Previous month</span>
+          <svg class="h-5 w-5" x-description="Heroicon name: solid/chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+  <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+</svg>
+        </button>
+        <button type="button" class="-my-1.5 -mr-1.5 ml-2 flex flex-none items-center justify-center p-1.5 text-gray-400 hover:text-gray-500">
+          <span class="sr-only">Next month</span>
+          <svg class="h-5 w-5" x-description="Heroicon name: solid/chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+  <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+</svg>
+        </button>
+      </div>
+      <div class="mt-10 grid grid-cols-7 text-center text-xs leading-6 text-gray-500">
+        <div>M</div>
+        <div>T</div>
+        <div>W</div>
+        <div>T</div>
+        <div>F</div>
+        <div>S</div>
+        <div>S</div>
+      </div>
+      <div class="mt-2 grid grid-cols-7 text-sm">
+        <div class="py-2">
+          <!--
+            Always include: "mx-auto flex h-8 w-8 items-center justify-center rounded-full"
+            Is selected, include: "text-white"
+            Is not selected and is today, include: "text-indigo-600"
+            Is not selected and is not today and is current month, include: "text-gray-900"
+            Is not selected and is not today and is not current month, include: "text-gray-400"
+            Is selected and is today, include: "bg-indigo-600"
+            Is selected and is not today, include: "bg-gray-900"
+            Is not selected, include: "hover:bg-gray-200"
+            Is selected or is today, include: "font-semibold"
+          -->
+          <button type="button" class="mx-auto flex h-8 w-8 items-center justify-center rounded-full text-gray-400 hover:bg-gray-200">
+            <time datetime="2021-12-27">27</time>
+          </button>
+        </div>
+        <div class="py-2">
+          <button type="button" class="mx-auto flex h-8 w-8 items-center justify-center rounded-full text-gray-400 hover:bg-gray-200">
+            <time datetime="2021-12-28">28</time>
+          </button>
+        </div>
+        <div class="py-2">
+          <button type="button" class="mx-auto flex h-8 w-8 items-center justify-center rounded-full text-gray-400 hover:bg-gray-200">
+            <time datetime="2021-12-29">29</time>
+          </button>
+        </div>
+        <div class="py-2">
+          <button type="button" class="mx-auto flex h-8 w-8 items-center justify-center rounded-full text-gray-400 hover:bg-gray-200">
+            <time datetime="2021-12-30">30</time>
+          </button>
+        </div>
+        <div class="py-2">
+          <button type="button" class="mx-auto flex h-8 w-8 items-center justify-center rounded-full text-gray-400 hover:bg-gray-200">
+            <time datetime="2021-12-31">31</time>
+          </button>
+        </div>
+        <div class="py-2">
+          <button type="button" class="mx-auto flex h-8 w-8 items-center justify-center rounded-full text-gray-900 hover:bg-gray-200">
+            <time datetime="2022-01-01">1</time>
+          </button>
+        </div>
+        <div class="py-2">
+          <button type="button" class="mx-auto flex h-8 w-8 items-center justify-center rounded-full text-gray-900 hover:bg-gray-200">
+            <time datetime="2022-01-02">2</time>
+          </button>
+        </div>
+        <div class="border-t border-gray-200 py-2">
+          <button type="button" class="mx-auto flex h-8 w-8 items-center justify-center rounded-full text-gray-900 hover:bg-gray-200">
+            <time datetime="2022-01-03">3</time>
+          </button>
+        </div>
+        <div class="border-t border-gray-200 py-2">
+          <button type="button" class="mx-auto flex h-8 w-8 items-center justify-center rounded-full text-gray-900 hover:bg-gray-200">
+            <time datetime="2022-01-04">4</time>
+          </button>
+        </div>
+        <div class="border-t border-gray-200 py-2">
+          <button type="button" class="mx-auto flex h-8 w-8 items-center justify-center rounded-full text-gray-900 hover:bg-gray-200">
+            <time datetime="2022-01-05">5</time>
+          </button>
+        </div>
+        <div class="border-t border-gray-200 py-2">
+          <button type="button" class="mx-auto flex h-8 w-8 items-center justify-center rounded-full text-gray-900 hover:bg-gray-200">
+            <time datetime="2022-01-06">6</time>
+          </button>
+        </div>
+        <div class="border-t border-gray-200 py-2">
+          <button type="button" class="mx-auto flex h-8 w-8 items-center justify-center rounded-full text-gray-900 hover:bg-gray-200">
+            <time datetime="2022-01-07">7</time>
+          </button>
+        </div>
+        <div class="border-t border-gray-200 py-2">
+          <button type="button" class="mx-auto flex h-8 w-8 items-center justify-center rounded-full text-gray-900 hover:bg-gray-200">
+            <time datetime="2022-01-08">8</time>
+          </button>
+        </div>
+        <div class="border-t border-gray-200 py-2">
+          <button type="button" class="mx-auto flex h-8 w-8 items-center justify-center rounded-full text-gray-900 hover:bg-gray-200">
+            <time datetime="2022-01-09">9</time>
+          </button>
+        </div>
+        <div class="border-t border-gray-200 py-2">
+          <button type="button" class="mx-auto flex h-8 w-8 items-center justify-center rounded-full text-gray-900 hover:bg-gray-200">
+            <time datetime="2022-01-10">10</time>
+          </button>
+        </div>
+        <div class="border-t border-gray-200 py-2">
+          <button type="button" class="mx-auto flex h-8 w-8 items-center justify-center rounded-full text-gray-900 hover:bg-gray-200">
+            <time datetime="2022-01-11">11</time>
+          </button>
+        </div>
+        <div class="border-t border-gray-200 py-2">
+          <button type="button" class="mx-auto flex h-8 w-8 items-center justify-center rounded-full font-semibold text-indigo-600 hover:bg-gray-200">
+            <time datetime="2022-01-12">12</time>
+          </button>
+        </div>
+        <div class="border-t border-gray-200 py-2">
+          <button type="button" class="mx-auto flex h-8 w-8 items-center justify-center rounded-full text-gray-900 hover:bg-gray-200">
+            <time datetime="2022-01-13">13</time>
+          </button>
+        </div>
+        <div class="border-t border-gray-200 py-2">
+          <button type="button" class="mx-auto flex h-8 w-8 items-center justify-center rounded-full text-gray-900 hover:bg-gray-200">
+            <time datetime="2022-01-14">14</time>
+          </button>
+        </div>
+        <div class="border-t border-gray-200 py-2">
+          <button type="button" class="mx-auto flex h-8 w-8 items-center justify-center rounded-full text-gray-900 hover:bg-gray-200">
+            <time datetime="2022-01-15">15</time>
+          </button>
+        </div>
+        <div class="border-t border-gray-200 py-2">
+          <button type="button" class="mx-auto flex h-8 w-8 items-center justify-center rounded-full text-gray-900 hover:bg-gray-200">
+            <time datetime="2022-01-16">16</time>
+          </button>
+        </div>
+        <div class="border-t border-gray-200 py-2">
+          <button type="button" class="mx-auto flex h-8 w-8 items-center justify-center rounded-full text-gray-900 hover:bg-gray-200">
+            <time datetime="2022-01-17">17</time>
+          </button>
+        </div>
+        <div class="border-t border-gray-200 py-2">
+          <button type="button" class="mx-auto flex h-8 w-8 items-center justify-center rounded-full text-gray-900 hover:bg-gray-200">
+            <time datetime="2022-01-18">18</time>
+          </button>
+        </div>
+        <div class="border-t border-gray-200 py-2">
+          <button type="button" class="mx-auto flex h-8 w-8 items-center justify-center rounded-full text-gray-900 hover:bg-gray-200">
+            <time datetime="2022-01-19">19</time>
+          </button>
+        </div>
+        <div class="border-t border-gray-200 py-2">
+          <button type="button" class="mx-auto flex h-8 w-8 items-center justify-center rounded-full text-gray-900 hover:bg-gray-200">
+            <time datetime="2022-01-20">20</time>
+          </button>
+        </div>
+        <div class="border-t border-gray-200 py-2">
+          <button type="button" class="mx-auto flex h-8 w-8 items-center justify-center rounded-full bg-gray-900 font-semibold text-white">
+            <time datetime="2022-01-21">21</time>
+          </button>
+        </div>
+        <div class="border-t border-gray-200 py-2">
+          <button type="button" class="mx-auto flex h-8 w-8 items-center justify-center rounded-full text-gray-900 hover:bg-gray-200">
+            <time datetime="2022-01-22">22</time>
+          </button>
+        </div>
+        <div class="border-t border-gray-200 py-2">
+          <button type="button" class="mx-auto flex h-8 w-8 items-center justify-center rounded-full text-gray-900 hover:bg-gray-200">
+            <time datetime="2022-01-23">23</time>
+          </button>
+        </div>
+        <div class="border-t border-gray-200 py-2">
+          <button type="button" class="mx-auto flex h-8 w-8 items-center justify-center rounded-full text-gray-900 hover:bg-gray-200">
+            <time datetime="2022-01-24">24</time>
+          </button>
+        </div>
+        <div class="border-t border-gray-200 py-2">
+          <button type="button" class="mx-auto flex h-8 w-8 items-center justify-center rounded-full text-gray-900 hover:bg-gray-200">
+            <time datetime="2022-01-25">25</time>
+          </button>
+        </div>
+        <div class="border-t border-gray-200 py-2">
+          <button type="button" class="mx-auto flex h-8 w-8 items-center justify-center rounded-full text-gray-900 hover:bg-gray-200">
+            <time datetime="2022-01-26">26</time>
+          </button>
+        </div>
+        <div class="border-t border-gray-200 py-2">
+          <button type="button" class="mx-auto flex h-8 w-8 items-center justify-center rounded-full text-gray-900 hover:bg-gray-200">
+            <time datetime="2022-01-27">27</time>
+          </button>
+        </div>
+        <div class="border-t border-gray-200 py-2">
+          <button type="button" class="mx-auto flex h-8 w-8 items-center justify-center rounded-full text-gray-900 hover:bg-gray-200">
+            <time datetime="2022-01-28">28</time>
+          </button>
+        </div>
+        <div class="border-t border-gray-200 py-2">
+          <button type="button" class="mx-auto flex h-8 w-8 items-center justify-center rounded-full text-gray-900 hover:bg-gray-200">
+            <time datetime="2022-01-29">29</time>
+          </button>
+        </div>
+        <div class="border-t border-gray-200 py-2">
+          <button type="button" class="mx-auto flex h-8 w-8 items-center justify-center rounded-full text-gray-900 hover:bg-gray-200">
+            <time datetime="2022-01-30">30</time>
+          </button>
+        </div>
+        <div class="border-t border-gray-200 py-2">
+          <button type="button" class="mx-auto flex h-8 w-8 items-center justify-center rounded-full text-gray-900 hover:bg-gray-200">
+            <time datetime="2022-01-31">31</time>
+          </button>
+        </div>
+        <div class="border-t border-gray-200 py-2">
+          <button type="button" class="mx-auto flex h-8 w-8 items-center justify-center rounded-full text-gray-400 hover:bg-gray-200">
+            <time datetime="2022-02-01">1</time>
+          </button>
+        </div>
+        <div class="border-t border-gray-200 py-2">
+          <button type="button" class="mx-auto flex h-8 w-8 items-center justify-center rounded-full text-gray-400 hover:bg-gray-200">
+            <time datetime="2022-02-02">2</time>
+          </button>
+        </div>
+        <div class="border-t border-gray-200 py-2">
+          <button type="button" class="mx-auto flex h-8 w-8 items-center justify-center rounded-full text-gray-400 hover:bg-gray-200">
+            <time datetime="2022-02-03">3</time>
+          </button>
+        </div>
+        <div class="border-t border-gray-200 py-2">
+          <button type="button" class="mx-auto flex h-8 w-8 items-center justify-center rounded-full text-gray-400 hover:bg-gray-200">
+            <time datetime="2022-02-04">4</time>
+          </button>
+        </div>
+        <div class="border-t border-gray-200 py-2">
+          <button type="button" class="mx-auto flex h-8 w-8 items-center justify-center rounded-full text-gray-400 hover:bg-gray-200">
+            <time datetime="2022-02-05">5</time>
+          </button>
+        </div>
+        <div class="border-t border-gray-200 py-2">
+          <button type="button" class="mx-auto flex h-8 w-8 items-center justify-center rounded-full text-gray-400 hover:bg-gray-200">
+            <time datetime="2022-02-06">6</time>
+          </button>
+        </div>
+      </div>
+    </div>
+    <section class="mt-12 md:mt-0 md:pl-14">
+      <h2 class="font-semibold text-gray-900">Schedule for <time datetime="2022-01-21">January 21, 2022</time></h2>
+      <ol class="mt-4 space-y-1 text-sm leading-6 text-gray-500">
+        
+          <li class="group flex items-center space-x-4 rounded-xl py-2 px-4 focus-within:bg-gray-100 hover:bg-gray-100">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80" alt="" class="h-10 w-10 flex-none rounded-full">
+            <div class="flex-auto">
+              <p class="text-gray-900">Leslie Alexander</p>
+              <p class="mt-0.5"><time datetime="2022-01-21T13:00">1:00 PM</time> - <time datetime="2022-01-21T14:30">2:30 PM</time></p>
+            </div>
+            <div x-data="Components.menu({ open: false })" x-init="init()" @keydown.escape.stop="open = false; focusButton()" @click.away="onClickAway($event)" class="relative opacity-0 focus-within:opacity-100 group-hover:opacity-100">
+              <div>
+                <button type="button" class="-m-2 flex items-center rounded-full p-1.5 text-gray-500 hover:text-gray-600" id="menu-0-button" x-ref="button" @click="onButtonClick()" @keyup.space.prevent="onButtonEnter()" @keydown.enter.prevent="onButtonEnter()" aria-expanded="false" aria-haspopup="true" x-bind:aria-expanded="open.toString()" @keydown.arrow-up.prevent="onArrowUp()" @keydown.arrow-down.prevent="onArrowDown()">
+                  <span class="sr-only">Open options</span>
+                  <svg class="h-6 w-6" x-description="Heroicon name: outline/dots-vertical" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"></path>
+</svg>
+                </button>
+              </div>
+
+              
+                <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="focus:outline-none absolute right-0 z-10 mt-2 w-36 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5" x-ref="menu-items" x-description="Dropdown menu, show/hide based on menu state." x-bind:aria-activedescendant="activeDescendant" role="menu" aria-orientation="vertical" aria-labelledby="menu-0-button" tabindex="-1" @keydown.arrow-up.prevent="onArrowUp()" @keydown.arrow-down.prevent="onArrowDown()" @keydown.tab="open = false" @keydown.enter.prevent="open = false; focusButton()" @keyup.space.prevent="open = false; focusButton()">
+                  <div class="py-1" role="none">
+                    <a href="#" class="text-gray-700 block px-4 py-2 text-sm" x-state:on="Active" x-state:off="Not Active" :class="{ 'bg-gray-100 text-gray-900': activeIndex === 0, 'text-gray-700': !(activeIndex === 0) }" role="menuitem" tabindex="-1" id="menu-0-item-0" @mouseenter="activeIndex = 0" @mouseleave="activeIndex = -1" @click="open = false; focusButton()">Edit</a>
+                    <a href="#" class="text-gray-700 block px-4 py-2 text-sm" :class="{ 'bg-gray-100 text-gray-900': activeIndex === 1, 'text-gray-700': !(activeIndex === 1) }" role="menuitem" tabindex="-1" id="menu-0-item-1" @mouseenter="activeIndex = 1" @mouseleave="activeIndex = -1" @click="open = false; focusButton()">Cancel</a>
+                  </div>
+                </div>
+              
+            </div>
+          </li>
+        
+          <li class="group flex items-center space-x-4 rounded-xl py-2 px-4 focus-within:bg-gray-100 hover:bg-gray-100">
+            <img src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80" alt="" class="h-10 w-10 flex-none rounded-full">
+            <div class="flex-auto">
+              <p class="text-gray-900">Michael Foster</p>
+              <p class="mt-0.5"><time datetime="2022-01-21T15:00">3:00 PM</time> - <time datetime="2022-01-21T16:30">4:30 PM</time></p>
+            </div>
+            <div x-data="Components.menu({ open: false })" x-init="init()" @keydown.escape.stop="open = false; focusButton()" @click.away="onClickAway($event)" class="relative opacity-0 focus-within:opacity-100 group-hover:opacity-100">
+              <div>
+                <button type="button" class="-m-2 flex items-center rounded-full p-1.5 text-gray-500 hover:text-gray-600" id="menu-1-button" x-ref="button" @click="onButtonClick()" @keyup.space.prevent="onButtonEnter()" @keydown.enter.prevent="onButtonEnter()" aria-expanded="false" aria-haspopup="true" x-bind:aria-expanded="open.toString()" @keydown.arrow-up.prevent="onArrowUp()" @keydown.arrow-down.prevent="onArrowDown()">
+                  <span class="sr-only">Open options</span>
+                  <svg class="h-6 w-6" x-description="Heroicon name: outline/dots-vertical" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"></path>
+</svg>
+                </button>
+              </div>
+
+              
+                <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="focus:outline-none absolute right-0 z-10 mt-2 w-36 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5" x-ref="menu-items" x-description="Dropdown menu, show/hide based on menu state." x-bind:aria-activedescendant="activeDescendant" role="menu" aria-orientation="vertical" aria-labelledby="menu-1-button" tabindex="-1" @keydown.arrow-up.prevent="onArrowUp()" @keydown.arrow-down.prevent="onArrowDown()" @keydown.tab="open = false" @keydown.enter.prevent="open = false; focusButton()" @keyup.space.prevent="open = false; focusButton()">
+                  <div class="py-1" role="none">
+                    <a href="#" class="text-gray-700 block px-4 py-2 text-sm" x-state:on="Active" x-state:off="Not Active" :class="{ 'bg-gray-100 text-gray-900': activeIndex === 0, 'text-gray-700': !(activeIndex === 0) }" role="menuitem" tabindex="-1" id="menu-1-item-0" @mouseenter="activeIndex = 0" @mouseleave="activeIndex = -1" @click="open = false; focusButton()">Edit</a>
+                    <a href="#" class="text-gray-700 block px-4 py-2 text-sm" :class="{ 'bg-gray-100 text-gray-900': activeIndex === 1, 'text-gray-700': !(activeIndex === 1) }" role="menuitem" tabindex="-1" id="menu-1-item-1" @mouseenter="activeIndex = 1" @mouseleave="activeIndex = -1" @click="open = false; focusButton()">Cancel</a>
+                  </div>
+                </div>
+              
+            </div>
+          </li>
+        
+          <li class="group flex items-center space-x-4 rounded-xl py-2 px-4 focus-within:bg-gray-100 hover:bg-gray-100">
+            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80" alt="" class="h-10 w-10 flex-none rounded-full">
+            <div class="flex-auto">
+              <p class="text-gray-900">Dries Vincent</p>
+              <p class="mt-0.5"><time datetime="2022-01-21T17:00">5:00 PM</time> - <time datetime="2022-01-21T18:30">6:30 PM</time></p>
+            </div>
+            <div x-data="Components.menu({ open: false })" x-init="init()" @keydown.escape.stop="open = false; focusButton()" @click.away="onClickAway($event)" class="relative opacity-0 focus-within:opacity-100 group-hover:opacity-100">
+              <div>
+                <button type="button" class="-m-2 flex items-center rounded-full p-1.5 text-gray-500 hover:text-gray-600" id="menu-2-button" x-ref="button" @click="onButtonClick()" @keyup.space.prevent="onButtonEnter()" @keydown.enter.prevent="onButtonEnter()" aria-expanded="false" aria-haspopup="true" x-bind:aria-expanded="open.toString()" @keydown.arrow-up.prevent="onArrowUp()" @keydown.arrow-down.prevent="onArrowDown()">
+                  <span class="sr-only">Open options</span>
+                  <svg class="h-6 w-6" x-description="Heroicon name: outline/dots-vertical" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"></path>
+</svg>
+                </button>
+              </div>
+
+              
+                <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="focus:outline-none absolute right-0 z-10 mt-2 w-36 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5" x-ref="menu-items" x-description="Dropdown menu, show/hide based on menu state." x-bind:aria-activedescendant="activeDescendant" role="menu" aria-orientation="vertical" aria-labelledby="menu-2-button" tabindex="-1" @keydown.arrow-up.prevent="onArrowUp()" @keydown.arrow-down.prevent="onArrowDown()" @keydown.tab="open = false" @keydown.enter.prevent="open = false; focusButton()" @keyup.space.prevent="open = false; focusButton()">
+                  <div class="py-1" role="none">
+                    <a href="#" class="text-gray-700 block px-4 py-2 text-sm" x-state:on="Active" x-state:off="Not Active" :class="{ 'bg-gray-100 text-gray-900': activeIndex === 0, 'text-gray-700': !(activeIndex === 0) }" role="menuitem" tabindex="-1" id="menu-2-item-0" @mouseenter="activeIndex = 0" @mouseleave="activeIndex = -1" @click="open = false; focusButton()">Edit</a>
+                    <a href="#" class="text-gray-700 block px-4 py-2 text-sm" :class="{ 'bg-gray-100 text-gray-900': activeIndex === 1, 'text-gray-700': !(activeIndex === 1) }" role="menuitem" tabindex="-1" id="menu-2-item-1" @mouseenter="activeIndex = 1" @mouseleave="activeIndex = -1" @click="open = false; focusButton()">Cancel</a>
+                  </div>
+                </div>
+              
+            </div>
+          </li>
+        
+          <li class="group flex items-center space-x-4 rounded-xl py-2 px-4 focus-within:bg-gray-100 hover:bg-gray-100">
+            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80" alt="" class="h-10 w-10 flex-none rounded-full">
+            <div class="flex-auto">
+              <p class="text-gray-900">Lindsay Walton</p>
+              <p class="mt-0.5"><time datetime="2022-01-21T19:00">7:00 PM</time> - <time datetime="2022-01-21T20:30">8:30 PM</time></p>
+            </div>
+            <div x-data="Components.menu({ open: false })" x-init="init()" @keydown.escape.stop="open = false; focusButton()" @click.away="onClickAway($event)" class="relative opacity-0 focus-within:opacity-100 group-hover:opacity-100">
+              <div>
+                <button type="button" class="-m-2 flex items-center rounded-full p-1.5 text-gray-500 hover:text-gray-600" id="menu-3-button" x-ref="button" @click="onButtonClick()" @keyup.space.prevent="onButtonEnter()" @keydown.enter.prevent="onButtonEnter()" aria-expanded="false" aria-haspopup="true" x-bind:aria-expanded="open.toString()" @keydown.arrow-up.prevent="onArrowUp()" @keydown.arrow-down.prevent="onArrowDown()">
+                  <span class="sr-only">Open options</span>
+                  <svg class="h-6 w-6" x-description="Heroicon name: outline/dots-vertical" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"></path>
+</svg>
+                </button>
+              </div>
+
+              
+                <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="focus:outline-none absolute right-0 z-10 mt-2 w-36 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5" x-ref="menu-items" x-description="Dropdown menu, show/hide based on menu state." x-bind:aria-activedescendant="activeDescendant" role="menu" aria-orientation="vertical" aria-labelledby="menu-3-button" tabindex="-1" @keydown.arrow-up.prevent="onArrowUp()" @keydown.arrow-down.prevent="onArrowDown()" @keydown.tab="open = false" @keydown.enter.prevent="open = false; focusButton()" @keyup.space.prevent="open = false; focusButton()">
+                  <div class="py-1" role="none">
+                    <a href="#" class="text-gray-700 block px-4 py-2 text-sm" x-state:on="Active" x-state:off="Not Active" :class="{ 'bg-gray-100 text-gray-900': activeIndex === 0, 'text-gray-700': !(activeIndex === 0) }" role="menuitem" tabindex="-1" id="menu-3-item-0" @mouseenter="activeIndex = 0" @mouseleave="activeIndex = -1" @click="open = false; focusButton()">Edit</a>
+                    <a href="#" class="text-gray-700 block px-4 py-2 text-sm" :class="{ 'bg-gray-100 text-gray-900': activeIndex === 1, 'text-gray-700': !(activeIndex === 1) }" role="menuitem" tabindex="-1" id="menu-3-item-1" @mouseenter="activeIndex = 1" @mouseleave="activeIndex = -1" @click="open = false; focusButton()">Cancel</a>
+                  </div>
+                </div>
+              
+            </div>
+          </li>
+        
+          <li class="group flex items-center space-x-4 rounded-xl py-2 px-4 focus-within:bg-gray-100 hover:bg-gray-100">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80" alt="" class="h-10 w-10 flex-none rounded-full">
+            <div class="flex-auto">
+              <p class="text-gray-900">Courtney Henry</p>
+              <p class="mt-0.5"><time datetime="2022-01-21T21:00">9:00 PM</time> - <time datetime="2022-01-21T22:30">10:30 PM</time></p>
+            </div>
+            <div x-data="Components.menu({ open: false })" x-init="init()" @keydown.escape.stop="open = false; focusButton()" @click.away="onClickAway($event)" class="relative opacity-0 focus-within:opacity-100 group-hover:opacity-100">
+              <div>
+                <button type="button" class="-m-2 flex items-center rounded-full p-1.5 text-gray-500 hover:text-gray-600" id="menu-4-button" x-ref="button" @click="onButtonClick()" @keyup.space.prevent="onButtonEnter()" @keydown.enter.prevent="onButtonEnter()" aria-expanded="false" aria-haspopup="true" x-bind:aria-expanded="open.toString()" @keydown.arrow-up.prevent="onArrowUp()" @keydown.arrow-down.prevent="onArrowDown()">
+                  <span class="sr-only">Open options</span>
+                  <svg class="h-6 w-6" x-description="Heroicon name: outline/dots-vertical" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"></path>
+</svg>
+                </button>
+              </div>
+
+              
+                <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="focus:outline-none absolute right-0 z-10 mt-2 w-36 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5" x-ref="menu-items" x-description="Dropdown menu, show/hide based on menu state." x-bind:aria-activedescendant="activeDescendant" role="menu" aria-orientation="vertical" aria-labelledby="menu-4-button" tabindex="-1" @keydown.arrow-up.prevent="onArrowUp()" @keydown.arrow-down.prevent="onArrowDown()" @keydown.tab="open = false" @keydown.enter.prevent="open = false; focusButton()" @keyup.space.prevent="open = false; focusButton()">
+                  <div class="py-1" role="none">
+                    <a href="#" class="text-gray-700 block px-4 py-2 text-sm" x-state:on="Active" x-state:off="Not Active" :class="{ 'bg-gray-100 text-gray-900': activeIndex === 0, 'text-gray-700': !(activeIndex === 0) }" role="menuitem" tabindex="-1" id="menu-4-item-0" @mouseenter="activeIndex = 0" @mouseleave="activeIndex = -1" @click="open = false; focusButton()">Edit</a>
+                    <a href="#" class="text-gray-700 block px-4 py-2 text-sm" :class="{ 'bg-gray-100 text-gray-900': activeIndex === 1, 'text-gray-700': !(activeIndex === 1) }" role="menuitem" tabindex="-1" id="menu-4-item-1" @mouseenter="activeIndex = 1" @mouseleave="activeIndex = -1" @click="open = false; focusButton()">Cancel</a>
+                  </div>
+                </div>
+              
+            </div>
+          </li>
+        
+      </ol>
+    </section>
+  </div>
+
+    </div>
+  </div>

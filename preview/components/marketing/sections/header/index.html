@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-gray-50">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@tailwindcss" />
+    <meta name="twitter:title" content="Tailwind UI" />
+    <meta name="twitter:description" content="Header section examples for Tailwind CSS, designed and built by the creators of the framework." />
+    <meta name="twitter:image" content="https://tailwindui.com/img/og-image.png" />
+    <meta name="twitter:creator" content="@tailwindcss" />
+    <meta property="og:url" content="https://www.tailwindui.com/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Tailwind UI" />
+    <meta property="og:description" content="Header section examples for Tailwind CSS, designed and built by the creators of the framework." />
+    <meta property="og:image" content="https://tailwindui.com/img/og-image.png" />
+    <meta property="description" content="Header section examples for Tailwind CSS, designed and built by the creators of the framework." />
+    <meta name="csrf-token" content="CONSTANT_TOKEN" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+    <link rel="preload" href="/fonts/Inter-roman.var.woff2?v=3.18" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="/css/app.css" />
+    <title>Header Sections - Official Tailwind CSS UI Components</title>
+        <script>
+      function getActiveSnippet() {
+        try {
+          if (['html', 'react', 'vue'].includes(localStorage.activeSnippet)) {
+            return localStorage.activeSnippet
+          }
+          return 'html'
+        } catch (_) {
+          return 'html'
+        }
+      }
+      document.querySelector('html').classList.add('snippet-' + getActiveSnippet())
+    </script>
+    </head>
+  <body class="font-sans antialiased text-gray-600 min-h-full flex flex-col ">
+    
+
+
+<header class="flex-none relative z-50 text-sm leading-6 font-medium ring-1 ring-gray-900 ring-opacity-5 shadow-sm py-5 bg-white">
+  <nav aria-label="Global" class="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center  ">
+      <a href="/components" class="flex-none text-gray-900">
+        <span class="sr-only">Tailwind UI</span>
+        <svg aria-hidden="true" viewBox="0 0 160 24" fill="none" class="w-auto h-6">
+          <path d="M18.724 1.714c-4.538 0-7.376 2.286-8.51 6.857 1.702-2.285 3.687-3.143 5.957-2.57 1.296.325 2.22 1.271 3.245 2.318 1.668 1.706 3.6 3.681 7.819 3.681 4.539 0 7.376-2.286 8.51-6.857-1.701 2.286-3.687 3.143-5.957 2.571-1.294-.325-2.22-1.272-3.245-2.32-1.668-1.705-3.6-3.68-7.819-3.68zM10.214 12c-4.539 0-7.376 2.286-8.51 6.857 1.701-2.286 3.687-3.143 5.957-2.571 1.294.325 2.22 1.272 3.245 2.32 1.668 1.705 3.6 3.68 7.818 3.68 4.54 0 7.377-2.286 8.511-6.857-1.702 2.286-3.688 3.143-5.957 2.571-1.295-.326-2.22-1.272-3.245-2.32-1.669-1.705-3.6-3.68-7.82-3.68z" fill="#06B6D4"/>
+          <path d="M51.285 9.531V6.857h-3.166v-3.6l-2.758.823v2.777h-2.348v2.674h2.348v6.172c0 3.343 1.686 4.526 5.924 4.011V17.22c-2.094.103-3.166.129-3.166-1.517V9.53h3.166zm12.087-2.674v1.826c-.97-1.337-2.476-2.16-4.468-2.16-3.472 0-6.357 2.931-6.357 6.763 0 3.805 2.885 6.763 6.357 6.763 1.992 0 3.498-.823 4.468-2.186v1.851h2.758V6.857h-2.758zM59.338 17.4c-2.297 0-4.034-1.723-4.034-4.114 0-2.392 1.736-4.115 4.034-4.115s4.034 1.723 4.034 4.115c0 2.391-1.736 4.114-4.034 4.114zM70.723 4.929c.97 0 1.762-.823 1.762-1.775 0-.977-.792-1.774-1.762-1.774s-1.762.797-1.762 1.774c0 .952.792 1.775 1.762 1.775zm-1.379 14.785h2.758V6.857h-2.758v12.857zm5.96 0h2.757V.943h-2.758v18.771zM95.969 6.857l-2.502 8.872-2.655-8.872h-2.63L85.5 15.73l-2.477-8.872h-2.91l4.008 12.857h2.707l2.68-8.665 2.656 8.665h2.706L98.88 6.857h-2.911zm6.32-1.928c.97 0 1.762-.823 1.762-1.775 0-.977-.792-1.774-1.762-1.774s-1.762.797-1.762 1.774c0 .952.792 1.775 1.762 1.775zm-1.379 14.785h2.758V6.857h-2.758v12.857zm12.674-13.191c-1.736 0-3.115.643-3.957 1.98V6.857h-2.758v12.857h2.758v-6.891c0-2.623 1.43-3.703 3.242-3.703 1.737 0 2.86 1.029 2.86 2.983v7.611h2.757V11.82c0-3.343-2.042-5.297-4.902-5.297zm17.982-4.809v6.969c-.971-1.337-2.477-2.16-4.468-2.16-3.473 0-6.358 2.931-6.358 6.763 0 3.805 2.885 6.763 6.358 6.763 1.991 0 3.497-.823 4.468-2.186v1.851h2.757v-18h-2.757zM127.532 17.4c-2.298 0-4.034-1.723-4.034-4.114 0-2.392 1.736-4.115 4.034-4.115 2.297 0 4.034 1.723 4.034 4.115 0 2.391-1.737 4.114-4.034 4.114z" fill="currentColor"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M145.532 3.429h8.511c.902 0 1.768.36 2.407 1.004.638.643.997 1.515.997 2.424v8.572c0 .909-.359 1.781-.997 2.424a3.394 3.394 0 01-2.407 1.004h-8.511a3.39 3.39 0 01-2.407-1.004 3.438 3.438 0 01-.997-2.424V6.857c0-.91.358-1.781.997-2.424a3.39 3.39 0 012.407-1.004zm-5.106 3.428c0-1.364.538-2.672 1.495-3.636a5.09 5.09 0 013.611-1.507h8.511c1.354 0 2.653.542 3.61 1.507a5.16 5.16 0 011.496 3.636v8.572a5.16 5.16 0 01-1.496 3.636 5.086 5.086 0 01-3.61 1.506h-8.511a5.09 5.09 0 01-3.611-1.506 5.164 5.164 0 01-1.495-3.636V6.857zm10.907 6.251c0 1.812-1.359 2.916-3.193 2.916-1.823 0-3.182-1.104-3.182-2.916v-5.65h1.633v5.52c0 .815.429 1.427 1.549 1.427 1.12 0 1.549-.612 1.549-1.428v-5.52h1.644v5.652zm1.72 2.748V7.457h1.644v8.4h-1.644z" fill="currentColor"/>
+        </svg>
+      </a>
+                    <p class="hidden lg:block text-sm ml-6 border-l border-gray-200 pl-6">
+          <a href="https://tailwindcss.com/blog/tailwindcss-v3" target="_blank" class="relative flex items-center hover:text-gray-900">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-teal-500" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.967.744L14.146 7.2 17.5 9.134a1 1 0 010 1.732l-3.354 1.935-1.18 4.455a1 1 0 01-1.933 0L9.854 12.8 6.5 10.866a1 1 0 010-1.732l3.354-1.935 1.18-4.455A1 1 0 0112 2z" clip-rule="evenodd" />
+            </svg>
+                         Ready for Tailwind CSS v3.0
+            <svg aria-hidden="true" width="11" height="11" fill="currentColor" class="ml-1.5">
+              <path d="M5.593 10.139L10.232 5.5 5.593.862l-.895.89 3.107 3.102H0v1.292h7.805L4.698 9.254l.895.885z"/>
+            </svg>
+          </a>
+        </p>
+                        <div class="ml-auto flex items-center">
+        <a href="/components" class="hidden sm:block hover:text-gray-900">Components</a>
+        <a href="/documentation" class="hidden sm:block ml-6 mr-2 hover:text-gray-900">Documentation</a>
+
+        <button type="button" x-data @click="$dispatch('open-command-palette')" class="-my-1 mr-3 sm:mx-2.5 w-8 h-8 rounded-lg flex items-center justify-center">
+          <span class="sr-only">Search components</span>
+          <svg aria-hidden="true" viewBox="0 0 20 20" fill="none" class="w-5 h-5 text-gray-900">
+            <circle cx="8.5" cy="8.5" r="5.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M17.25 17.25L13 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+
+        <div x-data="{ open: false }" x-init="window.addEventListener('focus', event => { if (open && !$el.contains(event.target)) open = false }, true)" @click.away="open = false" @keydown.escape="open = false;$refs.toggle.focus()" class="relative sm:border-l -mr-1.5 sm:ml-2 sm:mr-0 sm:pl-6 border-gray-200">
+          <button type="button" x-ref="toggle" @click="open = !open" aria-expanded="false" :aria-expanded="open" class="font-medium flex items-center">
+            <span class="hidden sm:flex items-center">
+              Account
+              <svg aria-hidden="true" width="8" height="6" fill="none" class="ml-2.5 text-gray-400">
+                <path d="M7 1.5l-3 3-3-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </span>
+            <span class="flex sm:hidden -my-1 w-8 h-8 rounded-lg items-center justify-center">
+              <svg aria-hidden="true" width="20" height="20" fill="none" class="text-gray-900">
+                <path d="M3.75 4.75h12.5M3.75 9.75h12.5M3.75 14.75h12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </button>
+          <div x-cloak x-show="open" class="absolute top-full right-0 w-60 mt-3 -mr-0.5 sm:-mr-3.5 bg-white rounded-lg shadow-md ring-1 ring-gray-900 ring-opacity-5 font-normal text-sm text-gray-900 divide-y divide-gray-100">
+            <p class="py-3 px-3.5 truncate">
+              <span class="block mb-0.5 text-xs text-gray-500">Signed in as</span>
+              <span class="font-semibold">Licensed User</span>
+            </p>
+            <div class="py-1.5 px-3.5">
+              <a href="/components" class="group flex sm:hidden items-center py-1.5 hover:text-teal-600">
+                <svg aria-hidden="true" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="flex-none mr-3 text-gray-400 group-hover:text-teal-600">
+                  <rect x="2.75" y="2.75" width="5.5" height="5.5" rx="1" />
+                  <rect x="2.75" y="11.75" width="5.5" height="5.5" rx="1" />
+                  <rect x="11.75" y="11.75" width="5.5" height="5.5" rx="2.75" />
+                  <path d="M13.616 3.305a1 1 0 011.79.004l1.731 3.498a1 1 0 01-.896 1.443H12.76a1 1 0 01-.894-1.448l1.751-3.497z" />
+                </svg>
+                Components
+              </a>
+              <a href="/documentation" class="group flex sm:hidden items-center py-1.5 hover:text-teal-600">
+                <svg aria-hidden="true" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="flex-none mr-3 text-gray-400 group-hover:text-teal-600">
+                  <path d="M5.75 17.25h8.5a2 2 0 002-2V7L12 2.75H5.75a2 2 0 00-2 2v10.5a2 2 0 002 2z" />
+                  <path d="M11.75 3v4.25H16M6.75 10.75h6.5M6.75 13.75h6.5" />
+                </svg>
+                Documentation
+              </a>
+              <a href="/changelog" class="group flex items-center py-1.5 hover:text-teal-600">
+                <svg aria-hidden="true" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" class="flex-none mr-3 text-gray-400 group-hover:text-teal-600">
+                  <rect x="7.75" y="2.75" width="4.5" height="4.5" rx="2.25" />
+                  <rect x="7.75" y="12.75" width="4.5" height="4.5" rx="2.25" />
+                  <path d="M10 7.5v5" />
+                </svg>
+                Changelog
+              </a>
+              <a href="/support" class="group flex items-center py-1.5 hover:text-teal-600">
+                <svg aria-hidden="true" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" class="flex-none mr-3 text-gray-400 group-hover:text-teal-600">
+                  <rect x="2.75" y="2.75" width="14.5" height="14.5" rx="7.25" />
+                  <rect x="6.75" y="6.75" width="6.5" height="6.5" rx="3.25" />
+                  <path d="M5 15l2.5-2.5M15 5l-2.5 2.5M15 15l-2.5-2.5M5 5l2.5 2.5" />
+                </svg>
+                Support
+              </a>
+              <a href="/license" class="group flex items-center py-1.5 hover:text-teal-600">
+                <svg aria-hidden="true" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="flex-none mr-3 text-gray-400 group-hover:text-teal-600">
+                  <circle cx="10" cy="8" r="5.25" />
+                  <path d="M13 12.5l1.25 4.75-4.25-1.5-4.25 1.5L7 12.5" />
+                </svg>
+                License
+              </a>
+            </div>
+                          <div class="py-1.5 px-3.5">
+                                <a href="/documentation#figma-assets" class="group flex items-center py-1.5 hover:text-teal-600">
+                  <svg aria-hidden="true" width="20" height="20" fill="none" class="flex-none mr-3 text-gray-400 group-hover:text-teal-600">
+                    <path d="M6 13.25a3.25 3.25 0 01-1.1-6.31c.473-.17.865-.562.996-1.047a4.252 4.252 0 018.209 0c.13.485.522.878.995 1.048A3.251 3.251 0 0114 13.25M10 11.75v5.5M7.75 14.75l2.25 2.5 2.25-2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  Download Figma Assets
+                </a>
+                                              </div>
+            
+                          <div class="py-1.5 px-3.5">
+                <a href="/upgrade-team" class="group flex items-center py-1.5 hover:text-teal-600">
+                  <svg aria-hidden="true" width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg" class="flex-none mr-3 text-gray-400 group-hover:text-teal-600">
+                    <rect x="4.75" y="6.75" width="4.5" height="4.5" rx="2.25" stroke="#9CA3AF" stroke-width="1.5"/>
+                    <rect x="10.75" y="2.75" width="4.5" height="4.5" rx="2.25" stroke="#9CA3AF" stroke-width="1.5"/>
+                    <path d="M11.179 16.52c-.854-1.416-2.035-2.77-4.171-2.77s-3.318 1.353-4.171 2.77a.484.484 0 00.425.73h7.492c.379 0 .62-.406.425-.73zM12.75 9.75c2.14 0 3.51 1.358 4.418 2.776.204.32-.035.724-.414.724H12.75" stroke="#9CA3AF" stroke-width="1.5" stroke-linecap="round"/>
+                  </svg>
+                  Upgrade to Team License
+                </a>
+              </div>
+                        <div class="py-1.5 px-3.5">
+              <a href="/account-settings" class="group flex items-center py-1.5 hover:text-teal-600">
+                <svg aria-hidden="true" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" class="flex-none mr-3 text-gray-400 group-hover:text-teal-600">
+                  <rect x="7.75" y="5.75" width="4.5" height="4.5" rx="2.25" />
+                  <rect x="2.75" y="2.75" width="14.5" height="14.5" rx="7.25" />
+                  <path d="M14.618 15.5A5.249 5.249 0 0010 12.75a5.249 5.249 0 00-4.618 2.75" />
+                </svg>
+                Account Settings
+              </a>
+              <form method="POST" action="https://tailwindui.com/logout">
+                <input type="hidden" name="_token" value="CONSTANT_TOKEN">                <button type="submit" class="group flex w-full items-center py-1.5 text-gray-900 hover:text-teal-600">
+                  <svg aria-hidden="true" width="20" height="20" fill="none" class="flex-none mr-3 text-gray-400 group-hover:text-teal-600">
+                    <path d="M10.25 3.75H9A6.25 6.25 0 002.75 10v0A6.25 6.25 0 009 16.25h1.25M10.75 10h6.5M14.75 12.25l2.5-2.25-2.5-2.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  Sign out
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+                </div>
+  </nav>
+  </header>
+
+<main class="flex-auto ">
+  <div class="overflow-hidden">
+  <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div class="flex flex-col mb-8">
+      <h1 class="order-1 text-gray-900 text-3xl font-extrabold tracking-tight mt-2">Header Sections</h1>
+      <nav aria-label="Breadcrumb" class="flex items-center text-gray-500 text-sm font-medium space-x-2 whitespace-nowrap">
+        <a href="/components#product-marketing" class="hover:text-gray-900">
+          Marketing
+        </a>
+        <svg aria-hidden="true" width="24" height="24" fill="none" class="flex-none text-gray-300">
+          <path d="M10.75 8.75l3.5 3.25-3.5 3.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <a href="/components#product-marketing-sections" aria-current="page" class="truncate hover:text-gray-900">
+          Page Sections
+        </a>
+      </nav>
+    </div>
+
+    <div class="space-y-20">
+              <section
+  aria-labelledby="heading-2c3b25e7b9e4490edd7b6950692c0a11"
+  id="component-2c3b25e7b9e4490edd7b6950692c0a11"
+  x-data="componentPreview({ userId: 26664, languages: [&quot;html&quot;,&quot;react&quot;,&quot;vue&quot;], activeSnippet: getActiveSnippet(), snippets: [{&quot;language&quot;:&quot;html&quot;,&quot;highlight&quot;:&quot;html&quot;,&quot;label&quot;:&quot;HTML&quot;,&quot;snippet&quot;:&quot;&lt;!-- This example requires Tailwind CSS v2.0+ --&gt;\n&lt;div class=\&quot;bg-white\&quot;&gt;\n  &lt;div class=\&quot;max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8\&quot;&gt;\n    &lt;div class=\&quot;text-center\&quot;&gt;\n      &lt;h2 class=\&quot;text-base font-semibold text-indigo-600 tracking-wide uppercase\&quot;&gt;Pricing&lt;\/h2&gt;\n      &lt;p class=\&quot;mt-1 text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl\&quot;&gt;Take control of your team.&lt;\/p&gt;\n      &lt;p class=\&quot;max-w-xl mt-5 mx-auto text-xl text-gray-500\&quot;&gt;Start building for free, then add a site plan to go live. Account plans unlock additional features.&lt;\/p&gt;\n    &lt;\/div&gt;\n  &lt;\/div&gt;\n&lt;\/div&gt;\n&quot;},{&quot;language&quot;:&quot;react&quot;,&quot;highlight&quot;:&quot;jsx&quot;,&quot;label&quot;:&quot;React&quot;,&quot;snippet&quot;:&quot;\/* This example requires Tailwind CSS v2.0+ *\/\nexport default function Example() {\n  return (\n    &lt;div className=\&quot;bg-white\&quot;&gt;\n      &lt;div className=\&quot;max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8\&quot;&gt;\n        &lt;div className=\&quot;text-center\&quot;&gt;\n          &lt;h2 className=\&quot;text-base font-semibold text-indigo-600 tracking-wide uppercase\&quot;&gt;Pricing&lt;\/h2&gt;\n          &lt;p className=\&quot;mt-1 text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl\&quot;&gt;\n            Take control of your team.\n          &lt;\/p&gt;\n          &lt;p className=\&quot;max-w-xl mt-5 mx-auto text-xl text-gray-500\&quot;&gt;\n            Start building for free, then add a site plan to go live. Account plans unlock additional features.\n          &lt;\/p&gt;\n        &lt;\/div&gt;\n      &lt;\/div&gt;\n    &lt;\/div&gt;\n  )\n}\n&quot;},{&quot;language&quot;:&quot;vue&quot;,&quot;highlight&quot;:&quot;html&quot;,&quot;label&quot;:&quot;Vue&quot;,&quot;snippet&quot;:&quot;&lt;!-- This example requires Tailwind CSS v2.0+ --&gt;\n&lt;template&gt;\n  &lt;div class=\&quot;bg-white\&quot;&gt;\n    &lt;div class=\&quot;max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8\&quot;&gt;\n      &lt;div class=\&quot;text-center\&quot;&gt;\n        &lt;h2 class=\&quot;text-base font-semibold text-indigo-600 tracking-wide uppercase\&quot;&gt;Pricing&lt;\/h2&gt;\n        &lt;p class=\&quot;mt-1 text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl\&quot;&gt;Take control of your team.&lt;\/p&gt;\n        &lt;p class=\&quot;max-w-xl mt-5 mx-auto text-xl text-gray-500\&quot;&gt;Start building for free, then add a site plan to go live. Account plans unlock additional features.&lt;\/p&gt;\n      &lt;\/div&gt;\n    &lt;\/div&gt;\n  &lt;\/div&gt;\n&lt;\/template&gt;\n&quot;}] })"
+  x-init="init()"
+>
+  <div class="flex items-center mb-3 whitespace-nowrap">
+    <h2 id="heading-2c3b25e7b9e4490edd7b6950692c0a11" class="font-medium text-gray-900 truncate">
+      <a href="#component-2c3b25e7b9e4490edd7b6950692c0a11" class="mr-1">Simple centered</a>
+    </h2>
+            <div class="flex-none flex items-center ml-auto pl-4 sm:pl-6">
+      <div class="group p-0.5 rounded-lg flex bg-gray-100 hover:bg-gray-200">
+        <button x-ref="preview" type="button" class="flex focus-visible:ring-2 focus-visible:ring-teal-500 focus-visible:ring-offset-2 rounded-md focus:outline-none focus-visible:ring-offset-gray-100" @click="activeTab = 'preview'" :tabindex="activeTab === 'preview' ? '0' : '-1'" @keydown.arrow-left="activeTab = 'code'" @keydown.arrow-right="activeTab = 'code'">
+          <span x-show="false" class="p-1.5 lg:pl-2.5 lg:pr-3.5 rounded-md flex items-center text-sm font-medium bg-white shadow-sm ring-1 ring-black ring-opacity-5">
+            <svg aria-hidden="true" width="20" height="20" fill="none" class="lg:mr-2 text-teal-500">
+              <path d="M17.25 10c0 1-1.75 6.25-7.25 6.25S2.75 11 2.75 10 4.5 3.75 10 3.75 17.25 9 17.25 10z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="10" cy="10" r="2.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="text-gray-900 sr-only lg:not-sr-only">Preview</span>
+          </span>
+          <span x-show="true" style="display:none" class="p-1.5 lg:pl-2.5 lg:pr-3.5 rounded-md flex items-center text-sm font-medium" :class="activeTab === 'preview' ? 'bg-white shadow-sm ring-1 ring-black ring-opacity-5' : ''">
+            <svg aria-hidden="true" width="20" height="20" fill="none" class="lg:mr-2" :class="activeTab === 'preview' ? 'text-teal-500' : 'text-gray-500 group-hover:text-gray-900'">
+              <path d="M17.25 10c0 1-1.75 6.25-7.25 6.25S2.75 11 2.75 10 4.5 3.75 10 3.75 17.25 9 17.25 10z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="10" cy="10" r="2.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="sr-only lg:not-sr-only" :class="activeTab === 'preview' ? 'text-gray-900' : 'text-gray-600 group-hover:text-gray-900'">Preview</span>
+          </span>
+        </button>
+        <button x-ref="code" type="button" class="ml-0.5 p-1.5 lg:pl-2.5 lg:pr-3.5 rounded-md flex items-center text-sm text-gray-600 font-medium focus-visible:ring-2 focus-visible:ring-teal-500 focus-visible:ring-offset-2 focus:outline-none focus-visible:ring-offset-gray-100" :class="activeTab === 'code' ? 'bg-white shadow-sm ring-1 ring-black ring-opacity-5' : ''" @click="activeTab = 'code'" tabindex="-1" :tabindex="activeTab === 'code' ? '0' : '-1'" @keydown.arrow-left="activeTab = 'preview'" @keydown.arrow-right="activeTab = 'preview'">
+          <svg aria-hidden="true" width="20" height="20" fill="none" class="lg:mr-2" :class="activeTab === 'code' ? 'text-teal-500' : 'text-gray-500 group-hover:text-gray-900'">
+            <path d="M13.75 6.75l3.5 3.25-3.5 3.25M6.25 13.25L2.75 10l3.5-3.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="sr-only lg:not-sr-only" :class="activeTab === 'code' ? 'text-gray-900' : 'text-gray-600 group-hover:text-gray-900'">Code</span>
+        </button>
+      </div>
+
+      <div class="hidden sm:block w-px h-6 bg-gray-200 ml-6"></div>
+
+            <div class="relative hidden sm:block ml-2.5">
+        <div x-show="false" aria-hidden="true">
+          <div class="absolute inset-0">
+                          <select tabindex="-1" class="placeholder-html bg-transparent text-gray-900 rounded-none border-0 form-select p-0 pl-3.5 pr-[1.875rem] h-9 w-full sm:text-sm font-medium pointer-events-none" style="background-image:none;">
+                <option>HTML</option>
+              </select>
+                          <select tabindex="-1" class="placeholder-react bg-transparent text-gray-900 rounded-none border-0 form-select p-0 pl-3.5 pr-[1.875rem] h-9 w-full sm:text-sm font-medium pointer-events-none" style="background-image:none;">
+                <option>React</option>
+              </select>
+                          <select tabindex="-1" class="placeholder-vue bg-transparent text-gray-900 rounded-none border-0 form-select p-0 pl-3.5 pr-[1.875rem] h-9 w-full sm:text-sm font-medium pointer-events-none" style="background-image:none;">
+                <option>Vue</option>
+              </select>
+                      </div>
+        </div>
+        <div style="opacity:0" :style="'opacity:1'">
+          <select x-model="activeSnippet" class="bg-transparent text-gray-900 rounded-lg border-0 form-select p-0 pl-3.5 pr-[1.875rem] h-9 w-full sm:text-sm font-medium focus:shadow-none focus-visible:ring-2 focus-visible:ring-teal-500" style="background-image:none;">
+                          <option value="html">HTML</option>
+                          <option value="react">React</option>
+                          <option value="vue">Vue</option>
+                      </select>
+        </div>
+        <svg aria-hidden="true" viewBox="0 0 8 6" width="8" height="6" fill="none" class="absolute inset-y-0 right-3.5 h-full pointer-events-none">
+          <path d="M7 1.5l-3 3-3-3" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </div>
+      
+      <button type="button" class="hidden sm:flex sm:items-center sm:justify-center relative w-9 h-9 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 text-gray-400 hover:text-gray-600 group ml-2.5" :style="copied ? 'color:#06B6D4' : ''" @click="navigator.clipboard.writeText(snippets.find(s=>s.language===activeSnippet).snippet).then(()=>{copied=true;clearTimeout(copyTimeout);copyTimeout=setTimeout(()=>{copied=false},1500)})">
+        <span class="sr-only">Copy code</span>
+        <span x-show="copied" style="display:none" class="absolute inset-x-0 bottom-full mb-2.5 flex justify-center" x-transition:enter="transform ease-out duration-200 transition origin-bottom" x-transition:enter-start="scale-95 translate-y-0.5 opacity-0" x-transition:enter-end="scale-100 translate-y-0 opacity-100" x-transition:leave="transition ease-in duration-100" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
+          <span class="bg-gray-900 text-white rounded-md text-[0.625rem] leading-4 tracking-wide font-semibold uppercase py-1 px-3 filter drop-shadow-md">
+            <svg aria-hidden="true" width="16" height="6" viewBox="0 0 16 6" class="text-gray-900 absolute top-full left-1/2 -mt-px -ml-2">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M15 0H1V1.00366V1.00366V1.00371H1.01672C2.72058 1.0147 4.24225 2.74704 5.42685 4.72928C6.42941 6.40691 9.57154 6.4069 10.5741 4.72926C11.7587 2.74703 13.2803 1.0147 14.9841 1.00371H15V0Z" fill="currentColor"/>
+            </svg>
+            Copied!
+          </span>
+        </span>
+        <svg aria-hidden="true" width="32" height="32" viewBox="0 0 32 32" fill="none" class="stroke-current transform group-hover:rotate-[-4deg] transition" :style="copied ? '--tw-rotate:-8deg;' : ''">
+          <path d="M12.9975 10.7499L11.7475 10.7499C10.6429 10.7499 9.74747 11.6453 9.74747 12.7499L9.74747 21.2499C9.74747 22.3544 10.6429 23.2499 11.7475 23.2499L20.2475 23.2499C21.352 23.2499 22.2475 22.3544 22.2475 21.2499L22.2475 12.7499C22.2475 11.6453 21.352 10.7499 20.2475 10.7499L18.9975 10.7499" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M17.9975 12.2499L13.9975 12.2499C13.4452 12.2499 12.9975 11.8022 12.9975 11.2499L12.9975 9.74988C12.9975 9.19759 13.4452 8.74988 13.9975 8.74988L17.9975 8.74988C18.5498 8.74988 18.9975 9.19759 18.9975 9.74988L18.9975 11.2499C18.9975 11.8022 18.5498 12.2499 17.9975 12.2499Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M13.7475 16.2499L18.2475 16.2499" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M13.7475 19.2499L18.2475 19.2499" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          <g x-cloak :class="[copied ? '' : 'opacity-0', initialized ? 'transition-opacity' : '']">
+            <path d="M15.9975 5.99988L15.9975 3.99988" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M19.9975 5.99988L20.9975 4.99988" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M11.9975 5.99988L10.9975 4.99988" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </g>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <style>
+    #frame-2c3b25e7b9e4490edd7b6950692c0a11 {
+      height: 340px;
+    }
+    @media (min-width: 704px) {
+      #frame-2c3b25e7b9e4490edd7b6950692c0a11 {
+        height: 356px;
+      }
+    }
+  </style>
+  <div class="relative bg-gray-500 rounded-lg ring-1 ring-gray-900 ring-opacity-5 overflow-hidden">
+    <div :class="{ 'block': activeTab === 'preview', 'hidden': activeTab !== 'preview' }" class="block">
+      <div x-data="resizableIFrame()" x-init="init()" x-ref="root" :style="'max-width: 100%; width: ' + width" class="min-w-full sm:min-w-[392px] relative sm:pr-4">
+        <div id="frame-2c3b25e7b9e4490edd7b6950692c0a11" class="bg-white">
+          <iframe x-ref="iframe" title="Simple centered preview" aria-label="Simple centered preview" name="frame-2c3b25e7b9e4490edd7b6950692c0a11" class="w-full rounded-lg overflow-hidden sm:rounded-r-none" srcdoc="&lt;!doctype html&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, shrink-to-fit=no&quot;&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;/css/components-v2.css&quot;&gt;&lt;script src=&quot;/js/components-v2.js&quot;&gt;&lt;/script&gt;&lt;script src=&quot;/js/iframe.js&quot; defer&gt;&lt;/script&gt;&lt;script src=&quot;/js/alpine.js&quot; defer&gt;&lt;/script&gt;&lt;body class=&quot;antialiased font-sans bg-gray-200 overflow-hidden&quot;&gt;&lt;div class=&quot;&quot; style=&quot;&quot;&gt;
+  
+  &lt;div class=&quot;bg-white&quot;&gt;
+    &lt;div class=&quot;max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8&quot;&gt;
+      &lt;div class=&quot;text-center&quot;&gt;
+        &lt;h2 class=&quot;text-base font-semibold text-indigo-600 tracking-wide uppercase&quot;&gt;Pricing&lt;/h2&gt;
+        &lt;p class=&quot;mt-1 text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl&quot;&gt;Take control of your team.&lt;/p&gt;
+        &lt;p class=&quot;max-w-xl mt-5 mx-auto text-xl text-gray-500&quot;&gt;Start building for free, then add a site plan to go live. Account plans unlock additional features.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;/div&gt;&lt;/body&gt;" style="opacity:0"></iframe>
+          <div :class="{ 'pointer-events-none': !resizing }" class="hidden absolute opacity-0 inset-0 mr-4 pointer-events-none sm:block"></div>
+          <div x-ref="handle" @pointerdown="onResizeStart($event)" class="sr-only sm:not-sr-only sm:border-l sm:bg-gray-100 sm:absolute sm:right-0 sm:inset-y-0 sm:flex sm:items-center sm:w-4 cursor-[ew-resize]" style="touch-action: none">
+            <div class="absolute inset-y-0 -inset-x-2"></div>
+            <svg aria-hidden="true" class="h-4 w-4 text-gray-600 pointer-events-none" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5h2v14H8zM14 5h2v14h-2z" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div :class="{ 'block': activeTab === 'code', 'hidden': activeTab !== 'code' }" class="hidden bg-gray-800">
+      <ul role="list" class="flex sm:hidden px-4 border-b border-gray-700 space-x-2">
+                  <li class="py-1 border-b -mb-px" :class="activeSnippet === 'html' ? 'border-teal-400' : 'border-transparent'">
+            <button type="button" class="text-sm font-medium p-2" :class="activeSnippet === 'html' ? 'text-teal-400' : 'text-gray-400'" @click="activeSnippet = 'html'">HTML</button>
+          </li>
+                  <li class="py-1 border-b -mb-px" :class="activeSnippet === 'react' ? 'border-teal-400' : 'border-transparent'">
+            <button type="button" class="text-sm font-medium p-2" :class="activeSnippet === 'react' ? 'text-teal-400' : 'text-gray-400'" @click="activeSnippet = 'react'">React</button>
+          </li>
+                  <li class="py-1 border-b -mb-px" :class="activeSnippet === 'vue' ? 'border-teal-400' : 'border-transparent'">
+            <button type="button" class="text-sm font-medium p-2" :class="activeSnippet === 'vue' ? 'text-teal-400' : 'text-gray-400'" @click="activeSnippet = 'vue'">Vue</button>
+          </li>
+              </ul>
+            <pre @copy="onCopy($event)" :class="{'block': activeSnippet === 'html', 'hidden': activeSnippet !== 'html' }" class="language-html block scrollbar-none m-0 p-0 overflow-auto text-white text-sm leading-normal"><code class="inline-block p-4 scrolling-touch subpixel-antialiased" x-ref="codeBlockhtml"></code></pre>
+            <pre @copy="onCopy($event)" :class="{'block': activeSnippet === 'react', 'hidden': activeSnippet !== 'react' }" class="language-jsx block scrollbar-none m-0 p-0 overflow-auto text-white text-sm leading-normal"><code class="inline-block p-4 scrolling-touch subpixel-antialiased" x-ref="codeBlockreact"></code></pre>
+            <pre @copy="onCopy($event)" :class="{'block': activeSnippet === 'vue', 'hidden': activeSnippet !== 'vue' }" class="language-html block scrollbar-none m-0 p-0 overflow-auto text-white text-sm leading-normal"><code class="inline-block p-4 scrolling-touch subpixel-antialiased" x-ref="codeBlockvue"></code></pre>
+          </div>
+  </div>
+  
+</section>
+              <section
+  aria-labelledby="heading-89bb1d244fc65729fdeeec97fb00a404"
+  id="component-89bb1d244fc65729fdeeec97fb00a404"
+  x-data="componentPreview({ userId: 26664, languages: [&quot;html&quot;,&quot;react&quot;,&quot;vue&quot;], activeSnippet: getActiveSnippet(), snippets: [{&quot;language&quot;:&quot;html&quot;,&quot;highlight&quot;:&quot;html&quot;,&quot;label&quot;:&quot;HTML&quot;,&quot;snippet&quot;:&quot;&lt;!--\n  This example requires Tailwind CSS v2.0+ \n  \n  This example requires some changes to your config:\n  \n  ```\n  \/\/ tailwind.config.js\n  module.exports = {\n    \/\/ ...\n    plugins: [\n      \/\/ ...\n      require(&#039;@tailwindcss\/forms&#039;),\n    ],\n  }\n  ```\n--&gt;\n&lt;div class=\&quot;bg-gray-800\&quot;&gt;\n  &lt;div class=\&quot;max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 lg:flex lg:justify-between\&quot;&gt;\n    &lt;div class=\&quot;max-w-xl\&quot;&gt;\n      &lt;h2 class=\&quot;text-4xl font-extrabold text-white sm:text-5xl sm:tracking-tight lg:text-6xl\&quot;&gt;Pricing Plans&lt;\/h2&gt;\n      &lt;p class=\&quot;mt-5 text-xl text-gray-400\&quot;&gt;Start building for free, then add a site plan to go live. Account plans unlock additional features.&lt;\/p&gt;\n    &lt;\/div&gt;\n    &lt;div class=\&quot;mt-10 w-full max-w-xs\&quot;&gt;\n      &lt;label for=\&quot;currency\&quot; class=\&quot;block text-base font-medium text-gray-300\&quot;&gt;Currency&lt;\/label&gt;\n      &lt;div class=\&quot;mt-1.5 relative\&quot;&gt;\n        &lt;select id=\&quot;currency\&quot; name=\&quot;currency\&quot; class=\&quot;appearance-none block w-full bg-none bg-gray-700 border border-transparent rounded-md pl-3 pr-10 py-2 text-base text-white focus:outline-none focus:ring-1 focus:ring-white focus:border-white sm:text-sm\&quot;&gt;\n          &lt;option&gt;Argentina (ARS)&lt;\/option&gt;\n          &lt;option&gt;Australia (AUD)&lt;\/option&gt;\n          &lt;option selected&gt;United States (USD)&lt;\/option&gt;\n          &lt;option&gt;Canada (CAD)&lt;\/option&gt;\n          &lt;option&gt;France (EUR)&lt;\/option&gt;\n          &lt;option&gt;Japan (JPY)&lt;\/option&gt;\n          &lt;option&gt;Nigeria (NGN)&lt;\/option&gt;\n          &lt;option&gt;Switzerland (CHF)&lt;\/option&gt;\n          &lt;option&gt;United Kingdom (GBP)&lt;\/option&gt;\n        &lt;\/select&gt;\n        &lt;div class=\&quot;pointer-events-none absolute inset-y-0 right-0 px-2 flex items-center\&quot;&gt;\n          &lt;!-- Heroicon name: solid\/chevron-down --&gt;\n          &lt;svg class=\&quot;h-4 w-4 text-white\&quot; xmlns=\&quot;http:\/\/www.w3.org\/2000\/svg\&quot; viewBox=\&quot;0 0 20 20\&quot; fill=\&quot;currentColor\&quot; aria-hidden=\&quot;true\&quot;&gt;\n            &lt;path fill-rule=\&quot;evenodd\&quot; d=\&quot;M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z\&quot; clip-rule=\&quot;evenodd\&quot; \/&gt;\n          &lt;\/svg&gt;\n        &lt;\/div&gt;\n      &lt;\/div&gt;\n    &lt;\/div&gt;\n  &lt;\/div&gt;\n&lt;\/div&gt;\n&quot;},{&quot;language&quot;:&quot;react&quot;,&quot;highlight&quot;:&quot;jsx&quot;,&quot;label&quot;:&quot;React&quot;,&quot;snippet&quot;:&quot;\/*\n  This example requires Tailwind CSS v2.0+ \n  \n  This example requires some changes to your config:\n  \n  ```\n  \/\/ tailwind.config.js\n  module.exports = {\n    \/\/ ...\n    plugins: [\n      \/\/ ...\n      require(&#039;@tailwindcss\/forms&#039;),\n    ],\n  }\n  ```\n*\/\nimport { ChevronDownIcon } from &#039;@heroicons\/react\/solid&#039;\n\nexport default function Example() {\n  return (\n    &lt;div className=\&quot;bg-gray-800\&quot;&gt;\n      &lt;div className=\&quot;max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 lg:flex lg:justify-between\&quot;&gt;\n        &lt;div className=\&quot;max-w-xl\&quot;&gt;\n          &lt;h2 className=\&quot;text-4xl font-extrabold text-white sm:text-5xl sm:tracking-tight lg:text-6xl\&quot;&gt;\n            Pricing Plans\n          &lt;\/h2&gt;\n          &lt;p className=\&quot;mt-5 text-xl text-gray-400\&quot;&gt;\n            Start building for free, then add a site plan to go live. Account plans unlock additional features.\n          &lt;\/p&gt;\n        &lt;\/div&gt;\n        &lt;div className=\&quot;mt-10 w-full max-w-xs\&quot;&gt;\n          &lt;label htmlFor=\&quot;currency\&quot; className=\&quot;block text-base font-medium text-gray-300\&quot;&gt;\n            Currency\n          &lt;\/label&gt;\n          &lt;div className=\&quot;mt-1.5 relative\&quot;&gt;\n            &lt;select\n              id=\&quot;currency\&quot;\n              name=\&quot;currency\&quot;\n              className=\&quot;appearance-none block w-full bg-none bg-gray-700 border border-transparent rounded-md pl-3 pr-10 py-2 text-base text-white focus:outline-none focus:ring-1 focus:ring-white focus:border-white sm:text-sm\&quot;\n              defaultValue=\&quot;United States (USD)\&quot;\n            &gt;\n              &lt;option&gt;Argentina (ARS)&lt;\/option&gt;\n              &lt;option&gt;Australia (AUD)&lt;\/option&gt;\n              &lt;option&gt;United States (USD)&lt;\/option&gt;\n              &lt;option&gt;Canada (CAD)&lt;\/option&gt;\n              &lt;option&gt;France (EUR)&lt;\/option&gt;\n              &lt;option&gt;Japan (JPY)&lt;\/option&gt;\n              &lt;option&gt;Nigeria (NGN)&lt;\/option&gt;\n              &lt;option&gt;Switzerland (CHF)&lt;\/option&gt;\n              &lt;option&gt;United Kingdom (GBP)&lt;\/option&gt;\n            &lt;\/select&gt;\n            &lt;div className=\&quot;pointer-events-none absolute inset-y-0 right-0 px-2 flex items-center\&quot;&gt;\n              &lt;ChevronDownIcon className=\&quot;h-4 w-4 text-white\&quot; aria-hidden=\&quot;true\&quot; \/&gt;\n            &lt;\/div&gt;\n          &lt;\/div&gt;\n        &lt;\/div&gt;\n      &lt;\/div&gt;\n    &lt;\/div&gt;\n  )\n}\n&quot;},{&quot;language&quot;:&quot;vue&quot;,&quot;highlight&quot;:&quot;html&quot;,&quot;label&quot;:&quot;Vue&quot;,&quot;snippet&quot;:&quot;&lt;!--\n  This example requires Tailwind CSS v2.0+ \n  \n  This example requires some changes to your config:\n  \n  ```\n  \/\/ tailwind.config.js\n  module.exports = {\n    \/\/ ...\n    plugins: [\n      \/\/ ...\n      require(&#039;@tailwindcss\/forms&#039;),\n    ],\n  }\n  ```\n--&gt;\n&lt;template&gt;\n  &lt;div class=\&quot;bg-gray-800\&quot;&gt;\n    &lt;div class=\&quot;max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 lg:flex lg:justify-between\&quot;&gt;\n      &lt;div class=\&quot;max-w-xl\&quot;&gt;\n        &lt;h2 class=\&quot;text-4xl font-extrabold text-white sm:text-5xl sm:tracking-tight lg:text-6xl\&quot;&gt;Pricing Plans&lt;\/h2&gt;\n        &lt;p class=\&quot;mt-5 text-xl text-gray-400\&quot;&gt;Start building for free, then add a site plan to go live. Account plans unlock additional features.&lt;\/p&gt;\n      &lt;\/div&gt;\n      &lt;div class=\&quot;mt-10 w-full max-w-xs\&quot;&gt;\n        &lt;label for=\&quot;currency\&quot; class=\&quot;block text-base font-medium text-gray-300\&quot;&gt;Currency&lt;\/label&gt;\n        &lt;div class=\&quot;mt-1.5 relative\&quot;&gt;\n          &lt;select id=\&quot;currency\&quot; name=\&quot;currency\&quot; class=\&quot;appearance-none block w-full bg-none bg-gray-700 border border-transparent rounded-md pl-3 pr-10 py-2 text-base text-white focus:outline-none focus:ring-1 focus:ring-white focus:border-white sm:text-sm\&quot;&gt;\n            &lt;option&gt;Argentina (ARS)&lt;\/option&gt;\n            &lt;option&gt;Australia (AUD)&lt;\/option&gt;\n            &lt;option selected=\&quot;\&quot;&gt;United States (USD)&lt;\/option&gt;\n            &lt;option&gt;Canada (CAD)&lt;\/option&gt;\n            &lt;option&gt;France (EUR)&lt;\/option&gt;\n            &lt;option&gt;Japan (JPY)&lt;\/option&gt;\n            &lt;option&gt;Nigeria (NGN)&lt;\/option&gt;\n            &lt;option&gt;Switzerland (CHF)&lt;\/option&gt;\n            &lt;option&gt;United Kingdom (GBP)&lt;\/option&gt;\n          &lt;\/select&gt;\n          &lt;div class=\&quot;pointer-events-none absolute inset-y-0 right-0 px-2 flex items-center\&quot;&gt;\n            &lt;ChevronDownIcon class=\&quot;h-4 w-4 text-white\&quot; aria-hidden=\&quot;true\&quot; \/&gt;\n          &lt;\/div&gt;\n        &lt;\/div&gt;\n      &lt;\/div&gt;\n    &lt;\/div&gt;\n  &lt;\/div&gt;\n&lt;\/template&gt;\n\n&lt;script&gt;\nimport { ChevronDownIcon } from &#039;@heroicons\/vue\/solid&#039;\n\nexport default {\n  components: {\n    ChevronDownIcon,\n  },\n}\n&lt;\/script&gt;&quot;}] })"
+  x-init="init()"
+>
+  <div class="flex items-center mb-3 whitespace-nowrap">
+    <h2 id="heading-89bb1d244fc65729fdeeec97fb00a404" class="font-medium text-gray-900 truncate">
+      <a href="#component-89bb1d244fc65729fdeeec97fb00a404" class="mr-1">Simple with select menu dark</a>
+    </h2>
+            <div class="flex-none flex items-center ml-auto pl-4 sm:pl-6">
+      <div class="group p-0.5 rounded-lg flex bg-gray-100 hover:bg-gray-200">
+        <button x-ref="preview" type="button" class="flex focus-visible:ring-2 focus-visible:ring-teal-500 focus-visible:ring-offset-2 rounded-md focus:outline-none focus-visible:ring-offset-gray-100" @click="activeTab = 'preview'" :tabindex="activeTab === 'preview' ? '0' : '-1'" @keydown.arrow-left="activeTab = 'code'" @keydown.arrow-right="activeTab = 'code'">
+          <span x-show="false" class="p-1.5 lg:pl-2.5 lg:pr-3.5 rounded-md flex items-center text-sm font-medium bg-white shadow-sm ring-1 ring-black ring-opacity-5">
+            <svg aria-hidden="true" width="20" height="20" fill="none" class="lg:mr-2 text-teal-500">
+              <path d="M17.25 10c0 1-1.75 6.25-7.25 6.25S2.75 11 2.75 10 4.5 3.75 10 3.75 17.25 9 17.25 10z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="10" cy="10" r="2.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="text-gray-900 sr-only lg:not-sr-only">Preview</span>
+          </span>
+          <span x-show="true" style="display:none" class="p-1.5 lg:pl-2.5 lg:pr-3.5 rounded-md flex items-center text-sm font-medium" :class="activeTab === 'preview' ? 'bg-white shadow-sm ring-1 ring-black ring-opacity-5' : ''">
+            <svg aria-hidden="true" width="20" height="20" fill="none" class="lg:mr-2" :class="activeTab === 'preview' ? 'text-teal-500' : 'text-gray-500 group-hover:text-gray-900'">
+              <path d="M17.25 10c0 1-1.75 6.25-7.25 6.25S2.75 11 2.75 10 4.5 3.75 10 3.75 17.25 9 17.25 10z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="10" cy="10" r="2.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="sr-only lg:not-sr-only" :class="activeTab === 'preview' ? 'text-gray-900' : 'text-gray-600 group-hover:text-gray-900'">Preview</span>
+          </span>
+        </button>
+        <button x-ref="code" type="button" class="ml-0.5 p-1.5 lg:pl-2.5 lg:pr-3.5 rounded-md flex items-center text-sm text-gray-600 font-medium focus-visible:ring-2 focus-visible:ring-teal-500 focus-visible:ring-offset-2 focus:outline-none focus-visible:ring-offset-gray-100" :class="activeTab === 'code' ? 'bg-white shadow-sm ring-1 ring-black ring-opacity-5' : ''" @click="activeTab = 'code'" tabindex="-1" :tabindex="activeTab === 'code' ? '0' : '-1'" @keydown.arrow-left="activeTab = 'preview'" @keydown.arrow-right="activeTab = 'preview'">
+          <svg aria-hidden="true" width="20" height="20" fill="none" class="lg:mr-2" :class="activeTab === 'code' ? 'text-teal-500' : 'text-gray-500 group-hover:text-gray-900'">
+            <path d="M13.75 6.75l3.5 3.25-3.5 3.25M6.25 13.25L2.75 10l3.5-3.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="sr-only lg:not-sr-only" :class="activeTab === 'code' ? 'text-gray-900' : 'text-gray-600 group-hover:text-gray-900'">Code</span>
+        </button>
+      </div>
+
+      <div class="hidden sm:block w-px h-6 bg-gray-200 ml-6"></div>
+
+            <div class="relative hidden sm:block ml-2.5">
+        <div x-show="false" aria-hidden="true">
+          <div class="absolute inset-0">
+                          <select tabindex="-1" class="placeholder-html bg-transparent text-gray-900 rounded-none border-0 form-select p-0 pl-3.5 pr-[1.875rem] h-9 w-full sm:text-sm font-medium pointer-events-none" style="background-image:none;">
+                <option>HTML</option>
+              </select>
+                          <select tabindex="-1" class="placeholder-react bg-transparent text-gray-900 rounded-none border-0 form-select p-0 pl-3.5 pr-[1.875rem] h-9 w-full sm:text-sm font-medium pointer-events-none" style="background-image:none;">
+                <option>React</option>
+              </select>
+                          <select tabindex="-1" class="placeholder-vue bg-transparent text-gray-900 rounded-none border-0 form-select p-0 pl-3.5 pr-[1.875rem] h-9 w-full sm:text-sm font-medium pointer-events-none" style="background-image:none;">
+                <option>Vue</option>
+              </select>
+                      </div>
+        </div>
+        <div style="opacity:0" :style="'opacity:1'">
+          <select x-model="activeSnippet" class="bg-transparent text-gray-900 rounded-lg border-0 form-select p-0 pl-3.5 pr-[1.875rem] h-9 w-full sm:text-sm font-medium focus:shadow-none focus-visible:ring-2 focus-visible:ring-teal-500" style="background-image:none;">
+                          <option value="html">HTML</option>
+                          <option value="react">React</option>
+                          <option value="vue">Vue</option>
+                      </select>
+        </div>
+        <svg aria-hidden="true" viewBox="0 0 8 6" width="8" height="6" fill="none" class="absolute inset-y-0 right-3.5 h-full pointer-events-none">
+          <path d="M7 1.5l-3 3-3-3" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </div>
+      
+      <button type="button" class="hidden sm:flex sm:items-center sm:justify-center relative w-9 h-9 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 text-gray-400 hover:text-gray-600 group ml-2.5" :style="copied ? 'color:#06B6D4' : ''" @click="navigator.clipboard.writeText(snippets.find(s=>s.language===activeSnippet).snippet).then(()=>{copied=true;clearTimeout(copyTimeout);copyTimeout=setTimeout(()=>{copied=false},1500)})">
+        <span class="sr-only">Copy code</span>
+        <span x-show="copied" style="display:none" class="absolute inset-x-0 bottom-full mb-2.5 flex justify-center" x-transition:enter="transform ease-out duration-200 transition origin-bottom" x-transition:enter-start="scale-95 translate-y-0.5 opacity-0" x-transition:enter-end="scale-100 translate-y-0 opacity-100" x-transition:leave="transition ease-in duration-100" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
+          <span class="bg-gray-900 text-white rounded-md text-[0.625rem] leading-4 tracking-wide font-semibold uppercase py-1 px-3 filter drop-shadow-md">
+            <svg aria-hidden="true" width="16" height="6" viewBox="0 0 16 6" class="text-gray-900 absolute top-full left-1/2 -mt-px -ml-2">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M15 0H1V1.00366V1.00366V1.00371H1.01672C2.72058 1.0147 4.24225 2.74704 5.42685 4.72928C6.42941 6.40691 9.57154 6.4069 10.5741 4.72926C11.7587 2.74703 13.2803 1.0147 14.9841 1.00371H15V0Z" fill="currentColor"/>
+            </svg>
+            Copied!
+          </span>
+        </span>
+        <svg aria-hidden="true" width="32" height="32" viewBox="0 0 32 32" fill="none" class="stroke-current transform group-hover:rotate-[-4deg] transition" :style="copied ? '--tw-rotate:-8deg;' : ''">
+          <path d="M12.9975 10.7499L11.7475 10.7499C10.6429 10.7499 9.74747 11.6453 9.74747 12.7499L9.74747 21.2499C9.74747 22.3544 10.6429 23.2499 11.7475 23.2499L20.2475 23.2499C21.352 23.2499 22.2475 22.3544 22.2475 21.2499L22.2475 12.7499C22.2475 11.6453 21.352 10.7499 20.2475 10.7499L18.9975 10.7499" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M17.9975 12.2499L13.9975 12.2499C13.4452 12.2499 12.9975 11.8022 12.9975 11.2499L12.9975 9.74988C12.9975 9.19759 13.4452 8.74988 13.9975 8.74988L17.9975 8.74988C18.5498 8.74988 18.9975 9.19759 18.9975 9.74988L18.9975 11.2499C18.9975 11.8022 18.5498 12.2499 17.9975 12.2499Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M13.7475 16.2499L18.2475 16.2499" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M13.7475 19.2499L18.2475 19.2499" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          <g x-cloak :class="[copied ? '' : 'opacity-0', initialized ? 'transition-opacity' : '']">
+            <path d="M15.9975 5.99988L15.9975 3.99988" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M19.9975 5.99988L20.9975 4.99988" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M11.9975 5.99988L10.9975 4.99988" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </g>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <style>
+    #frame-89bb1d244fc65729fdeeec97fb00a404 {
+      height: 384px;
+    }
+    @media (min-width: 704px) {
+      #frame-89bb1d244fc65729fdeeec97fb00a404 {
+        height: 328px;
+      }
+    }
+  </style>
+  <div class="relative bg-gray-500 rounded-lg ring-1 ring-gray-900 ring-opacity-5 overflow-hidden">
+    <div :class="{ 'block': activeTab === 'preview', 'hidden': activeTab !== 'preview' }" class="block">
+      <div x-data="resizableIFrame()" x-init="init()" x-ref="root" :style="'max-width: 100%; width: ' + width" class="min-w-full sm:min-w-[392px] relative sm:pr-4">
+        <div id="frame-89bb1d244fc65729fdeeec97fb00a404" class="bg-white">
+          <iframe x-ref="iframe" title="Simple with select menu dark preview" aria-label="Simple with select menu dark preview" name="frame-89bb1d244fc65729fdeeec97fb00a404" class="w-full rounded-lg overflow-hidden sm:rounded-r-none" srcdoc="&lt;!doctype html&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, shrink-to-fit=no&quot;&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;/css/components-v2.css&quot;&gt;&lt;script src=&quot;/js/components-v2.js&quot;&gt;&lt;/script&gt;&lt;script src=&quot;/js/iframe.js&quot; defer&gt;&lt;/script&gt;&lt;script src=&quot;/js/alpine.js&quot; defer&gt;&lt;/script&gt;&lt;body class=&quot;antialiased font-sans bg-gray-200 overflow-hidden&quot;&gt;&lt;div class=&quot;&quot; style=&quot;&quot;&gt;
+  
+  &lt;div class=&quot;bg-gray-800&quot;&gt;
+    &lt;div class=&quot;max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 lg:flex lg:justify-between&quot;&gt;
+      &lt;div class=&quot;max-w-xl&quot;&gt;
+        &lt;h2 class=&quot;text-4xl font-extrabold text-white sm:text-5xl sm:tracking-tight lg:text-6xl&quot;&gt;Pricing Plans&lt;/h2&gt;
+        &lt;p class=&quot;mt-5 text-xl text-gray-400&quot;&gt;Start building for free, then add a site plan to go live. Account plans unlock additional features.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;mt-10 w-full max-w-xs&quot;&gt;
+        &lt;label for=&quot;currency&quot; class=&quot;block text-base font-medium text-gray-300&quot;&gt;Currency&lt;/label&gt;
+        &lt;div class=&quot;mt-1.5 relative&quot;&gt;
+          &lt;select id=&quot;currency&quot; name=&quot;currency&quot; class=&quot;appearance-none block w-full bg-none bg-gray-700 border border-transparent rounded-md pl-3 pr-10 py-2 text-base text-white focus:outline-none focus:ring-1 focus:ring-white focus:border-white sm:text-sm&quot;&gt;
+            &lt;option&gt;Argentina (ARS)&lt;/option&gt;
+            &lt;option&gt;Australia (AUD)&lt;/option&gt;
+            &lt;option selected&gt;United States (USD)&lt;/option&gt;
+            &lt;option&gt;Canada (CAD)&lt;/option&gt;
+            &lt;option&gt;France (EUR)&lt;/option&gt;
+            &lt;option&gt;Japan (JPY)&lt;/option&gt;
+            &lt;option&gt;Nigeria (NGN)&lt;/option&gt;
+            &lt;option&gt;Switzerland (CHF)&lt;/option&gt;
+            &lt;option&gt;United Kingdom (GBP)&lt;/option&gt;
+          &lt;/select&gt;
+          &lt;div class=&quot;pointer-events-none absolute inset-y-0 right-0 px-2 flex items-center&quot;&gt;
+            &lt;svg class=&quot;h-4 w-4 text-white&quot; x-description=&quot;Heroicon name: solid/chevron-down&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 20 20&quot; fill=&quot;currentColor&quot; aria-hidden=&quot;true&quot;&gt;
+  &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z&quot; clip-rule=&quot;evenodd&quot;&gt;&lt;/path&gt;
+&lt;/svg&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;/div&gt;&lt;/body&gt;" style="opacity:0"></iframe>
+          <div :class="{ 'pointer-events-none': !resizing }" class="hidden absolute opacity-0 inset-0 mr-4 pointer-events-none sm:block"></div>
+          <div x-ref="handle" @pointerdown="onResizeStart($event)" class="sr-only sm:not-sr-only sm:border-l sm:bg-gray-100 sm:absolute sm:right-0 sm:inset-y-0 sm:flex sm:items-center sm:w-4 cursor-[ew-resize]" style="touch-action: none">
+            <div class="absolute inset-y-0 -inset-x-2"></div>
+            <svg aria-hidden="true" class="h-4 w-4 text-gray-600 pointer-events-none" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5h2v14H8zM14 5h2v14h-2z" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div :class="{ 'block': activeTab === 'code', 'hidden': activeTab !== 'code' }" class="hidden bg-gray-800">
+      <ul role="list" class="flex sm:hidden px-4 border-b border-gray-700 space-x-2">
+                  <li class="py-1 border-b -mb-px" :class="activeSnippet === 'html' ? 'border-teal-400' : 'border-transparent'">
+            <button type="button" class="text-sm font-medium p-2" :class="activeSnippet === 'html' ? 'text-teal-400' : 'text-gray-400'" @click="activeSnippet = 'html'">HTML</button>
+          </li>
+                  <li class="py-1 border-b -mb-px" :class="activeSnippet === 'react' ? 'border-teal-400' : 'border-transparent'">
+            <button type="button" class="text-sm font-medium p-2" :class="activeSnippet === 'react' ? 'text-teal-400' : 'text-gray-400'" @click="activeSnippet = 'react'">React</button>
+          </li>
+                  <li class="py-1 border-b -mb-px" :class="activeSnippet === 'vue' ? 'border-teal-400' : 'border-transparent'">
+            <button type="button" class="text-sm font-medium p-2" :class="activeSnippet === 'vue' ? 'text-teal-400' : 'text-gray-400'" @click="activeSnippet = 'vue'">Vue</button>
+          </li>
+              </ul>
+            <pre @copy="onCopy($event)" :class="{'block': activeSnippet === 'html', 'hidden': activeSnippet !== 'html' }" class="language-html block scrollbar-none m-0 p-0 overflow-auto text-white text-sm leading-normal"><code class="inline-block p-4 scrolling-touch subpixel-antialiased" x-ref="codeBlockhtml"></code></pre>
+            <pre @copy="onCopy($event)" :class="{'block': activeSnippet === 'react', 'hidden': activeSnippet !== 'react' }" class="language-jsx block scrollbar-none m-0 p-0 overflow-auto text-white text-sm leading-normal"><code class="inline-block p-4 scrolling-touch subpixel-antialiased" x-ref="codeBlockreact"></code></pre>
+            <pre @copy="onCopy($event)" :class="{'block': activeSnippet === 'vue', 'hidden': activeSnippet !== 'vue' }" class="language-html block scrollbar-none m-0 p-0 overflow-auto text-white text-sm leading-normal"><code class="inline-block p-4 scrolling-touch subpixel-antialiased" x-ref="codeBlockvue"></code></pre>
+          </div>
+  </div>
+  
+</section>
+              <section
+  aria-labelledby="heading-4a7d4e3bae3742e75cde89fd1656877b"
+  id="component-4a7d4e3bae3742e75cde89fd1656877b"
+  x-data="componentPreview({ userId: 26664, languages: [&quot;html&quot;,&quot;react&quot;,&quot;vue&quot;], activeSnippet: getActiveSnippet(), snippets: [{&quot;language&quot;:&quot;html&quot;,&quot;highlight&quot;:&quot;html&quot;,&quot;label&quot;:&quot;HTML&quot;,&quot;snippet&quot;:&quot;&lt;!--\n  This example requires Tailwind CSS v2.0+ \n  \n  This example requires some changes to your config:\n  \n  ```\n  \/\/ tailwind.config.js\n  module.exports = {\n    \/\/ ...\n    plugins: [\n      \/\/ ...\n      require(&#039;@tailwindcss\/forms&#039;),\n    ],\n  }\n  ```\n--&gt;\n&lt;div class=\&quot;bg-white\&quot;&gt;\n  &lt;div class=\&quot;max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 lg:flex lg:justify-between\&quot;&gt;\n    &lt;div class=\&quot;max-w-xl\&quot;&gt;\n      &lt;h2 class=\&quot;text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl\&quot;&gt;Pricing Plans&lt;\/h2&gt;\n      &lt;p class=\&quot;mt-5 text-xl text-gray-500\&quot;&gt;Start building for free, then add a site plan to go live. Account plans unlock additional features.&lt;\/p&gt;\n    &lt;\/div&gt;\n    &lt;div class=\&quot;mt-10 w-full max-w-xs\&quot;&gt;\n      &lt;label for=\&quot;currency\&quot; class=\&quot;block text-base font-medium text-gray-500\&quot;&gt;Currency&lt;\/label&gt;\n      &lt;div class=\&quot;mt-1.5 relative\&quot;&gt;\n        &lt;select id=\&quot;currency\&quot; name=\&quot;currency\&quot; class=\&quot;appearance-none block w-full bg-none bg-white border border-gray-300 rounded-md pl-3 pr-10 py-2 text-base text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm\&quot;&gt;\n          &lt;option&gt;Argentina (ARS)&lt;\/option&gt;\n          &lt;option&gt;Australia (AUD)&lt;\/option&gt;\n          &lt;option selected&gt;United States (USD)&lt;\/option&gt;\n          &lt;option&gt;Canada (CAD)&lt;\/option&gt;\n          &lt;option&gt;France (EUR)&lt;\/option&gt;\n          &lt;option&gt;Japan (JPY)&lt;\/option&gt;\n          &lt;option&gt;Nigeria (NGN)&lt;\/option&gt;\n          &lt;option&gt;Switzerland (CHF)&lt;\/option&gt;\n          &lt;option&gt;United Kingdom (GBP)&lt;\/option&gt;\n        &lt;\/select&gt;\n        &lt;div class=\&quot;pointer-events-none absolute inset-y-0 right-0 px-2 flex items-center\&quot;&gt;\n          &lt;!-- Heroicon name: solid\/chevron-down --&gt;\n          &lt;svg class=\&quot;h-4 w-4 text-gray-400\&quot; xmlns=\&quot;http:\/\/www.w3.org\/2000\/svg\&quot; viewBox=\&quot;0 0 20 20\&quot; fill=\&quot;currentColor\&quot; aria-hidden=\&quot;true\&quot;&gt;\n            &lt;path fill-rule=\&quot;evenodd\&quot; d=\&quot;M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z\&quot; clip-rule=\&quot;evenodd\&quot; \/&gt;\n          &lt;\/svg&gt;\n        &lt;\/div&gt;\n      &lt;\/div&gt;\n    &lt;\/div&gt;\n  &lt;\/div&gt;\n&lt;\/div&gt;\n&quot;},{&quot;language&quot;:&quot;react&quot;,&quot;highlight&quot;:&quot;jsx&quot;,&quot;label&quot;:&quot;React&quot;,&quot;snippet&quot;:&quot;\/*\n  This example requires Tailwind CSS v2.0+ \n  \n  This example requires some changes to your config:\n  \n  ```\n  \/\/ tailwind.config.js\n  module.exports = {\n    \/\/ ...\n    plugins: [\n      \/\/ ...\n      require(&#039;@tailwindcss\/forms&#039;),\n    ],\n  }\n  ```\n*\/\nimport { ChevronDownIcon } from &#039;@heroicons\/react\/solid&#039;\n\nexport default function Example() {\n  return (\n    &lt;div className=\&quot;bg-white\&quot;&gt;\n      &lt;div className=\&quot;max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 lg:flex lg:justify-between\&quot;&gt;\n        &lt;div className=\&quot;max-w-xl\&quot;&gt;\n          &lt;h2 className=\&quot;text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl\&quot;&gt;\n            Pricing Plans\n          &lt;\/h2&gt;\n          &lt;p className=\&quot;mt-5 text-xl text-gray-500\&quot;&gt;\n            Start building for free, then add a site plan to go live. Account plans unlock additional features.\n          &lt;\/p&gt;\n        &lt;\/div&gt;\n        &lt;div className=\&quot;mt-10 w-full max-w-xs\&quot;&gt;\n          &lt;label htmlFor=\&quot;currency\&quot; className=\&quot;block text-base font-medium text-gray-500\&quot;&gt;\n            Currency\n          &lt;\/label&gt;\n          &lt;div className=\&quot;mt-1.5 relative\&quot;&gt;\n            &lt;select\n              id=\&quot;currency\&quot;\n              name=\&quot;currency\&quot;\n              className=\&quot;appearance-none block w-full bg-none bg-white border border-gray-300 rounded-md pl-3 pr-10 py-2 text-base text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm\&quot;\n              defaultValue=\&quot;United States (USD)\&quot;\n            &gt;\n              &lt;option&gt;Argentina (ARS)&lt;\/option&gt;\n              &lt;option&gt;Australia (AUD)&lt;\/option&gt;\n              &lt;option&gt;United States (USD)&lt;\/option&gt;\n              &lt;option&gt;Canada (CAD)&lt;\/option&gt;\n              &lt;option&gt;France (EUR)&lt;\/option&gt;\n              &lt;option&gt;Japan (JPY)&lt;\/option&gt;\n              &lt;option&gt;Nigeria (NGN)&lt;\/option&gt;\n              &lt;option&gt;Switzerland (CHF)&lt;\/option&gt;\n              &lt;option&gt;United Kingdom (GBP)&lt;\/option&gt;\n            &lt;\/select&gt;\n            &lt;div className=\&quot;pointer-events-none absolute inset-y-0 right-0 px-2 flex items-center\&quot;&gt;\n              &lt;ChevronDownIcon className=\&quot;h-4 w-4 text-gray-400\&quot; aria-hidden=\&quot;true\&quot; \/&gt;\n            &lt;\/div&gt;\n          &lt;\/div&gt;\n        &lt;\/div&gt;\n      &lt;\/div&gt;\n    &lt;\/div&gt;\n  )\n}\n&quot;},{&quot;language&quot;:&quot;vue&quot;,&quot;highlight&quot;:&quot;html&quot;,&quot;label&quot;:&quot;Vue&quot;,&quot;snippet&quot;:&quot;&lt;!--\n  This example requires Tailwind CSS v2.0+ \n  \n  This example requires some changes to your config:\n  \n  ```\n  \/\/ tailwind.config.js\n  module.exports = {\n    \/\/ ...\n    plugins: [\n      \/\/ ...\n      require(&#039;@tailwindcss\/forms&#039;),\n    ],\n  }\n  ```\n--&gt;\n&lt;template&gt;\n  &lt;div class=\&quot;bg-white\&quot;&gt;\n    &lt;div class=\&quot;max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 lg:flex lg:justify-between\&quot;&gt;\n      &lt;div class=\&quot;max-w-xl\&quot;&gt;\n        &lt;h2 class=\&quot;text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl\&quot;&gt;Pricing Plans&lt;\/h2&gt;\n        &lt;p class=\&quot;mt-5 text-xl text-gray-500\&quot;&gt;Start building for free, then add a site plan to go live. Account plans unlock additional features.&lt;\/p&gt;\n      &lt;\/div&gt;\n      &lt;div class=\&quot;mt-10 w-full max-w-xs\&quot;&gt;\n        &lt;label for=\&quot;currency\&quot; class=\&quot;block text-base font-medium text-gray-500\&quot;&gt;Currency&lt;\/label&gt;\n        &lt;div class=\&quot;mt-1.5 relative\&quot;&gt;\n          &lt;select id=\&quot;currency\&quot; name=\&quot;currency\&quot; class=\&quot;appearance-none block w-full bg-none bg-white border border-gray-300 rounded-md pl-3 pr-10 py-2 text-base text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm\&quot;&gt;\n            &lt;option&gt;Argentina (ARS)&lt;\/option&gt;\n            &lt;option&gt;Australia (AUD)&lt;\/option&gt;\n            &lt;option selected=\&quot;\&quot;&gt;United States (USD)&lt;\/option&gt;\n            &lt;option&gt;Canada (CAD)&lt;\/option&gt;\n            &lt;option&gt;France (EUR)&lt;\/option&gt;\n            &lt;option&gt;Japan (JPY)&lt;\/option&gt;\n            &lt;option&gt;Nigeria (NGN)&lt;\/option&gt;\n            &lt;option&gt;Switzerland (CHF)&lt;\/option&gt;\n            &lt;option&gt;United Kingdom (GBP)&lt;\/option&gt;\n          &lt;\/select&gt;\n          &lt;div class=\&quot;pointer-events-none absolute inset-y-0 right-0 px-2 flex items-center\&quot;&gt;\n            &lt;ChevronDownIcon class=\&quot;h-4 w-4 text-gray-400\&quot; aria-hidden=\&quot;true\&quot; \/&gt;\n          &lt;\/div&gt;\n        &lt;\/div&gt;\n      &lt;\/div&gt;\n    &lt;\/div&gt;\n  &lt;\/div&gt;\n&lt;\/template&gt;\n\n&lt;script&gt;\nimport { ChevronDownIcon } from &#039;@heroicons\/vue\/solid&#039;\n\nexport default {\n  components: {\n    ChevronDownIcon,\n  },\n}\n&lt;\/script&gt;&quot;}] })"
+  x-init="init()"
+>
+  <div class="flex items-center mb-3 whitespace-nowrap">
+    <h2 id="heading-4a7d4e3bae3742e75cde89fd1656877b" class="font-medium text-gray-900 truncate">
+      <a href="#component-4a7d4e3bae3742e75cde89fd1656877b" class="mr-1">Simple with select menu</a>
+    </h2>
+            <div class="flex-none flex items-center ml-auto pl-4 sm:pl-6">
+      <div class="group p-0.5 rounded-lg flex bg-gray-100 hover:bg-gray-200">
+        <button x-ref="preview" type="button" class="flex focus-visible:ring-2 focus-visible:ring-teal-500 focus-visible:ring-offset-2 rounded-md focus:outline-none focus-visible:ring-offset-gray-100" @click="activeTab = 'preview'" :tabindex="activeTab === 'preview' ? '0' : '-1'" @keydown.arrow-left="activeTab = 'code'" @keydown.arrow-right="activeTab = 'code'">
+          <span x-show="false" class="p-1.5 lg:pl-2.5 lg:pr-3.5 rounded-md flex items-center text-sm font-medium bg-white shadow-sm ring-1 ring-black ring-opacity-5">
+            <svg aria-hidden="true" width="20" height="20" fill="none" class="lg:mr-2 text-teal-500">
+              <path d="M17.25 10c0 1-1.75 6.25-7.25 6.25S2.75 11 2.75 10 4.5 3.75 10 3.75 17.25 9 17.25 10z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="10" cy="10" r="2.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="text-gray-900 sr-only lg:not-sr-only">Preview</span>
+          </span>
+          <span x-show="true" style="display:none" class="p-1.5 lg:pl-2.5 lg:pr-3.5 rounded-md flex items-center text-sm font-medium" :class="activeTab === 'preview' ? 'bg-white shadow-sm ring-1 ring-black ring-opacity-5' : ''">
+            <svg aria-hidden="true" width="20" height="20" fill="none" class="lg:mr-2" :class="activeTab === 'preview' ? 'text-teal-500' : 'text-gray-500 group-hover:text-gray-900'">
+              <path d="M17.25 10c0 1-1.75 6.25-7.25 6.25S2.75 11 2.75 10 4.5 3.75 10 3.75 17.25 9 17.25 10z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="10" cy="10" r="2.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="sr-only lg:not-sr-only" :class="activeTab === 'preview' ? 'text-gray-900' : 'text-gray-600 group-hover:text-gray-900'">Preview</span>
+          </span>
+        </button>
+        <button x-ref="code" type="button" class="ml-0.5 p-1.5 lg:pl-2.5 lg:pr-3.5 rounded-md flex items-center text-sm text-gray-600 font-medium focus-visible:ring-2 focus-visible:ring-teal-500 focus-visible:ring-offset-2 focus:outline-none focus-visible:ring-offset-gray-100" :class="activeTab === 'code' ? 'bg-white shadow-sm ring-1 ring-black ring-opacity-5' : ''" @click="activeTab = 'code'" tabindex="-1" :tabindex="activeTab === 'code' ? '0' : '-1'" @keydown.arrow-left="activeTab = 'preview'" @keydown.arrow-right="activeTab = 'preview'">
+          <svg aria-hidden="true" width="20" height="20" fill="none" class="lg:mr-2" :class="activeTab === 'code' ? 'text-teal-500' : 'text-gray-500 group-hover:text-gray-900'">
+            <path d="M13.75 6.75l3.5 3.25-3.5 3.25M6.25 13.25L2.75 10l3.5-3.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="sr-only lg:not-sr-only" :class="activeTab === 'code' ? 'text-gray-900' : 'text-gray-600 group-hover:text-gray-900'">Code</span>
+        </button>
+      </div>
+
+      <div class="hidden sm:block w-px h-6 bg-gray-200 ml-6"></div>
+
+            <div class="relative hidden sm:block ml-2.5">
+        <div x-show="false" aria-hidden="true">
+          <div class="absolute inset-0">
+                          <select tabindex="-1" class="placeholder-html bg-transparent text-gray-900 rounded-none border-0 form-select p-0 pl-3.5 pr-[1.875rem] h-9 w-full sm:text-sm font-medium pointer-events-none" style="background-image:none;">
+                <option>HTML</option>
+              </select>
+                          <select tabindex="-1" class="placeholder-react bg-transparent text-gray-900 rounded-none border-0 form-select p-0 pl-3.5 pr-[1.875rem] h-9 w-full sm:text-sm font-medium pointer-events-none" style="background-image:none;">
+                <option>React</option>
+              </select>
+                          <select tabindex="-1" class="placeholder-vue bg-transparent text-gray-900 rounded-none border-0 form-select p-0 pl-3.5 pr-[1.875rem] h-9 w-full sm:text-sm font-medium pointer-events-none" style="background-image:none;">
+                <option>Vue</option>
+              </select>
+                      </div>
+        </div>
+        <div style="opacity:0" :style="'opacity:1'">
+          <select x-model="activeSnippet" class="bg-transparent text-gray-900 rounded-lg border-0 form-select p-0 pl-3.5 pr-[1.875rem] h-9 w-full sm:text-sm font-medium focus:shadow-none focus-visible:ring-2 focus-visible:ring-teal-500" style="background-image:none;">
+                          <option value="html">HTML</option>
+                          <option value="react">React</option>
+                          <option value="vue">Vue</option>
+                      </select>
+        </div>
+        <svg aria-hidden="true" viewBox="0 0 8 6" width="8" height="6" fill="none" class="absolute inset-y-0 right-3.5 h-full pointer-events-none">
+          <path d="M7 1.5l-3 3-3-3" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </div>
+      
+      <button type="button" class="hidden sm:flex sm:items-center sm:justify-center relative w-9 h-9 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 text-gray-400 hover:text-gray-600 group ml-2.5" :style="copied ? 'color:#06B6D4' : ''" @click="navigator.clipboard.writeText(snippets.find(s=>s.language===activeSnippet).snippet).then(()=>{copied=true;clearTimeout(copyTimeout);copyTimeout=setTimeout(()=>{copied=false},1500)})">
+        <span class="sr-only">Copy code</span>
+        <span x-show="copied" style="display:none" class="absolute inset-x-0 bottom-full mb-2.5 flex justify-center" x-transition:enter="transform ease-out duration-200 transition origin-bottom" x-transition:enter-start="scale-95 translate-y-0.5 opacity-0" x-transition:enter-end="scale-100 translate-y-0 opacity-100" x-transition:leave="transition ease-in duration-100" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
+          <span class="bg-gray-900 text-white rounded-md text-[0.625rem] leading-4 tracking-wide font-semibold uppercase py-1 px-3 filter drop-shadow-md">
+            <svg aria-hidden="true" width="16" height="6" viewBox="0 0 16 6" class="text-gray-900 absolute top-full left-1/2 -mt-px -ml-2">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M15 0H1V1.00366V1.00366V1.00371H1.01672C2.72058 1.0147 4.24225 2.74704 5.42685 4.72928C6.42941 6.40691 9.57154 6.4069 10.5741 4.72926C11.7587 2.74703 13.2803 1.0147 14.9841 1.00371H15V0Z" fill="currentColor"/>
+            </svg>
+            Copied!
+          </span>
+        </span>
+        <svg aria-hidden="true" width="32" height="32" viewBox="0 0 32 32" fill="none" class="stroke-current transform group-hover:rotate-[-4deg] transition" :style="copied ? '--tw-rotate:-8deg;' : ''">
+          <path d="M12.9975 10.7499L11.7475 10.7499C10.6429 10.7499 9.74747 11.6453 9.74747 12.7499L9.74747 21.2499C9.74747 22.3544 10.6429 23.2499 11.7475 23.2499L20.2475 23.2499C21.352 23.2499 22.2475 22.3544 22.2475 21.2499L22.2475 12.7499C22.2475 11.6453 21.352 10.7499 20.2475 10.7499L18.9975 10.7499" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M17.9975 12.2499L13.9975 12.2499C13.4452 12.2499 12.9975 11.8022 12.9975 11.2499L12.9975 9.74988C12.9975 9.19759 13.4452 8.74988 13.9975 8.74988L17.9975 8.74988C18.5498 8.74988 18.9975 9.19759 18.9975 9.74988L18.9975 11.2499C18.9975 11.8022 18.5498 12.2499 17.9975 12.2499Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M13.7475 16.2499L18.2475 16.2499" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M13.7475 19.2499L18.2475 19.2499" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          <g x-cloak :class="[copied ? '' : 'opacity-0', initialized ? 'transition-opacity' : '']">
+            <path d="M15.9975 5.99988L15.9975 3.99988" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M19.9975 5.99988L20.9975 4.99988" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M11.9975 5.99988L10.9975 4.99988" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </g>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <style>
+    #frame-4a7d4e3bae3742e75cde89fd1656877b {
+      height: 384px;
+    }
+    @media (min-width: 704px) {
+      #frame-4a7d4e3bae3742e75cde89fd1656877b {
+        height: 328px;
+      }
+    }
+  </style>
+  <div class="relative bg-gray-500 rounded-lg ring-1 ring-gray-900 ring-opacity-5 overflow-hidden">
+    <div :class="{ 'block': activeTab === 'preview', 'hidden': activeTab !== 'preview' }" class="block">
+      <div x-data="resizableIFrame()" x-init="init()" x-ref="root" :style="'max-width: 100%; width: ' + width" class="min-w-full sm:min-w-[392px] relative sm:pr-4">
+        <div id="frame-4a7d4e3bae3742e75cde89fd1656877b" class="bg-white">
+          <iframe x-ref="iframe" title="Simple with select menu preview" aria-label="Simple with select menu preview" name="frame-4a7d4e3bae3742e75cde89fd1656877b" class="w-full rounded-lg overflow-hidden sm:rounded-r-none" srcdoc="&lt;!doctype html&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, shrink-to-fit=no&quot;&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;/css/components-v2.css&quot;&gt;&lt;script src=&quot;/js/components-v2.js&quot;&gt;&lt;/script&gt;&lt;script src=&quot;/js/iframe.js&quot; defer&gt;&lt;/script&gt;&lt;script src=&quot;/js/alpine.js&quot; defer&gt;&lt;/script&gt;&lt;body class=&quot;antialiased font-sans bg-gray-200 overflow-hidden&quot;&gt;&lt;div class=&quot;&quot; style=&quot;&quot;&gt;
+  
+  &lt;div class=&quot;bg-white&quot;&gt;
+    &lt;div class=&quot;max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 lg:flex lg:justify-between&quot;&gt;
+      &lt;div class=&quot;max-w-xl&quot;&gt;
+        &lt;h2 class=&quot;text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl&quot;&gt;Pricing Plans&lt;/h2&gt;
+        &lt;p class=&quot;mt-5 text-xl text-gray-500&quot;&gt;Start building for free, then add a site plan to go live. Account plans unlock additional features.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;mt-10 w-full max-w-xs&quot;&gt;
+        &lt;label for=&quot;currency&quot; class=&quot;block text-base font-medium text-gray-500&quot;&gt;Currency&lt;/label&gt;
+        &lt;div class=&quot;mt-1.5 relative&quot;&gt;
+          &lt;select id=&quot;currency&quot; name=&quot;currency&quot; class=&quot;appearance-none block w-full bg-none bg-white border border-gray-300 rounded-md pl-3 pr-10 py-2 text-base text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm&quot;&gt;
+            &lt;option&gt;Argentina (ARS)&lt;/option&gt;
+            &lt;option&gt;Australia (AUD)&lt;/option&gt;
+            &lt;option selected&gt;United States (USD)&lt;/option&gt;
+            &lt;option&gt;Canada (CAD)&lt;/option&gt;
+            &lt;option&gt;France (EUR)&lt;/option&gt;
+            &lt;option&gt;Japan (JPY)&lt;/option&gt;
+            &lt;option&gt;Nigeria (NGN)&lt;/option&gt;
+            &lt;option&gt;Switzerland (CHF)&lt;/option&gt;
+            &lt;option&gt;United Kingdom (GBP)&lt;/option&gt;
+          &lt;/select&gt;
+          &lt;div class=&quot;pointer-events-none absolute inset-y-0 right-0 px-2 flex items-center&quot;&gt;
+            &lt;svg class=&quot;h-4 w-4 text-gray-400&quot; x-description=&quot;Heroicon name: solid/chevron-down&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 20 20&quot; fill=&quot;currentColor&quot; aria-hidden=&quot;true&quot;&gt;
+  &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z&quot; clip-rule=&quot;evenodd&quot;&gt;&lt;/path&gt;
+&lt;/svg&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;/div&gt;&lt;/body&gt;" style="opacity:0"></iframe>
+          <div :class="{ 'pointer-events-none': !resizing }" class="hidden absolute opacity-0 inset-0 mr-4 pointer-events-none sm:block"></div>
+          <div x-ref="handle" @pointerdown="onResizeStart($event)" class="sr-only sm:not-sr-only sm:border-l sm:bg-gray-100 sm:absolute sm:right-0 sm:inset-y-0 sm:flex sm:items-center sm:w-4 cursor-[ew-resize]" style="touch-action: none">
+            <div class="absolute inset-y-0 -inset-x-2"></div>
+            <svg aria-hidden="true" class="h-4 w-4 text-gray-600 pointer-events-none" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5h2v14H8zM14 5h2v14h-2z" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div :class="{ 'block': activeTab === 'code', 'hidden': activeTab !== 'code' }" class="hidden bg-gray-800">
+      <ul role="list" class="flex sm:hidden px-4 border-b border-gray-700 space-x-2">
+                  <li class="py-1 border-b -mb-px" :class="activeSnippet === 'html' ? 'border-teal-400' : 'border-transparent'">
+            <button type="button" class="text-sm font-medium p-2" :class="activeSnippet === 'html' ? 'text-teal-400' : 'text-gray-400'" @click="activeSnippet = 'html'">HTML</button>
+          </li>
+                  <li class="py-1 border-b -mb-px" :class="activeSnippet === 'react' ? 'border-teal-400' : 'border-transparent'">
+            <button type="button" class="text-sm font-medium p-2" :class="activeSnippet === 'react' ? 'text-teal-400' : 'text-gray-400'" @click="activeSnippet = 'react'">React</button>
+          </li>
+                  <li class="py-1 border-b -mb-px" :class="activeSnippet === 'vue' ? 'border-teal-400' : 'border-transparent'">
+            <button type="button" class="text-sm font-medium p-2" :class="activeSnippet === 'vue' ? 'text-teal-400' : 'text-gray-400'" @click="activeSnippet = 'vue'">Vue</button>
+          </li>
+              </ul>
+            <pre @copy="onCopy($event)" :class="{'block': activeSnippet === 'html', 'hidden': activeSnippet !== 'html' }" class="language-html block scrollbar-none m-0 p-0 overflow-auto text-white text-sm leading-normal"><code class="inline-block p-4 scrolling-touch subpixel-antialiased" x-ref="codeBlockhtml"></code></pre>
+            <pre @copy="onCopy($event)" :class="{'block': activeSnippet === 'react', 'hidden': activeSnippet !== 'react' }" class="language-jsx block scrollbar-none m-0 p-0 overflow-auto text-white text-sm leading-normal"><code class="inline-block p-4 scrolling-touch subpixel-antialiased" x-ref="codeBlockreact"></code></pre>
+            <pre @copy="onCopy($event)" :class="{'block': activeSnippet === 'vue', 'hidden': activeSnippet !== 'vue' }" class="language-html block scrollbar-none m-0 p-0 overflow-auto text-white text-sm leading-normal"><code class="inline-block p-4 scrolling-touch subpixel-antialiased" x-ref="codeBlockvue"></code></pre>
+          </div>
+  </div>
+  
+</section>
+              <section
+  aria-labelledby="heading-17d3a4a8538b7d528d954a5db2874da8"
+  id="component-17d3a4a8538b7d528d954a5db2874da8"
+  x-data="componentPreview({ userId: 26664, languages: [&quot;html&quot;,&quot;react&quot;,&quot;vue&quot;], activeSnippet: getActiveSnippet(), snippets: [{&quot;language&quot;:&quot;html&quot;,&quot;highlight&quot;:&quot;html&quot;,&quot;label&quot;:&quot;HTML&quot;,&quot;snippet&quot;:&quot;&lt;!-- This example requires Tailwind CSS v2.0+ --&gt;\n&lt;div class=\&quot;relative bg-indigo-800\&quot;&gt;\n  &lt;div class=\&quot;absolute inset-0\&quot;&gt;\n    &lt;img class=\&quot;w-full h-full object-cover\&quot; src=\&quot;https:\/\/images.unsplash.com\/photo-1525130413817-d45c1d127c42?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1920&amp;q=60&amp;&amp;sat=-100\&quot; alt=\&quot;\&quot;&gt;\n    &lt;div class=\&quot;absolute inset-0 bg-indigo-800 mix-blend-multiply\&quot; aria-hidden=\&quot;true\&quot;&gt;&lt;\/div&gt;\n  &lt;\/div&gt;\n  &lt;div class=\&quot;relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8\&quot;&gt;\n    &lt;h1 class=\&quot;text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl\&quot;&gt;Get in touch&lt;\/h1&gt;\n    &lt;p class=\&quot;mt-6 text-xl text-indigo-100 max-w-3xl\&quot;&gt;Mattis amet hendrerit dolor, quisque lorem pharetra. Pellentesque lacus nisi urna, arcu sociis eu. Orci vel lectus nisl eget eget ut consectetur. Sit justo viverra non adipisicing elit distinctio.&lt;\/p&gt;\n  &lt;\/div&gt;\n&lt;\/div&gt;\n&quot;},{&quot;language&quot;:&quot;react&quot;,&quot;highlight&quot;:&quot;jsx&quot;,&quot;label&quot;:&quot;React&quot;,&quot;snippet&quot;:&quot;\/* This example requires Tailwind CSS v2.0+ *\/\nexport default function Example() {\n  return (\n    &lt;div className=\&quot;relative bg-indigo-800\&quot;&gt;\n      &lt;div className=\&quot;absolute inset-0\&quot;&gt;\n        &lt;img\n          className=\&quot;w-full h-full object-cover\&quot;\n          src=\&quot;https:\/\/images.unsplash.com\/photo-1525130413817-d45c1d127c42?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1920&amp;q=60&amp;&amp;sat=-100\&quot;\n          alt=\&quot;\&quot;\n        \/&gt;\n        &lt;div className=\&quot;absolute inset-0 bg-indigo-800 mix-blend-multiply\&quot; aria-hidden=\&quot;true\&quot; \/&gt;\n      &lt;\/div&gt;\n      &lt;div className=\&quot;relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8\&quot;&gt;\n        &lt;h1 className=\&quot;text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl\&quot;&gt;Get in touch&lt;\/h1&gt;\n        &lt;p className=\&quot;mt-6 text-xl text-indigo-100 max-w-3xl\&quot;&gt;\n          Mattis amet hendrerit dolor, quisque lorem pharetra. Pellentesque lacus nisi urna, arcu sociis eu. Orci vel\n          lectus nisl eget eget ut consectetur. Sit justo viverra non adipisicing elit distinctio.\n        &lt;\/p&gt;\n      &lt;\/div&gt;\n    &lt;\/div&gt;\n  )\n}\n&quot;},{&quot;language&quot;:&quot;vue&quot;,&quot;highlight&quot;:&quot;html&quot;,&quot;label&quot;:&quot;Vue&quot;,&quot;snippet&quot;:&quot;&lt;!-- This example requires Tailwind CSS v2.0+ --&gt;\n&lt;template&gt;\n  &lt;div class=\&quot;relative bg-indigo-800\&quot;&gt;\n    &lt;div class=\&quot;absolute inset-0\&quot;&gt;\n      &lt;img class=\&quot;w-full h-full object-cover\&quot; src=\&quot;https:\/\/images.unsplash.com\/photo-1525130413817-d45c1d127c42?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1920&amp;q=60&amp;&amp;sat=-100\&quot; alt=\&quot;\&quot; \/&gt;\n      &lt;div class=\&quot;absolute inset-0 bg-indigo-800 mix-blend-multiply\&quot; aria-hidden=\&quot;true\&quot; \/&gt;\n    &lt;\/div&gt;\n    &lt;div class=\&quot;relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8\&quot;&gt;\n      &lt;h1 class=\&quot;text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl\&quot;&gt;Get in touch&lt;\/h1&gt;\n      &lt;p class=\&quot;mt-6 text-xl text-indigo-100 max-w-3xl\&quot;&gt;Mattis amet hendrerit dolor, quisque lorem pharetra. Pellentesque lacus nisi urna, arcu sociis eu. Orci vel lectus nisl eget eget ut consectetur. Sit justo viverra non adipisicing elit distinctio.&lt;\/p&gt;\n    &lt;\/div&gt;\n  &lt;\/div&gt;\n&lt;\/template&gt;\n&quot;}] })"
+  x-init="init()"
+>
+  <div class="flex items-center mb-3 whitespace-nowrap">
+    <h2 id="heading-17d3a4a8538b7d528d954a5db2874da8" class="font-medium text-gray-900 truncate">
+      <a href="#component-17d3a4a8538b7d528d954a5db2874da8" class="mr-1">Branded with background image</a>
+    </h2>
+            <div class="flex-none flex items-center ml-auto pl-4 sm:pl-6">
+      <div class="group p-0.5 rounded-lg flex bg-gray-100 hover:bg-gray-200">
+        <button x-ref="preview" type="button" class="flex focus-visible:ring-2 focus-visible:ring-teal-500 focus-visible:ring-offset-2 rounded-md focus:outline-none focus-visible:ring-offset-gray-100" @click="activeTab = 'preview'" :tabindex="activeTab === 'preview' ? '0' : '-1'" @keydown.arrow-left="activeTab = 'code'" @keydown.arrow-right="activeTab = 'code'">
+          <span x-show="false" class="p-1.5 lg:pl-2.5 lg:pr-3.5 rounded-md flex items-center text-sm font-medium bg-white shadow-sm ring-1 ring-black ring-opacity-5">
+            <svg aria-hidden="true" width="20" height="20" fill="none" class="lg:mr-2 text-teal-500">
+              <path d="M17.25 10c0 1-1.75 6.25-7.25 6.25S2.75 11 2.75 10 4.5 3.75 10 3.75 17.25 9 17.25 10z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="10" cy="10" r="2.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="text-gray-900 sr-only lg:not-sr-only">Preview</span>
+          </span>
+          <span x-show="true" style="display:none" class="p-1.5 lg:pl-2.5 lg:pr-3.5 rounded-md flex items-center text-sm font-medium" :class="activeTab === 'preview' ? 'bg-white shadow-sm ring-1 ring-black ring-opacity-5' : ''">
+            <svg aria-hidden="true" width="20" height="20" fill="none" class="lg:mr-2" :class="activeTab === 'preview' ? 'text-teal-500' : 'text-gray-500 group-hover:text-gray-900'">
+              <path d="M17.25 10c0 1-1.75 6.25-7.25 6.25S2.75 11 2.75 10 4.5 3.75 10 3.75 17.25 9 17.25 10z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="10" cy="10" r="2.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="sr-only lg:not-sr-only" :class="activeTab === 'preview' ? 'text-gray-900' : 'text-gray-600 group-hover:text-gray-900'">Preview</span>
+          </span>
+        </button>
+        <button x-ref="code" type="button" class="ml-0.5 p-1.5 lg:pl-2.5 lg:pr-3.5 rounded-md flex items-center text-sm text-gray-600 font-medium focus-visible:ring-2 focus-visible:ring-teal-500 focus-visible:ring-offset-2 focus:outline-none focus-visible:ring-offset-gray-100" :class="activeTab === 'code' ? 'bg-white shadow-sm ring-1 ring-black ring-opacity-5' : ''" @click="activeTab = 'code'" tabindex="-1" :tabindex="activeTab === 'code' ? '0' : '-1'" @keydown.arrow-left="activeTab = 'preview'" @keydown.arrow-right="activeTab = 'preview'">
+          <svg aria-hidden="true" width="20" height="20" fill="none" class="lg:mr-2" :class="activeTab === 'code' ? 'text-teal-500' : 'text-gray-500 group-hover:text-gray-900'">
+            <path d="M13.75 6.75l3.5 3.25-3.5 3.25M6.25 13.25L2.75 10l3.5-3.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="sr-only lg:not-sr-only" :class="activeTab === 'code' ? 'text-gray-900' : 'text-gray-600 group-hover:text-gray-900'">Code</span>
+        </button>
+      </div>
+
+      <div class="hidden sm:block w-px h-6 bg-gray-200 ml-6"></div>
+
+            <div class="relative hidden sm:block ml-2.5">
+        <div x-show="false" aria-hidden="true">
+          <div class="absolute inset-0">
+                          <select tabindex="-1" class="placeholder-html bg-transparent text-gray-900 rounded-none border-0 form-select p-0 pl-3.5 pr-[1.875rem] h-9 w-full sm:text-sm font-medium pointer-events-none" style="background-image:none;">
+                <option>HTML</option>
+              </select>
+                          <select tabindex="-1" class="placeholder-react bg-transparent text-gray-900 rounded-none border-0 form-select p-0 pl-3.5 pr-[1.875rem] h-9 w-full sm:text-sm font-medium pointer-events-none" style="background-image:none;">
+                <option>React</option>
+              </select>
+                          <select tabindex="-1" class="placeholder-vue bg-transparent text-gray-900 rounded-none border-0 form-select p-0 pl-3.5 pr-[1.875rem] h-9 w-full sm:text-sm font-medium pointer-events-none" style="background-image:none;">
+                <option>Vue</option>
+              </select>
+                      </div>
+        </div>
+        <div style="opacity:0" :style="'opacity:1'">
+          <select x-model="activeSnippet" class="bg-transparent text-gray-900 rounded-lg border-0 form-select p-0 pl-3.5 pr-[1.875rem] h-9 w-full sm:text-sm font-medium focus:shadow-none focus-visible:ring-2 focus-visible:ring-teal-500" style="background-image:none;">
+                          <option value="html">HTML</option>
+                          <option value="react">React</option>
+                          <option value="vue">Vue</option>
+                      </select>
+        </div>
+        <svg aria-hidden="true" viewBox="0 0 8 6" width="8" height="6" fill="none" class="absolute inset-y-0 right-3.5 h-full pointer-events-none">
+          <path d="M7 1.5l-3 3-3-3" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </div>
+      
+      <button type="button" class="hidden sm:flex sm:items-center sm:justify-center relative w-9 h-9 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 text-gray-400 hover:text-gray-600 group ml-2.5" :style="copied ? 'color:#06B6D4' : ''" @click="navigator.clipboard.writeText(snippets.find(s=>s.language===activeSnippet).snippet).then(()=>{copied=true;clearTimeout(copyTimeout);copyTimeout=setTimeout(()=>{copied=false},1500)})">
+        <span class="sr-only">Copy code</span>
+        <span x-show="copied" style="display:none" class="absolute inset-x-0 bottom-full mb-2.5 flex justify-center" x-transition:enter="transform ease-out duration-200 transition origin-bottom" x-transition:enter-start="scale-95 translate-y-0.5 opacity-0" x-transition:enter-end="scale-100 translate-y-0 opacity-100" x-transition:leave="transition ease-in duration-100" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
+          <span class="bg-gray-900 text-white rounded-md text-[0.625rem] leading-4 tracking-wide font-semibold uppercase py-1 px-3 filter drop-shadow-md">
+            <svg aria-hidden="true" width="16" height="6" viewBox="0 0 16 6" class="text-gray-900 absolute top-full left-1/2 -mt-px -ml-2">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M15 0H1V1.00366V1.00366V1.00371H1.01672C2.72058 1.0147 4.24225 2.74704 5.42685 4.72928C6.42941 6.40691 9.57154 6.4069 10.5741 4.72926C11.7587 2.74703 13.2803 1.0147 14.9841 1.00371H15V0Z" fill="currentColor"/>
+            </svg>
+            Copied!
+          </span>
+        </span>
+        <svg aria-hidden="true" width="32" height="32" viewBox="0 0 32 32" fill="none" class="stroke-current transform group-hover:rotate-[-4deg] transition" :style="copied ? '--tw-rotate:-8deg;' : ''">
+          <path d="M12.9975 10.7499L11.7475 10.7499C10.6429 10.7499 9.74747 11.6453 9.74747 12.7499L9.74747 21.2499C9.74747 22.3544 10.6429 23.2499 11.7475 23.2499L20.2475 23.2499C21.352 23.2499 22.2475 22.3544 22.2475 21.2499L22.2475 12.7499C22.2475 11.6453 21.352 10.7499 20.2475 10.7499L18.9975 10.7499" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M17.9975 12.2499L13.9975 12.2499C13.4452 12.2499 12.9975 11.8022 12.9975 11.2499L12.9975 9.74988C12.9975 9.19759 13.4452 8.74988 13.9975 8.74988L17.9975 8.74988C18.5498 8.74988 18.9975 9.19759 18.9975 9.74988L18.9975 11.2499C18.9975 11.8022 18.5498 12.2499 17.9975 12.2499Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M13.7475 16.2499L18.2475 16.2499" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M13.7475 19.2499L18.2475 19.2499" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          <g x-cloak :class="[copied ? '' : 'opacity-0', initialized ? 'transition-opacity' : '']">
+            <path d="M15.9975 5.99988L15.9975 3.99988" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M19.9975 5.99988L20.9975 4.99988" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M11.9975 5.99988L10.9975 4.99988" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </g>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <style>
+    #frame-17d3a4a8538b7d528d954a5db2874da8 {
+      height: 424px;
+    }
+    @media (min-width: 704px) {
+      #frame-17d3a4a8538b7d528d954a5db2874da8 {
+        height: 424px;
+      }
+    }
+  </style>
+  <div class="relative bg-gray-500 rounded-lg ring-1 ring-gray-900 ring-opacity-5 overflow-hidden">
+    <div :class="{ 'block': activeTab === 'preview', 'hidden': activeTab !== 'preview' }" class="block">
+      <div x-data="resizableIFrame()" x-init="init()" x-ref="root" :style="'max-width: 100%; width: ' + width" class="min-w-full sm:min-w-[392px] relative sm:pr-4">
+        <div id="frame-17d3a4a8538b7d528d954a5db2874da8" class="bg-white">
+          <iframe x-ref="iframe" title="Branded with background image preview" aria-label="Branded with background image preview" name="frame-17d3a4a8538b7d528d954a5db2874da8" class="w-full rounded-lg overflow-hidden sm:rounded-r-none" srcdoc="&lt;!doctype html&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, shrink-to-fit=no&quot;&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;/css/components-v2.css&quot;&gt;&lt;script src=&quot;/js/components-v2.js&quot;&gt;&lt;/script&gt;&lt;script src=&quot;/js/iframe.js&quot; defer&gt;&lt;/script&gt;&lt;script src=&quot;/js/alpine.js&quot; defer&gt;&lt;/script&gt;&lt;body class=&quot;antialiased font-sans bg-gray-200 overflow-hidden&quot;&gt;&lt;div class=&quot;&quot; style=&quot;&quot;&gt;
+  
+  &lt;div class=&quot;relative bg-indigo-800&quot;&gt;
+    &lt;div class=&quot;absolute inset-0&quot;&gt;
+      &lt;img class=&quot;w-full h-full object-cover&quot; src=&quot;https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1920&amp;q=60&amp;&amp;sat=-100&quot; alt=&quot;&quot;&gt;
+      &lt;div class=&quot;absolute inset-0 bg-indigo-800 mix-blend-multiply&quot; aria-hidden=&quot;true&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8&quot;&gt;
+      &lt;h1 class=&quot;text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl&quot;&gt;Get in touch&lt;/h1&gt;
+      &lt;p class=&quot;mt-6 text-xl text-indigo-100 max-w-3xl&quot;&gt;Mattis amet hendrerit dolor, quisque lorem pharetra. Pellentesque lacus nisi urna, arcu sociis eu. Orci vel lectus nisl eget eget ut consectetur. Sit justo viverra non adipisicing elit distinctio.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;/div&gt;&lt;/body&gt;" style="opacity:0"></iframe>
+          <div :class="{ 'pointer-events-none': !resizing }" class="hidden absolute opacity-0 inset-0 mr-4 pointer-events-none sm:block"></div>
+          <div x-ref="handle" @pointerdown="onResizeStart($event)" class="sr-only sm:not-sr-only sm:border-l sm:bg-gray-100 sm:absolute sm:right-0 sm:inset-y-0 sm:flex sm:items-center sm:w-4 cursor-[ew-resize]" style="touch-action: none">
+            <div class="absolute inset-y-0 -inset-x-2"></div>
+            <svg aria-hidden="true" class="h-4 w-4 text-gray-600 pointer-events-none" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5h2v14H8zM14 5h2v14h-2z" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div :class="{ 'block': activeTab === 'code', 'hidden': activeTab !== 'code' }" class="hidden bg-gray-800">
+      <ul role="list" class="flex sm:hidden px-4 border-b border-gray-700 space-x-2">
+                  <li class="py-1 border-b -mb-px" :class="activeSnippet === 'html' ? 'border-teal-400' : 'border-transparent'">
+            <button type="button" class="text-sm font-medium p-2" :class="activeSnippet === 'html' ? 'text-teal-400' : 'text-gray-400'" @click="activeSnippet = 'html'">HTML</button>
+          </li>
+                  <li class="py-1 border-b -mb-px" :class="activeSnippet === 'react' ? 'border-teal-400' : 'border-transparent'">
+            <button type="button" class="text-sm font-medium p-2" :class="activeSnippet === 'react' ? 'text-teal-400' : 'text-gray-400'" @click="activeSnippet = 'react'">React</button>
+          </li>
+                  <li class="py-1 border-b -mb-px" :class="activeSnippet === 'vue' ? 'border-teal-400' : 'border-transparent'">
+            <button type="button" class="text-sm font-medium p-2" :class="activeSnippet === 'vue' ? 'text-teal-400' : 'text-gray-400'" @click="activeSnippet = 'vue'">Vue</button>
+          </li>
+              </ul>
+            <pre @copy="onCopy($event)" :class="{'block': activeSnippet === 'html', 'hidden': activeSnippet !== 'html' }" class="language-html block scrollbar-none m-0 p-0 overflow-auto text-white text-sm leading-normal"><code class="inline-block p-4 scrolling-touch subpixel-antialiased" x-ref="codeBlockhtml"></code></pre>
+            <pre @copy="onCopy($event)" :class="{'block': activeSnippet === 'react', 'hidden': activeSnippet !== 'react' }" class="language-jsx block scrollbar-none m-0 p-0 overflow-auto text-white text-sm leading-normal"><code class="inline-block p-4 scrolling-touch subpixel-antialiased" x-ref="codeBlockreact"></code></pre>
+            <pre @copy="onCopy($event)" :class="{'block': activeSnippet === 'vue', 'hidden': activeSnippet !== 'vue' }" class="language-html block scrollbar-none m-0 p-0 overflow-auto text-white text-sm leading-normal"><code class="inline-block p-4 scrolling-touch subpixel-antialiased" x-ref="codeBlockvue"></code></pre>
+          </div>
+  </div>
+  
+</section>
+              <section
+  aria-labelledby="heading-547517d4dc48e1bf0ccab051ebb0dcba"
+  id="component-547517d4dc48e1bf0ccab051ebb0dcba"
+  x-data="componentPreview({ userId: 26664, languages: [&quot;html&quot;,&quot;react&quot;,&quot;vue&quot;], activeSnippet: getActiveSnippet(), snippets: [{&quot;language&quot;:&quot;html&quot;,&quot;highlight&quot;:&quot;html&quot;,&quot;label&quot;:&quot;HTML&quot;,&quot;snippet&quot;:&quot;&lt;!-- This example requires Tailwind CSS v2.0+ --&gt;\n&lt;div class=\&quot;bg-white\&quot;&gt;\n  &lt;!-- Header --&gt;\n  &lt;div class=\&quot;relative pb-32 bg-gray-800\&quot;&gt;\n    &lt;div class=\&quot;absolute inset-0\&quot;&gt;\n      &lt;img class=\&quot;w-full h-full object-cover\&quot; src=\&quot;https:\/\/images.unsplash.com\/photo-1525130413817-d45c1d127c42?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1920&amp;q=60&amp;&amp;sat=-100\&quot; alt=\&quot;\&quot;&gt;\n      &lt;div class=\&quot;absolute inset-0 bg-gray-800 mix-blend-multiply\&quot; aria-hidden=\&quot;true\&quot;&gt;&lt;\/div&gt;\n    &lt;\/div&gt;\n    &lt;div class=\&quot;relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8\&quot;&gt;\n      &lt;h1 class=\&quot;text-4xl font-extrabold tracking-tight text-white md:text-5xl lg:text-6xl\&quot;&gt;Support&lt;\/h1&gt;\n      &lt;p class=\&quot;mt-6 max-w-3xl text-xl text-gray-300\&quot;&gt;Varius facilisi mauris sed sit. Non sed et duis dui leo, vulputate id malesuada non. Cras aliquet purus dui laoreet diam sed lacus, fames. Dui, amet, nec sit pulvinar.&lt;\/p&gt;\n    &lt;\/div&gt;\n  &lt;\/div&gt;\n\n  &lt;!-- Overlapping cards --&gt;\n  &lt;section class=\&quot;-mt-32 max-w-7xl mx-auto relative z-10 pb-32 px-4 sm:px-6 lg:px-8\&quot; aria-labelledby=\&quot;contact-heading\&quot;&gt;\n    &lt;h2 class=\&quot;sr-only\&quot; id=\&quot;contact-heading\&quot;&gt;Contact us&lt;\/h2&gt;\n    &lt;div class=\&quot;grid grid-cols-1 gap-y-20 lg:grid-cols-3 lg:gap-y-0 lg:gap-x-8\&quot;&gt;\n      &lt;div class=\&quot;flex flex-col bg-white rounded-2xl shadow-xl\&quot;&gt;\n        &lt;div class=\&quot;flex-1 relative pt-16 px-6 pb-8 md:px-8\&quot;&gt;\n          &lt;div class=\&quot;absolute top-0 p-5 inline-block bg-indigo-600 rounded-xl shadow-lg transform -translate-y-1\/2\&quot;&gt;\n            &lt;!-- Heroicon name: outline\/phone --&gt;\n            &lt;svg class=\&quot;h-6 w-6 text-white\&quot; xmlns=\&quot;http:\/\/www.w3.org\/2000\/svg\&quot; fill=\&quot;none\&quot; viewBox=\&quot;0 0 24 24\&quot; stroke=\&quot;currentColor\&quot; aria-hidden=\&quot;true\&quot;&gt;\n              &lt;path stroke-linecap=\&quot;round\&quot; stroke-linejoin=\&quot;round\&quot; stroke-width=\&quot;2\&quot; d=\&quot;M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z\&quot; \/&gt;\n            &lt;\/svg&gt;\n          &lt;\/div&gt;\n          &lt;h3 class=\&quot;text-xl font-medium text-gray-900\&quot;&gt;Sales&lt;\/h3&gt;\n          &lt;p class=\&quot;mt-4 text-base text-gray-500\&quot;&gt;Varius facilisi mauris sed sit. Non sed et duis dui leo, vulputate id malesuada non. Cras aliquet purus dui laoreet diam sed lacus, fames.&lt;\/p&gt;\n        &lt;\/div&gt;\n        &lt;div class=\&quot;p-6 bg-gray-50 rounded-bl-2xl rounded-br-2xl md:px-8\&quot;&gt;\n          &lt;a href=\&quot;#\&quot; class=\&quot;text-base font-medium text-indigo-700 hover:text-indigo-600\&quot;&gt;Contact us&lt;span aria-hidden=\&quot;true\&quot;&gt; &amp;rarr;&lt;\/span&gt;&lt;\/a&gt;\n        &lt;\/div&gt;\n      &lt;\/div&gt;\n\n      &lt;div class=\&quot;flex flex-col bg-white rounded-2xl shadow-xl\&quot;&gt;\n        &lt;div class=\&quot;flex-1 relative pt-16 px-6 pb-8 md:px-8\&quot;&gt;\n          &lt;div class=\&quot;absolute top-0 p-5 inline-block bg-indigo-600 rounded-xl shadow-lg transform -translate-y-1\/2\&quot;&gt;\n            &lt;!-- Heroicon name: outline\/support --&gt;\n            &lt;svg class=\&quot;h-6 w-6 text-white\&quot; xmlns=\&quot;http:\/\/www.w3.org\/2000\/svg\&quot; fill=\&quot;none\&quot; viewBox=\&quot;0 0 24 24\&quot; stroke=\&quot;currentColor\&quot; aria-hidden=\&quot;true\&quot;&gt;\n              &lt;path stroke-linecap=\&quot;round\&quot; stroke-linejoin=\&quot;round\&quot; stroke-width=\&quot;2\&quot; d=\&quot;M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z\&quot; \/&gt;\n            &lt;\/svg&gt;\n          &lt;\/div&gt;\n          &lt;h3 class=\&quot;text-xl font-medium text-gray-900\&quot;&gt;Technical Support&lt;\/h3&gt;\n          &lt;p class=\&quot;mt-4 text-base text-gray-500\&quot;&gt;Varius facilisi mauris sed sit. Non sed et duis dui leo, vulputate id malesuada non. Cras aliquet purus dui laoreet diam sed lacus, fames.&lt;\/p&gt;\n        &lt;\/div&gt;\n        &lt;div class=\&quot;p-6 bg-gray-50 rounded-bl-2xl rounded-br-2xl md:px-8\&quot;&gt;\n          &lt;a href=\&quot;#\&quot; class=\&quot;text-base font-medium text-indigo-700 hover:text-indigo-600\&quot;&gt;Contact us&lt;span aria-hidden=\&quot;true\&quot;&gt; &amp;rarr;&lt;\/span&gt;&lt;\/a&gt;\n        &lt;\/div&gt;\n      &lt;\/div&gt;\n\n      &lt;div class=\&quot;flex flex-col bg-white rounded-2xl shadow-xl\&quot;&gt;\n        &lt;div class=\&quot;flex-1 relative pt-16 px-6 pb-8 md:px-8\&quot;&gt;\n          &lt;div class=\&quot;absolute top-0 p-5 inline-block bg-indigo-600 rounded-xl shadow-lg transform -translate-y-1\/2\&quot;&gt;\n            &lt;!-- Heroicon name: outline\/newspaper --&gt;\n            &lt;svg class=\&quot;h-6 w-6 text-white\&quot; xmlns=\&quot;http:\/\/www.w3.org\/2000\/svg\&quot; fill=\&quot;none\&quot; viewBox=\&quot;0 0 24 24\&quot; stroke=\&quot;currentColor\&quot; aria-hidden=\&quot;true\&quot;&gt;\n              &lt;path stroke-linecap=\&quot;round\&quot; stroke-linejoin=\&quot;round\&quot; stroke-width=\&quot;2\&quot; d=\&quot;M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z\&quot; \/&gt;\n            &lt;\/svg&gt;\n          &lt;\/div&gt;\n          &lt;h3 class=\&quot;text-xl font-medium text-gray-900\&quot;&gt;Media Inquiries&lt;\/h3&gt;\n          &lt;p class=\&quot;mt-4 text-base text-gray-500\&quot;&gt;Varius facilisi mauris sed sit. Non sed et duis dui leo, vulputate id malesuada non. Cras aliquet purus dui laoreet diam sed lacus, fames.&lt;\/p&gt;\n        &lt;\/div&gt;\n        &lt;div class=\&quot;p-6 bg-gray-50 rounded-bl-2xl rounded-br-2xl md:px-8\&quot;&gt;\n          &lt;a href=\&quot;#\&quot; class=\&quot;text-base font-medium text-indigo-700 hover:text-indigo-600\&quot;&gt;Contact us&lt;span aria-hidden=\&quot;true\&quot;&gt; &amp;rarr;&lt;\/span&gt;&lt;\/a&gt;\n        &lt;\/div&gt;\n      &lt;\/div&gt;\n    &lt;\/div&gt;\n  &lt;\/section&gt;\n&lt;\/div&gt;\n&quot;},{&quot;language&quot;:&quot;react&quot;,&quot;highlight&quot;:&quot;jsx&quot;,&quot;label&quot;:&quot;React&quot;,&quot;snippet&quot;:&quot;\/* This example requires Tailwind CSS v2.0+ *\/\nimport { NewspaperIcon, PhoneIcon, SupportIcon } from &#039;@heroicons\/react\/outline&#039;\n\nconst supportLinks = [\n  {\n    name: &#039;Sales&#039;,\n    href: &#039;#&#039;,\n    description:\n      &#039;Varius facilisi mauris sed sit. Non sed et duis dui leo, vulputate id malesuada non. Cras aliquet purus dui laoreet diam sed lacus, fames.&#039;,\n    icon: PhoneIcon,\n  },\n  {\n    name: &#039;Technical Support&#039;,\n    href: &#039;#&#039;,\n    description:\n      &#039;Varius facilisi mauris sed sit. Non sed et duis dui leo, vulputate id malesuada non. Cras aliquet purus dui laoreet diam sed lacus, fames.&#039;,\n    icon: SupportIcon,\n  },\n  {\n    name: &#039;Media Inquiries&#039;,\n    href: &#039;#&#039;,\n    description:\n      &#039;Varius facilisi mauris sed sit. Non sed et duis dui leo, vulputate id malesuada non. Cras aliquet purus dui laoreet diam sed lacus, fames.&#039;,\n    icon: NewspaperIcon,\n  },\n]\n\nexport default function Example() {\n  return (\n    &lt;div className=\&quot;bg-white\&quot;&gt;\n      {\/* Header *\/}\n      &lt;div className=\&quot;relative pb-32 bg-gray-800\&quot;&gt;\n        &lt;div className=\&quot;absolute inset-0\&quot;&gt;\n          &lt;img\n            className=\&quot;w-full h-full object-cover\&quot;\n            src=\&quot;https:\/\/images.unsplash.com\/photo-1525130413817-d45c1d127c42?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1920&amp;q=60&amp;&amp;sat=-100\&quot;\n            alt=\&quot;\&quot;\n          \/&gt;\n          &lt;div className=\&quot;absolute inset-0 bg-gray-800 mix-blend-multiply\&quot; aria-hidden=\&quot;true\&quot; \/&gt;\n        &lt;\/div&gt;\n        &lt;div className=\&quot;relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8\&quot;&gt;\n          &lt;h1 className=\&quot;text-4xl font-extrabold tracking-tight text-white md:text-5xl lg:text-6xl\&quot;&gt;Support&lt;\/h1&gt;\n          &lt;p className=\&quot;mt-6 max-w-3xl text-xl text-gray-300\&quot;&gt;\n            Varius facilisi mauris sed sit. Non sed et duis dui leo, vulputate id malesuada non. Cras aliquet purus dui\n            laoreet diam sed lacus, fames. Dui, amet, nec sit pulvinar.\n          &lt;\/p&gt;\n        &lt;\/div&gt;\n      &lt;\/div&gt;\n\n      {\/* Overlapping cards *\/}\n      &lt;section\n        className=\&quot;-mt-32 max-w-7xl mx-auto relative z-10 pb-32 px-4 sm:px-6 lg:px-8\&quot;\n        aria-labelledby=\&quot;contact-heading\&quot;\n      &gt;\n        &lt;h2 className=\&quot;sr-only\&quot; id=\&quot;contact-heading\&quot;&gt;\n          Contact us\n        &lt;\/h2&gt;\n        &lt;div className=\&quot;grid grid-cols-1 gap-y-20 lg:grid-cols-3 lg:gap-y-0 lg:gap-x-8\&quot;&gt;\n          {supportLinks.map((link) =&gt; (\n            &lt;div key={link.name} className=\&quot;flex flex-col bg-white rounded-2xl shadow-xl\&quot;&gt;\n              &lt;div className=\&quot;flex-1 relative pt-16 px-6 pb-8 md:px-8\&quot;&gt;\n                &lt;div className=\&quot;absolute top-0 p-5 inline-block bg-indigo-600 rounded-xl shadow-lg transform -translate-y-1\/2\&quot;&gt;\n                  &lt;link.icon className=\&quot;h-6 w-6 text-white\&quot; aria-hidden=\&quot;true\&quot; \/&gt;\n                &lt;\/div&gt;\n                &lt;h3 className=\&quot;text-xl font-medium text-gray-900\&quot;&gt;{link.name}&lt;\/h3&gt;\n                &lt;p className=\&quot;mt-4 text-base text-gray-500\&quot;&gt;{link.description}&lt;\/p&gt;\n              &lt;\/div&gt;\n              &lt;div className=\&quot;p-6 bg-gray-50 rounded-bl-2xl rounded-br-2xl md:px-8\&quot;&gt;\n                &lt;a href={link.href} className=\&quot;text-base font-medium text-indigo-700 hover:text-indigo-600\&quot;&gt;\n                  Contact us&lt;span aria-hidden=\&quot;true\&quot;&gt; &amp;rarr;&lt;\/span&gt;\n                &lt;\/a&gt;\n              &lt;\/div&gt;\n            &lt;\/div&gt;\n          ))}\n        &lt;\/div&gt;\n      &lt;\/section&gt;\n    &lt;\/div&gt;\n  )\n}\n&quot;},{&quot;language&quot;:&quot;vue&quot;,&quot;highlight&quot;:&quot;html&quot;,&quot;label&quot;:&quot;Vue&quot;,&quot;snippet&quot;:&quot;&lt;!-- This example requires Tailwind CSS v2.0+ --&gt;\n&lt;template&gt;\n  &lt;div class=\&quot;bg-white\&quot;&gt;\n    &lt;!-- Header --&gt;\n    &lt;div class=\&quot;relative pb-32 bg-gray-800\&quot;&gt;\n      &lt;div class=\&quot;absolute inset-0\&quot;&gt;\n        &lt;img class=\&quot;w-full h-full object-cover\&quot; src=\&quot;https:\/\/images.unsplash.com\/photo-1525130413817-d45c1d127c42?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1920&amp;q=60&amp;&amp;sat=-100\&quot; alt=\&quot;\&quot; \/&gt;\n        &lt;div class=\&quot;absolute inset-0 bg-gray-800 mix-blend-multiply\&quot; aria-hidden=\&quot;true\&quot; \/&gt;\n      &lt;\/div&gt;\n      &lt;div class=\&quot;relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8\&quot;&gt;\n        &lt;h1 class=\&quot;text-4xl font-extrabold tracking-tight text-white md:text-5xl lg:text-6xl\&quot;&gt;Support&lt;\/h1&gt;\n        &lt;p class=\&quot;mt-6 max-w-3xl text-xl text-gray-300\&quot;&gt;Varius facilisi mauris sed sit. Non sed et duis dui leo, vulputate id malesuada non. Cras aliquet purus dui laoreet diam sed lacus, fames. Dui, amet, nec sit pulvinar.&lt;\/p&gt;\n      &lt;\/div&gt;\n    &lt;\/div&gt;\n\n    &lt;!-- Overlapping cards --&gt;\n    &lt;section class=\&quot;-mt-32 max-w-7xl mx-auto relative z-10 pb-32 px-4 sm:px-6 lg:px-8\&quot; aria-labelledby=\&quot;contact-heading\&quot;&gt;\n      &lt;h2 class=\&quot;sr-only\&quot; id=\&quot;contact-heading\&quot;&gt;Contact us&lt;\/h2&gt;\n      &lt;div class=\&quot;grid grid-cols-1 gap-y-20 lg:grid-cols-3 lg:gap-y-0 lg:gap-x-8\&quot;&gt;\n        &lt;div v-for=\&quot;link in supportLinks\&quot; :key=\&quot;link.name\&quot; class=\&quot;flex flex-col bg-white rounded-2xl shadow-xl\&quot;&gt;\n          &lt;div class=\&quot;flex-1 relative pt-16 px-6 pb-8 md:px-8\&quot;&gt;\n            &lt;div class=\&quot;absolute top-0 p-5 inline-block bg-indigo-600 rounded-xl shadow-lg transform -translate-y-1\/2\&quot;&gt;\n              &lt;component :is=\&quot;link.icon\&quot; class=\&quot;h-6 w-6 text-white\&quot; aria-hidden=\&quot;true\&quot; \/&gt;\n            &lt;\/div&gt;\n            &lt;h3 class=\&quot;text-xl font-medium text-gray-900\&quot;&gt;{{ link.name }}&lt;\/h3&gt;\n            &lt;p class=\&quot;mt-4 text-base text-gray-500\&quot;&gt;{{ link.description }}&lt;\/p&gt;\n          &lt;\/div&gt;\n          &lt;div class=\&quot;p-6 bg-gray-50 rounded-bl-2xl rounded-br-2xl md:px-8\&quot;&gt;\n            &lt;a :href=\&quot;link.href\&quot; class=\&quot;text-base font-medium text-indigo-700 hover:text-indigo-600\&quot;&gt;Contact us&lt;span aria-hidden=\&quot;true\&quot;&gt; &amp;rarr;&lt;\/span&gt;&lt;\/a&gt;\n          &lt;\/div&gt;\n        &lt;\/div&gt;\n      &lt;\/div&gt;\n    &lt;\/section&gt;\n  &lt;\/div&gt;\n&lt;\/template&gt;\n\n&lt;script&gt;\nimport { NewspaperIcon, PhoneIcon, SupportIcon } from &#039;@heroicons\/vue\/outline&#039;\n\nconst supportLinks = [\n  {\n    name: &#039;Sales&#039;,\n    href: &#039;#&#039;,\n    description:\n      &#039;Varius facilisi mauris sed sit. Non sed et duis dui leo, vulputate id malesuada non. Cras aliquet purus dui laoreet diam sed lacus, fames.&#039;,\n    icon: PhoneIcon,\n  },\n  {\n    name: &#039;Technical Support&#039;,\n    href: &#039;#&#039;,\n    description:\n      &#039;Varius facilisi mauris sed sit. Non sed et duis dui leo, vulputate id malesuada non. Cras aliquet purus dui laoreet diam sed lacus, fames.&#039;,\n    icon: SupportIcon,\n  },\n  {\n    name: &#039;Media Inquiries&#039;,\n    href: &#039;#&#039;,\n    description:\n      &#039;Varius facilisi mauris sed sit. Non sed et duis dui leo, vulputate id malesuada non. Cras aliquet purus dui laoreet diam sed lacus, fames.&#039;,\n    icon: NewspaperIcon,\n  },\n]\n\nexport default {\n  setup() {\n    return {\n      supportLinks,\n    }\n  },\n}\n&lt;\/script&gt;&quot;}] })"
+  x-init="init()"
+>
+  <div class="flex items-center mb-3 whitespace-nowrap">
+    <h2 id="heading-547517d4dc48e1bf0ccab051ebb0dcba" class="font-medium text-gray-900 truncate">
+      <a href="#component-547517d4dc48e1bf0ccab051ebb0dcba" class="mr-1">With background image and overlapping cards</a>
+    </h2>
+            <div class="flex-none flex items-center ml-auto pl-4 sm:pl-6">
+      <div class="group p-0.5 rounded-lg flex bg-gray-100 hover:bg-gray-200">
+        <button x-ref="preview" type="button" class="flex focus-visible:ring-2 focus-visible:ring-teal-500 focus-visible:ring-offset-2 rounded-md focus:outline-none focus-visible:ring-offset-gray-100" @click="activeTab = 'preview'" :tabindex="activeTab === 'preview' ? '0' : '-1'" @keydown.arrow-left="activeTab = 'code'" @keydown.arrow-right="activeTab = 'code'">
+          <span x-show="false" class="p-1.5 lg:pl-2.5 lg:pr-3.5 rounded-md flex items-center text-sm font-medium bg-white shadow-sm ring-1 ring-black ring-opacity-5">
+            <svg aria-hidden="true" width="20" height="20" fill="none" class="lg:mr-2 text-teal-500">
+              <path d="M17.25 10c0 1-1.75 6.25-7.25 6.25S2.75 11 2.75 10 4.5 3.75 10 3.75 17.25 9 17.25 10z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="10" cy="10" r="2.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="text-gray-900 sr-only lg:not-sr-only">Preview</span>
+          </span>
+          <span x-show="true" style="display:none" class="p-1.5 lg:pl-2.5 lg:pr-3.5 rounded-md flex items-center text-sm font-medium" :class="activeTab === 'preview' ? 'bg-white shadow-sm ring-1 ring-black ring-opacity-5' : ''">
+            <svg aria-hidden="true" width="20" height="20" fill="none" class="lg:mr-2" :class="activeTab === 'preview' ? 'text-teal-500' : 'text-gray-500 group-hover:text-gray-900'">
+              <path d="M17.25 10c0 1-1.75 6.25-7.25 6.25S2.75 11 2.75 10 4.5 3.75 10 3.75 17.25 9 17.25 10z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="10" cy="10" r="2.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="sr-only lg:not-sr-only" :class="activeTab === 'preview' ? 'text-gray-900' : 'text-gray-600 group-hover:text-gray-900'">Preview</span>
+          </span>
+        </button>
+        <button x-ref="code" type="button" class="ml-0.5 p-1.5 lg:pl-2.5 lg:pr-3.5 rounded-md flex items-center text-sm text-gray-600 font-medium focus-visible:ring-2 focus-visible:ring-teal-500 focus-visible:ring-offset-2 focus:outline-none focus-visible:ring-offset-gray-100" :class="activeTab === 'code' ? 'bg-white shadow-sm ring-1 ring-black ring-opacity-5' : ''" @click="activeTab = 'code'" tabindex="-1" :tabindex="activeTab === 'code' ? '0' : '-1'" @keydown.arrow-left="activeTab = 'preview'" @keydown.arrow-right="activeTab = 'preview'">
+          <svg aria-hidden="true" width="20" height="20" fill="none" class="lg:mr-2" :class="activeTab === 'code' ? 'text-teal-500' : 'text-gray-500 group-hover:text-gray-900'">
+            <path d="M13.75 6.75l3.5 3.25-3.5 3.25M6.25 13.25L2.75 10l3.5-3.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="sr-only lg:not-sr-only" :class="activeTab === 'code' ? 'text-gray-900' : 'text-gray-600 group-hover:text-gray-900'">Code</span>
+        </button>
+      </div>
+
+      <div class="hidden sm:block w-px h-6 bg-gray-200 ml-6"></div>
+
+            <div class="relative hidden sm:block ml-2.5">
+        <div x-show="false" aria-hidden="true">
+          <div class="absolute inset-0">
+                          <select tabindex="-1" class="placeholder-html bg-transparent text-gray-900 rounded-none border-0 form-select p-0 pl-3.5 pr-[1.875rem] h-9 w-full sm:text-sm font-medium pointer-events-none" style="background-image:none;">
+                <option>HTML</option>
+              </select>
+                          <select tabindex="-1" class="placeholder-react bg-transparent text-gray-900 rounded-none border-0 form-select p-0 pl-3.5 pr-[1.875rem] h-9 w-full sm:text-sm font-medium pointer-events-none" style="background-image:none;">
+                <option>React</option>
+              </select>
+                          <select tabindex="-1" class="placeholder-vue bg-transparent text-gray-900 rounded-none border-0 form-select p-0 pl-3.5 pr-[1.875rem] h-9 w-full sm:text-sm font-medium pointer-events-none" style="background-image:none;">
+                <option>Vue</option>
+              </select>
+                      </div>
+        </div>
+        <div style="opacity:0" :style="'opacity:1'">
+          <select x-model="activeSnippet" class="bg-transparent text-gray-900 rounded-lg border-0 form-select p-0 pl-3.5 pr-[1.875rem] h-9 w-full sm:text-sm font-medium focus:shadow-none focus-visible:ring-2 focus-visible:ring-teal-500" style="background-image:none;">
+                          <option value="html">HTML</option>
+                          <option value="react">React</option>
+                          <option value="vue">Vue</option>
+                      </select>
+        </div>
+        <svg aria-hidden="true" viewBox="0 0 8 6" width="8" height="6" fill="none" class="absolute inset-y-0 right-3.5 h-full pointer-events-none">
+          <path d="M7 1.5l-3 3-3-3" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </div>
+      
+      <button type="button" class="hidden sm:flex sm:items-center sm:justify-center relative w-9 h-9 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 text-gray-400 hover:text-gray-600 group ml-2.5" :style="copied ? 'color:#06B6D4' : ''" @click="navigator.clipboard.writeText(snippets.find(s=>s.language===activeSnippet).snippet).then(()=>{copied=true;clearTimeout(copyTimeout);copyTimeout=setTimeout(()=>{copied=false},1500)})">
+        <span class="sr-only">Copy code</span>
+        <span x-show="copied" style="display:none" class="absolute inset-x-0 bottom-full mb-2.5 flex justify-center" x-transition:enter="transform ease-out duration-200 transition origin-bottom" x-transition:enter-start="scale-95 translate-y-0.5 opacity-0" x-transition:enter-end="scale-100 translate-y-0 opacity-100" x-transition:leave="transition ease-in duration-100" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
+          <span class="bg-gray-900 text-white rounded-md text-[0.625rem] leading-4 tracking-wide font-semibold uppercase py-1 px-3 filter drop-shadow-md">
+            <svg aria-hidden="true" width="16" height="6" viewBox="0 0 16 6" class="text-gray-900 absolute top-full left-1/2 -mt-px -ml-2">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M15 0H1V1.00366V1.00366V1.00371H1.01672C2.72058 1.0147 4.24225 2.74704 5.42685 4.72928C6.42941 6.40691 9.57154 6.4069 10.5741 4.72926C11.7587 2.74703 13.2803 1.0147 14.9841 1.00371H15V0Z" fill="currentColor"/>
+            </svg>
+            Copied!
+          </span>
+        </span>
+        <svg aria-hidden="true" width="32" height="32" viewBox="0 0 32 32" fill="none" class="stroke-current transform group-hover:rotate-[-4deg] transition" :style="copied ? '--tw-rotate:-8deg;' : ''">
+          <path d="M12.9975 10.7499L11.7475 10.7499C10.6429 10.7499 9.74747 11.6453 9.74747 12.7499L9.74747 21.2499C9.74747 22.3544 10.6429 23.2499 11.7475 23.2499L20.2475 23.2499C21.352 23.2499 22.2475 22.3544 22.2475 21.2499L22.2475 12.7499C22.2475 11.6453 21.352 10.7499 20.2475 10.7499L18.9975 10.7499" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M17.9975 12.2499L13.9975 12.2499C13.4452 12.2499 12.9975 11.8022 12.9975 11.2499L12.9975 9.74988C12.9975 9.19759 13.4452 8.74988 13.9975 8.74988L17.9975 8.74988C18.5498 8.74988 18.9975 9.19759 18.9975 9.74988L18.9975 11.2499C18.9975 11.8022 18.5498 12.2499 17.9975 12.2499Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M13.7475 16.2499L18.2475 16.2499" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M13.7475 19.2499L18.2475 19.2499" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          <g x-cloak :class="[copied ? '' : 'opacity-0', initialized ? 'transition-opacity' : '']">
+            <path d="M15.9975 5.99988L15.9975 3.99988" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M19.9975 5.99988L20.9975 4.99988" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M11.9975 5.99988L10.9975 4.99988" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </g>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <style>
+    #frame-547517d4dc48e1bf0ccab051ebb0dcba {
+      height: 1608px;
+    }
+    @media (min-width: 704px) {
+      #frame-547517d4dc48e1bf0ccab051ebb0dcba {
+        height: 832px;
+      }
+    }
+  </style>
+  <div class="relative bg-gray-500 rounded-lg ring-1 ring-gray-900 ring-opacity-5 overflow-hidden">
+    <div :class="{ 'block': activeTab === 'preview', 'hidden': activeTab !== 'preview' }" class="block">
+      <div x-data="resizableIFrame()" x-init="init()" x-ref="root" :style="'max-width: 100%; width: ' + width" class="min-w-full sm:min-w-[392px] relative sm:pr-4">
+        <div id="frame-547517d4dc48e1bf0ccab051ebb0dcba" class="bg-white">
+          <iframe x-ref="iframe" title="With background image and overlapping cards preview" aria-label="With background image and overlapping cards preview" name="frame-547517d4dc48e1bf0ccab051ebb0dcba" class="w-full rounded-lg overflow-hidden sm:rounded-r-none" srcdoc="&lt;!doctype html&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, shrink-to-fit=no&quot;&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;/css/components-v2.css&quot;&gt;&lt;script src=&quot;/js/components-v2.js&quot;&gt;&lt;/script&gt;&lt;script src=&quot;/js/iframe.js&quot; defer&gt;&lt;/script&gt;&lt;script src=&quot;/js/alpine.js&quot; defer&gt;&lt;/script&gt;&lt;body class=&quot;antialiased font-sans bg-gray-200 overflow-hidden&quot;&gt;&lt;div class=&quot;&quot; style=&quot;&quot;&gt;
+  
+  &lt;div class=&quot;bg-white&quot;&gt;
+    &lt;!-- Header --&gt;
+    &lt;div class=&quot;relative pb-32 bg-gray-800&quot;&gt;
+      &lt;div class=&quot;absolute inset-0&quot;&gt;
+        &lt;img class=&quot;w-full h-full object-cover&quot; src=&quot;https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1920&amp;q=60&amp;&amp;sat=-100&quot; alt=&quot;&quot;&gt;
+        &lt;div class=&quot;absolute inset-0 bg-gray-800 mix-blend-multiply&quot; aria-hidden=&quot;true&quot;&gt;&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8&quot;&gt;
+        &lt;h1 class=&quot;text-4xl font-extrabold tracking-tight text-white md:text-5xl lg:text-6xl&quot;&gt;Support&lt;/h1&gt;
+        &lt;p class=&quot;mt-6 max-w-3xl text-xl text-gray-300&quot;&gt;Varius facilisi mauris sed sit. Non sed et duis dui leo, vulputate id malesuada non. Cras aliquet purus dui laoreet diam sed lacus, fames. Dui, amet, nec sit pulvinar.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Overlapping cards --&gt;
+    &lt;section class=&quot;-mt-32 max-w-7xl mx-auto relative z-10 pb-32 px-4 sm:px-6 lg:px-8&quot; aria-labelledby=&quot;contact-heading&quot;&gt;
+      &lt;h2 class=&quot;sr-only&quot; id=&quot;contact-heading&quot;&gt;Contact us&lt;/h2&gt;
+      &lt;div class=&quot;grid grid-cols-1 gap-y-20 lg:grid-cols-3 lg:gap-y-0 lg:gap-x-8&quot;&gt;
+        
+          &lt;div class=&quot;flex flex-col bg-white rounded-2xl shadow-xl&quot;&gt;
+            &lt;div class=&quot;flex-1 relative pt-16 px-6 pb-8 md:px-8&quot;&gt;
+              &lt;div class=&quot;absolute top-0 p-5 inline-block bg-indigo-600 rounded-xl shadow-lg transform -translate-y-1/2&quot;&gt;
+                &lt;svg class=&quot;h-6 w-6 text-white&quot; x-description=&quot;Heroicon name: outline/phone&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; fill=&quot;none&quot; viewBox=&quot;0 0 24 24&quot; stroke=&quot;currentColor&quot; aria-hidden=&quot;true&quot;&gt;
+  &lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; stroke-width=&quot;2&quot; d=&quot;M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z&quot;&gt;&lt;/path&gt;
+&lt;/svg&gt;
+              &lt;/div&gt;
+              &lt;h3 class=&quot;text-xl font-medium text-gray-900&quot;&gt;Sales&lt;/h3&gt;
+              &lt;p class=&quot;mt-4 text-base text-gray-500&quot;&gt;Varius facilisi mauris sed sit. Non sed et duis dui leo, vulputate id malesuada non. Cras aliquet purus dui laoreet diam sed lacus, fames.&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;p-6 bg-gray-50 rounded-bl-2xl rounded-br-2xl md:px-8&quot;&gt;
+              &lt;a href=&quot;#&quot; class=&quot;text-base font-medium text-indigo-700 hover:text-indigo-600&quot;&gt;Contact us&lt;span aria-hidden=&quot;true&quot;&gt; &amp;rarr;&lt;/span&gt;&lt;/a&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        
+          &lt;div class=&quot;flex flex-col bg-white rounded-2xl shadow-xl&quot;&gt;
+            &lt;div class=&quot;flex-1 relative pt-16 px-6 pb-8 md:px-8&quot;&gt;
+              &lt;div class=&quot;absolute top-0 p-5 inline-block bg-indigo-600 rounded-xl shadow-lg transform -translate-y-1/2&quot;&gt;
+                &lt;svg class=&quot;h-6 w-6 text-white&quot; x-description=&quot;Heroicon name: outline/support&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; fill=&quot;none&quot; viewBox=&quot;0 0 24 24&quot; stroke=&quot;currentColor&quot; aria-hidden=&quot;true&quot;&gt;
+  &lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; stroke-width=&quot;2&quot; d=&quot;M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z&quot;&gt;&lt;/path&gt;
+&lt;/svg&gt;
+              &lt;/div&gt;
+              &lt;h3 class=&quot;text-xl font-medium text-gray-900&quot;&gt;Technical Support&lt;/h3&gt;
+              &lt;p class=&quot;mt-4 text-base text-gray-500&quot;&gt;Varius facilisi mauris sed sit. Non sed et duis dui leo, vulputate id malesuada non. Cras aliquet purus dui laoreet diam sed lacus, fames.&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;p-6 bg-gray-50 rounded-bl-2xl rounded-br-2xl md:px-8&quot;&gt;
+              &lt;a href=&quot;#&quot; class=&quot;text-base font-medium text-indigo-700 hover:text-indigo-600&quot;&gt;Contact us&lt;span aria-hidden=&quot;true&quot;&gt; &amp;rarr;&lt;/span&gt;&lt;/a&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        
+          &lt;div class=&quot;flex flex-col bg-white rounded-2xl shadow-xl&quot;&gt;
+            &lt;div class=&quot;flex-1 relative pt-16 px-6 pb-8 md:px-8&quot;&gt;
+              &lt;div class=&quot;absolute top-0 p-5 inline-block bg-indigo-600 rounded-xl shadow-lg transform -translate-y-1/2&quot;&gt;
+                &lt;svg class=&quot;h-6 w-6 text-white&quot; x-description=&quot;Heroicon name: outline/newspaper&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; fill=&quot;none&quot; viewBox=&quot;0 0 24 24&quot; stroke=&quot;currentColor&quot; aria-hidden=&quot;true&quot;&gt;
+  &lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; stroke-width=&quot;2&quot; d=&quot;M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z&quot;&gt;&lt;/path&gt;
+&lt;/svg&gt;
+              &lt;/div&gt;
+              &lt;h3 class=&quot;text-xl font-medium text-gray-900&quot;&gt;Media Inquiries&lt;/h3&gt;
+              &lt;p class=&quot;mt-4 text-base text-gray-500&quot;&gt;Varius facilisi mauris sed sit. Non sed et duis dui leo, vulputate id malesuada non. Cras aliquet purus dui laoreet diam sed lacus, fames.&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;p-6 bg-gray-50 rounded-bl-2xl rounded-br-2xl md:px-8&quot;&gt;
+              &lt;a href=&quot;#&quot; class=&quot;text-base font-medium text-indigo-700 hover:text-indigo-600&quot;&gt;Contact us&lt;span aria-hidden=&quot;true&quot;&gt; &amp;rarr;&lt;/span&gt;&lt;/a&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        
+      &lt;/div&gt;
+    &lt;/section&gt;
+  &lt;/div&gt;
+
+&lt;/div&gt;&lt;/body&gt;" style="opacity:0"></iframe>
+          <div :class="{ 'pointer-events-none': !resizing }" class="hidden absolute opacity-0 inset-0 mr-4 pointer-events-none sm:block"></div>
+          <div x-ref="handle" @pointerdown="onResizeStart($event)" class="sr-only sm:not-sr-only sm:border-l sm:bg-gray-100 sm:absolute sm:right-0 sm:inset-y-0 sm:flex sm:items-center sm:w-4 cursor-[ew-resize]" style="touch-action: none">
+            <div class="absolute inset-y-0 -inset-x-2"></div>
+            <svg aria-hidden="true" class="h-4 w-4 text-gray-600 pointer-events-none" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5h2v14H8zM14 5h2v14h-2z" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div :class="{ 'block': activeTab === 'code', 'hidden': activeTab !== 'code' }" class="hidden bg-gray-800">
+      <ul role="list" class="flex sm:hidden px-4 border-b border-gray-700 space-x-2">
+                  <li class="py-1 border-b -mb-px" :class="activeSnippet === 'html' ? 'border-teal-400' : 'border-transparent'">
+            <button type="button" class="text-sm font-medium p-2" :class="activeSnippet === 'html' ? 'text-teal-400' : 'text-gray-400'" @click="activeSnippet = 'html'">HTML</button>
+          </li>
+                  <li class="py-1 border-b -mb-px" :class="activeSnippet === 'react' ? 'border-teal-400' : 'border-transparent'">
+            <button type="button" class="text-sm font-medium p-2" :class="activeSnippet === 'react' ? 'text-teal-400' : 'text-gray-400'" @click="activeSnippet = 'react'">React</button>
+          </li>
+                  <li class="py-1 border-b -mb-px" :class="activeSnippet === 'vue' ? 'border-teal-400' : 'border-transparent'">
+            <button type="button" class="text-sm font-medium p-2" :class="activeSnippet === 'vue' ? 'text-teal-400' : 'text-gray-400'" @click="activeSnippet = 'vue'">Vue</button>
+          </li>
+              </ul>
+            <pre @copy="onCopy($event)" :class="{'block': activeSnippet === 'html', 'hidden': activeSnippet !== 'html' }" class="language-html block scrollbar-none m-0 p-0 overflow-auto text-white text-sm leading-normal"><code class="inline-block p-4 scrolling-touch subpixel-antialiased" x-ref="codeBlockhtml"></code></pre>
+            <pre @copy="onCopy($event)" :class="{'block': activeSnippet === 'react', 'hidden': activeSnippet !== 'react' }" class="language-jsx block scrollbar-none m-0 p-0 overflow-auto text-white text-sm leading-normal"><code class="inline-block p-4 scrolling-touch subpixel-antialiased" x-ref="codeBlockreact"></code></pre>
+            <pre @copy="onCopy($event)" :class="{'block': activeSnippet === 'vue', 'hidden': activeSnippet !== 'vue' }" class="language-html block scrollbar-none m-0 p-0 overflow-auto text-white text-sm leading-normal"><code class="inline-block p-4 scrolling-touch subpixel-antialiased" x-ref="codeBlockvue"></code></pre>
+          </div>
+  </div>
+  
+</section>
+      
+          </div>
+
+      </div>
+</div>
+
+</main>
+
+  <footer class="w-full max-w-container mx-auto border-t py-10 text-center text-sm text-gray-500 sm:flex sm:items-center sm:justify-center">
+    <p>&copy; 2022 Tailwind Labs Inc. All rights reserved.</p>
+    <p class="mt-2 sm:mt-0 sm:ml-3 sm:border-l sm:border-gray-200 sm:pl-3">
+      <a class="hover:text-teal-600" href="/privacy-policy">Privacy Policy</a>
+    </p>
+  </footer>
+
+<div x-data="alpineComponents.commandPalette([{&quot;url&quot;:&quot;\/components\/application-ui\/application-shells\/stacked&quot;,&quot;name&quot;:&quot;Stacked Layouts&quot;,&quot;category&quot;:&quot;Application UI \/ Application Shells&quot;},{&quot;url&quot;:&quot;\/components\/application-ui\/application-shells\/sidebar&quot;,&quot;name&quot;:&quot;Sidebar Layouts&quot;,&quot;category&quot;:&quot;Application UI \/ Application Shells&quot;},{&quot;url&quot;:&quot;\/components\/application-ui\/application-shells\/multi-column&quot;,&quot;name&quot;:&quot;Multi-Column Layouts&quot;,&quot;category&quot;:&quot;Application UI \/ Application Shells&quot;},{&quot;url&quot;:&quot;\/components\/application-ui\/headings\/page-headings&quot;,&quot;name&quot;:&quot;Page Headings&quot;,&quot;category&quot;:&quot;Application UI \/ Headings&quot;},{&quot;url&quot;:&quot;\/components\/application-ui\/headings\/card-headings&quot;,&quot;name&quot;:&quot;Card Headings&quot;,&quot;category&quot;:&quot;Application UI \/ Headings&quot;},{&quot;url&quot;:&quot;\/components\/application-ui\/headings\/section-headings&quot;,&quot;name&quot;:&quot;Section Headings&quot;,&quot;category&quot;:&quot;Application UI \/ Headings&quot;},{&quot;url&quot;:&quot;\/components\/application-ui\/data-display\/description-lists&quot;,&quot;name&quot;:&quot;Description Lists&quot;,&quot;category&quot;:&quot;Application UI \/ Data Display&quot;},{&quot;url&quot;:&quot;\/components\/application-ui\/data-display\/stats&quot;,&quot;name&quot;:&quot;Stats&quot;,&quot;category&quot;:&quot;Application UI \/ Data Display&quot;},{&quot;url&quot;:&quot;\/components\/application-ui\/data-display\/calendars&quot;,&quot;name&quot;:&quot;Calendars&quot;,&quot;category&quot;:&quot;Application UI \/ Data Display&quot;},{&quot;url&quot;:&quot;\/components\/application-ui\/lists\/tables&quot;,&quot;name&quot;:&quot;Tables&quot;,&quot;category&quot;:&quot;Application UI \/ Lists&quot;},{&quot;url&quot;:&quot;\/components\/application-ui\/lists\/stacked-lists&quot;,&quot;name&quot;:&quot;Stacked Lists&quot;,&quot;category&quot;:&quot;Application UI \/ Lists&quot;},{&quot;url&quot;:&quot;\/components\/application-ui\/lists\/grid-lists&quot;,&quot;name&quot;:&quot;Grid Lists&quot;,&quot;category&quot;:&quot;Application UI \/ Lists&quot;},{&quot;url&quot;:&quot;\/components\/application-ui\/lists\/feeds&quot;,&quot;name&quot;:&quot;Feeds&quot;,&quot;category&quot;:&quot;Application UI \/ Lists&quot;},{&quot;url&quot;:&quot;\/components\/application-ui\/forms\/form-layouts&quot;,&quot;name&quot;:&quot;Form Layouts&quot;,&quot;category&quot;:&quot;Application UI \/ Forms&quot;},{&quot;url&quot;:&quot;\/components\/application-ui\/forms\/input-groups&quot;,&quot;name&quot;:&quot;Input Groups&quot;,&quot;category&quot;:&quot;Application UI \/ Forms&quot;},{&quot;url&quot;:&quot;\/components\/application-ui\/forms\/select-menus&quot;,&quot;name&quot;:&quot;Select Menus&quot;,&quot;category&quot;:&quot;Application UI \/ Forms&quot;},{&quot;url&quot;:&quot;\/components\/application-ui\/forms\/textareas&quot;,&quot;name&quot;:&quot;Textareas&quot;,&quot;category&quot;:&quot;Application UI \/ Forms&quot;},{&quot;url&quot;:&quot;\/components\/application-ui\/forms\/radio-groups&quot;,&quot;name&quot;:&quot;Radio Groups&quot;,&quot;category&quot;:&quot;Application UI \/ Forms&quot;},{&quot;url&quot;:&quot;\/components\/application-ui\/forms\/checkboxes&quot;,&quot;name&quot;:&quot;Checkboxes&quot;,&quot;category&quot;:&quot;Application UI \/ Forms&quot;},{&quot;url&quot;:&quot;\/components\/application-ui\/forms\/toggles&quot;,&quot;name&quot;:&quot;Toggles&quot;,&quot;category&quot;:&quot;Application UI \/ Forms&quot;},{&quot;url&quot;:&quot;\/components\/application-ui\/forms\/sign-in-forms&quot;,&quot;name&quot;:&quot;Sign-in and Registration&quot;,&quot;category&quot;:&quot;Application UI \/ Forms&quot;},{&quot;url&quot;:&quot;\/components\/application-ui\/forms\/action-panels&quot;,&quot;name&quot;:&quot;Action Panels&quot;,&quot;category&quot;:&quot;Application UI \/ Forms&quot;},{&quot;url&quot;:&quot;\/components\/application-ui\/forms\/comboboxes&quot;,&quot;name&quot;:&quot;Comboboxes&quot;,&quot;category&quot;:&quot;Application UI \/ Forms&quot;},{&quot;url&quot;:&quot;\/components\/application-ui\/feedback\/alerts&quot;,&quot;name&quot;:&quot;Alerts&quot;,&quot;category&quot;:&quot;Application UI \/ Feedback&quot;},{&quot;url&quot;:&quot;\/components\/application-ui\/feedback\/empty-states&quot;,&quot;name&quot;:&quot;Empty States&quot;,&quot;category&quot;:&quot;Application UI \/ Feedback&quot;},{&quot;url&quot;:&quot;\/components\/application-ui\/navigation\/tabs&quot;,&quot;name&quot;:&quot;Tabs&quot;,&quot;category&quot;:&quot;Application UI \/ Navigation&quot;},{&quot;url&quot;:&quot;\/components\/application-ui\/navigation\/navbars&quot;,&quot;name&quot;:&quot;Navbars&quot;,&quot;category&quot;:&quot;Application UI \/ Navigation&quot;},{&quot;url&quot;:&quot;\/components\/application-ui\/navigation\/vertical-navigation&quot;,&quot;name&quot;:&quot;Vertical Navigation&quot;,&quot;category&quot;:&quot;Application UI \/ Navigation&quot;},{&quot;url&quot;:&quot;\/components\/application-ui\/navigation\/pagination&quot;,&quot;name&quot;:&quot;Pagination&quot;,&quot;category&quot;:&quot;Application UI \/ Navigation&quot;},{&quot;url&quot;:&quot;\/components\/application-ui\/navigation\/sidebar-navigation&quot;,&quot;name&quot;:&quot;Sidebar Navigation&quot;,&quot;category&quot;:&quot;Application UI \/ Navigation&quot;},{&quot;url&quot;:&quot;\/components\/application-ui\/navigation\/breadcrumbs&quot;,&quot;name&quot;:&quot;Breadcrumbs&quot;,&quot;category&quot;:&quot;Application UI \/ Navigation&quot;},{&quot;url&quot;:&quot;\/components\/application-ui\/navigation\/steps&quot;,&quot;name&quot;:&quot;Steps&quot;,&quot;category&quot;:&quot;Application UI \/ Navigation&quot;},{&quot;url&quot;:&quot;\/components\/application-ui\/navigation\/command-palettes&quot;,&quot;name&quot;:&quot;Command Palettes&quot;,&quot;category&quot;:&quot;Application UI \/ Navigation&quot;},{&quot;url&quot;:&quot;\/components\/application-ui\/overlays\/modals&quot;,&quot;name&quot;:&quot;Modals&quot;,&quot;category&quot;:&quot;Application UI \/ Overlays&quot;},{&quot;url&quot;:&quot;\/components\/application-ui\/overlays\/slide-overs&quot;,&quot;name&quot;:&quot;Slide-overs&quot;,&quot;category&quot;:&quot;Application UI \/ Overlays&quot;},{&quot;url&quot;:&quot;\/components\/application-ui\/overlays\/notifications&quot;,&quot;name&quot;:&quot;Notifications&quot;,&quot;category&quot;:&quot;Application UI \/ Overlays&quot;},{&quot;url&quot;:&quot;\/components\/application-ui\/elements\/avatars&quot;,&quot;name&quot;:&quot;Avatars&quot;,&quot;category&quot;:&quot;Application UI \/ Elements&quot;},{&quot;url&quot;:&quot;\/components\/application-ui\/elements\/badges&quot;,&quot;name&quot;:&quot;Badges&quot;,&quot;category&quot;:&quot;Application UI \/ Elements&quot;},{&quot;url&quot;:&quot;\/components\/application-ui\/elements\/buttons&quot;,&quot;name&quot;:&quot;Buttons&quot;,&quot;category&quot;:&quot;Application UI \/ Elements&quot;},{&quot;url&quot;:&quot;\/components\/application-ui\/elements\/button-groups&quot;,&quot;name&quot;:&quot;Button Groups&quot;,&quot;category&quot;:&quot;Application UI \/ Elements&quot;},{&quot;url&quot;:&quot;\/components\/application-ui\/elements\/dropdowns&quot;,&quot;name&quot;:&quot;Dropdowns&quot;,&quot;category&quot;:&quot;Application UI \/ Elements&quot;},{&quot;url&quot;:&quot;\/components\/application-ui\/layout\/containers&quot;,&quot;name&quot;:&quot;Containers&quot;,&quot;category&quot;:&quot;Application UI \/ Layout&quot;},{&quot;url&quot;:&quot;\/components\/application-ui\/layout\/panels&quot;,&quot;name&quot;:&quot;Panels&quot;,&quot;category&quot;:&quot;Application UI \/ Layout&quot;},{&quot;url&quot;:&quot;\/components\/application-ui\/layout\/list-containers&quot;,&quot;name&quot;:&quot;List containers&quot;,&quot;category&quot;:&quot;Application UI \/ Layout&quot;},{&quot;url&quot;:&quot;\/components\/application-ui\/layout\/media-objects&quot;,&quot;name&quot;:&quot;Media Objects&quot;,&quot;category&quot;:&quot;Application UI \/ Layout&quot;},{&quot;url&quot;:&quot;\/components\/application-ui\/layout\/dividers&quot;,&quot;name&quot;:&quot;Dividers&quot;,&quot;category&quot;:&quot;Application UI \/ Layout&quot;},{&quot;url&quot;:&quot;\/components\/application-ui\/page-examples\/home-screens&quot;,&quot;name&quot;:&quot;Home Screens&quot;,&quot;category&quot;:&quot;Application UI \/ Page Examples&quot;},{&quot;url&quot;:&quot;\/components\/application-ui\/page-examples\/detail-screens&quot;,&quot;name&quot;:&quot;Detail Screens&quot;,&quot;category&quot;:&quot;Application UI \/ Page Examples&quot;},{&quot;url&quot;:&quot;\/components\/application-ui\/page-examples\/settings-screens&quot;,&quot;name&quot;:&quot;Settings Screens&quot;,&quot;category&quot;:&quot;Application UI \/ Page Examples&quot;},{&quot;url&quot;:&quot;\/components\/ecommerce\/components\/product-overviews&quot;,&quot;name&quot;:&quot;Product Overviews&quot;,&quot;category&quot;:&quot;Ecommerce \/ Components&quot;},{&quot;url&quot;:&quot;\/components\/ecommerce\/components\/product-lists&quot;,&quot;name&quot;:&quot;Product Lists&quot;,&quot;category&quot;:&quot;Ecommerce \/ Components&quot;},{&quot;url&quot;:&quot;\/components\/ecommerce\/components\/category-previews&quot;,&quot;name&quot;:&quot;Category Previews&quot;,&quot;category&quot;:&quot;Ecommerce \/ Components&quot;},{&quot;url&quot;:&quot;\/components\/ecommerce\/components\/shopping-carts&quot;,&quot;name&quot;:&quot;Shopping Carts&quot;,&quot;category&quot;:&quot;Ecommerce \/ Components&quot;},{&quot;url&quot;:&quot;\/components\/ecommerce\/components\/checkout-forms&quot;,&quot;name&quot;:&quot;Checkout Forms&quot;,&quot;category&quot;:&quot;Ecommerce \/ Components&quot;},{&quot;url&quot;:&quot;\/components\/ecommerce\/components\/category-filters&quot;,&quot;name&quot;:&quot;Category Filters&quot;,&quot;category&quot;:&quot;Ecommerce \/ Components&quot;},{&quot;url&quot;:&quot;\/components\/ecommerce\/components\/reviews&quot;,&quot;name&quot;:&quot;Reviews&quot;,&quot;category&quot;:&quot;Ecommerce \/ Components&quot;},{&quot;url&quot;:&quot;\/components\/ecommerce\/components\/product-quickviews&quot;,&quot;name&quot;:&quot;Product Quickviews&quot;,&quot;category&quot;:&quot;Ecommerce \/ Components&quot;},{&quot;url&quot;:&quot;\/components\/ecommerce\/components\/product-features&quot;,&quot;name&quot;:&quot;Product Features&quot;,&quot;category&quot;:&quot;Ecommerce \/ Components&quot;},{&quot;url&quot;:&quot;\/components\/ecommerce\/components\/store-navigation&quot;,&quot;name&quot;:&quot;Store Navigation&quot;,&quot;category&quot;:&quot;Ecommerce \/ Components&quot;},{&quot;url&quot;:&quot;\/components\/ecommerce\/components\/order-summaries&quot;,&quot;name&quot;:&quot;Order Summaries&quot;,&quot;category&quot;:&quot;Ecommerce \/ Components&quot;},{&quot;url&quot;:&quot;\/components\/ecommerce\/components\/order-history&quot;,&quot;name&quot;:&quot;Order History&quot;,&quot;category&quot;:&quot;Ecommerce \/ Components&quot;},{&quot;url&quot;:&quot;\/components\/ecommerce\/components\/promo-sections&quot;,&quot;name&quot;:&quot;Promo Sections&quot;,&quot;category&quot;:&quot;Ecommerce \/ Components&quot;},{&quot;url&quot;:&quot;\/components\/ecommerce\/components\/incentives&quot;,&quot;name&quot;:&quot;Incentives&quot;,&quot;category&quot;:&quot;Ecommerce \/ Components&quot;},{&quot;url&quot;:&quot;\/components\/ecommerce\/page-examples\/storefront-pages&quot;,&quot;name&quot;:&quot;Storefront Pages&quot;,&quot;category&quot;:&quot;Ecommerce \/ Page Examples&quot;},{&quot;url&quot;:&quot;\/components\/ecommerce\/page-examples\/product-pages&quot;,&quot;name&quot;:&quot;Product Pages&quot;,&quot;category&quot;:&quot;Ecommerce \/ Page Examples&quot;},{&quot;url&quot;:&quot;\/components\/ecommerce\/page-examples\/category-pages&quot;,&quot;name&quot;:&quot;Category Pages&quot;,&quot;category&quot;:&quot;Ecommerce \/ Page Examples&quot;},{&quot;url&quot;:&quot;\/components\/ecommerce\/page-examples\/shopping-cart-pages&quot;,&quot;name&quot;:&quot;Shopping Cart Pages&quot;,&quot;category&quot;:&quot;Ecommerce \/ Page Examples&quot;},{&quot;url&quot;:&quot;\/components\/ecommerce\/page-examples\/checkout-pages&quot;,&quot;name&quot;:&quot;Checkout Pages&quot;,&quot;category&quot;:&quot;Ecommerce \/ Page Examples&quot;},{&quot;url&quot;:&quot;\/components\/ecommerce\/page-examples\/order-detail-pages&quot;,&quot;name&quot;:&quot;Order Detail Pages&quot;,&quot;category&quot;:&quot;Ecommerce \/ Page Examples&quot;},{&quot;url&quot;:&quot;\/components\/ecommerce\/page-examples\/order-history-pages&quot;,&quot;name&quot;:&quot;Order History Pages&quot;,&quot;category&quot;:&quot;Ecommerce \/ Page Examples&quot;},{&quot;url&quot;:&quot;\/components\/marketing\/sections\/heroes&quot;,&quot;name&quot;:&quot;Hero Sections&quot;,&quot;category&quot;:&quot;Marketing \/ Page Sections&quot;},{&quot;url&quot;:&quot;\/components\/marketing\/sections\/feature-sections&quot;,&quot;name&quot;:&quot;Feature Sections&quot;,&quot;category&quot;:&quot;Marketing \/ Page Sections&quot;},{&quot;url&quot;:&quot;\/components\/marketing\/sections\/cta-sections&quot;,&quot;name&quot;:&quot;CTA Sections&quot;,&quot;category&quot;:&quot;Marketing \/ Page Sections&quot;},{&quot;url&quot;:&quot;\/components\/marketing\/sections\/pricing&quot;,&quot;name&quot;:&quot;Pricing Sections&quot;,&quot;category&quot;:&quot;Marketing \/ Page Sections&quot;},{&quot;url&quot;:&quot;\/components\/marketing\/sections\/header&quot;,&quot;name&quot;:&quot;Header Sections&quot;,&quot;category&quot;:&quot;Marketing \/ Page Sections&quot;},{&quot;url&quot;:&quot;\/components\/marketing\/sections\/faq-sections&quot;,&quot;name&quot;:&quot;FAQs&quot;,&quot;category&quot;:&quot;Marketing \/ Page Sections&quot;},{&quot;url&quot;:&quot;\/components\/marketing\/sections\/newsletter-sections&quot;,&quot;name&quot;:&quot;Newsletter Sections&quot;,&quot;category&quot;:&quot;Marketing \/ Page Sections&quot;},{&quot;url&quot;:&quot;\/components\/marketing\/sections\/stats-sections&quot;,&quot;name&quot;:&quot;Stats&quot;,&quot;category&quot;:&quot;Marketing \/ Page Sections&quot;},{&quot;url&quot;:&quot;\/components\/marketing\/sections\/testimonials&quot;,&quot;name&quot;:&quot;Testimonials&quot;,&quot;category&quot;:&quot;Marketing \/ Page Sections&quot;},{&quot;url&quot;:&quot;\/components\/marketing\/sections\/blog-sections&quot;,&quot;name&quot;:&quot;Blog Sections&quot;,&quot;category&quot;:&quot;Marketing \/ Page Sections&quot;},{&quot;url&quot;:&quot;\/components\/marketing\/sections\/contact-sections&quot;,&quot;name&quot;:&quot;Contact Sections&quot;,&quot;category&quot;:&quot;Marketing \/ Page Sections&quot;},{&quot;url&quot;:&quot;\/components\/marketing\/sections\/team-sections&quot;,&quot;name&quot;:&quot;Team Sections&quot;,&quot;category&quot;:&quot;Marketing \/ Page Sections&quot;},{&quot;url&quot;:&quot;\/components\/marketing\/sections\/content-sections&quot;,&quot;name&quot;:&quot;Content Sections&quot;,&quot;category&quot;:&quot;Marketing \/ Page Sections&quot;},{&quot;url&quot;:&quot;\/components\/marketing\/sections\/footers&quot;,&quot;name&quot;:&quot;Footers&quot;,&quot;category&quot;:&quot;Marketing \/ Page Sections&quot;},{&quot;url&quot;:&quot;\/components\/marketing\/sections\/logo-clouds&quot;,&quot;name&quot;:&quot;Logo Clouds&quot;,&quot;category&quot;:&quot;Marketing \/ Page Sections&quot;},{&quot;url&quot;:&quot;\/components\/marketing\/elements\/headers&quot;,&quot;name&quot;:&quot;Headers&quot;,&quot;category&quot;:&quot;Marketing \/ Elements&quot;},{&quot;url&quot;:&quot;\/components\/marketing\/elements\/flyout-menus&quot;,&quot;name&quot;:&quot;Flyout Menus&quot;,&quot;category&quot;:&quot;Marketing \/ Elements&quot;},{&quot;url&quot;:&quot;\/components\/marketing\/elements\/banners&quot;,&quot;name&quot;:&quot;Banners&quot;,&quot;category&quot;:&quot;Marketing \/ Elements&quot;},{&quot;url&quot;:&quot;\/components\/marketing\/feedback\/404-pages&quot;,&quot;name&quot;:&quot;404 Pages&quot;,&quot;category&quot;:&quot;Marketing \/ Feedback&quot;},{&quot;url&quot;:&quot;\/components\/marketing\/page-examples\/landing-pages&quot;,&quot;name&quot;:&quot;Landing Pages&quot;,&quot;category&quot;:&quot;Marketing \/ Page Examples&quot;},{&quot;url&quot;:&quot;\/components\/marketing\/page-examples\/pricing-pages&quot;,&quot;name&quot;:&quot;Pricing Pages&quot;,&quot;category&quot;:&quot;Marketing \/ Page Examples&quot;},{&quot;url&quot;:&quot;\/components\/marketing\/page-examples\/contact-pages&quot;,&quot;name&quot;:&quot;Contact Pages&quot;,&quot;category&quot;:&quot;Marketing \/ Page Examples&quot;}])" x-init="init()" @keydown.window.escape="close()" @open-command-palette.window="open()">
+  <div style="display: none;" x-show="isOpen" role="combobox" aria-haspopup="listbox" aria-expanded="true" class="fixed z-50 pt-16 flex items-start justify-center inset-0 sm:pt-24">
+    <div x-show="isOpen" x-transition:enter="ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="fixed inset-0 bg-gray-800 bg-opacity-60 transition-opacity"></div>
+    <div x-show="isOpen" x-transition:enter="ease-out duration-200" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="ease-in duration-150" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" class="relative transform transition-all max-w-lg w-full px-4">
+      <div class="bg-white rounded-lg shadow-md overflow-hidden" @click.away="close()">
+        <form role="search" @submit.prevent="go()" novalidate class="relative flex items-center pr-4" :class="search ? 'shadow-sm' : ''">
+          <input @keydown.prevent.escape @keydown.prevent.arrow-up="selectUp()" @keydown.prevent.arrow-down="selectDown()" x-ref="search" x-model="search" type="search" aria-autocomplete="list" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" style="caret-color: #6b7280" class="flex-auto -mr-9 appearance-none bg-transparent pl-4 pr-12 py-4 text-gray-600 text-base sm:text-sm placeholder-gray-500 focus:outline-none" placeholder="Find anything..." aria-label="Search components" aria-controls="search-results" :aria-activedescendant="'search-result-' + selected" />
+          <svg width="20" height="20" fill="none" class="flex-none text-gray-400 pointer-events-none">
+            <circle cx="8.5" cy="8.5" r="5.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M17.25 17.25L13 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </form>
+        <ul role="listbox" id="search-results" x-show="results.length > 0" x-ref="results" class="text-sm font-medium overflow-y-auto border-t border-gray-200 divide-y divide-gray-200 rounded-b-lg max-h-[18.375rem]">
+          <template hidden x-for="({ name, url, category }, i) in results" :key="url">
+            <li role="option" :id="'search-result-' + i" :aria-selected="(selected === i).toString()">
+              <a :href="url" tabindex="-1" class="flex justify-between p-4" :class="{ 'bg-gray-50': selected === i }" @mouseenter="selected = i">
+                <span x-text="name" class="whitespace-nowrap" :class="{'text-gray-900': selected !== i, 'text-teal-600': selected === i }"></span>
+                <span x-text="category" class="ml-4 text-right text-gray-500"></span>
+              </a>
+            </li>
+          </template>
+        </ul>
+        <div x-show="search && results.length === 0" class="bg-gray-50 p-16 text-center">
+          <h2 class="text-gray-900 font-semibold mb-2">No results found</h2>
+          <p class="text-sm">We can’t find anything with that term at the moment, try searching something else.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <script src="https://cdn.usefathom.com/script.js" site="SOXJJCZQ" defer></script>
+    <script src="/js/app.js"></script>
+    <script src="/js/alpine.js"></script>
+        <script src="/js/prism.js" data-manual></script>
+    </body>
+</html>

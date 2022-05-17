@@ -1,0 +1,88 @@
+<!--
+  This example requires Tailwind CSS v2.0+
+
+  The alpine.js code is *NOT* production ready and is included to preview
+  possible interactivity
+-->
+<div class="px-8 py-12 flex justify-center bg-white">
+    
+  <fieldset x-data="window.Components.radioGroup({ initialCheckedIndex: 0 })" x-init="init()">
+    <legend class="text-base font-medium text-gray-900">
+      Select a mailing list
+    </legend>
+
+    <div class="mt-4 grid grid-cols-1 gap-y-6 sm:grid-cols-3 sm:gap-x-4">
+      
+        <label x-radio-group-option="" class="relative bg-white border rounded-lg shadow-sm p-4 flex cursor-pointer focus:outline-none" x-description="Checked: &quot;border-transparent&quot;, Not Checked: &quot;border-gray-300&quot;	Active: &quot;ring-2 ring-indigo-500&quot;" :class="{ 'border-transparent': (value === 'Newsletter'), 'border-gray-300': !(value === 'Newsletter'), 'ring-2 ring-indigo-500': (active === 'Newsletter'), 'undefined': !(active === 'Newsletter') }">
+<input type="radio" x-model="value" name="project-type" value="Newsletter" class="sr-only" aria-labelledby="project-type-0-label" aria-describedby="project-type-0-description-0 project-type-0-description-1">
+          <div class="flex-1 flex">
+            <div class="flex flex-col">
+              <span id="project-type-0-label" class="block text-sm font-medium text-gray-900">
+                Newsletter
+              </span>
+              <span id="project-type-0-description-0" class="mt-1 flex items-center text-sm text-gray-500">
+                Last message sent an hour ago
+              </span>
+              <span id="project-type-0-description-1" class="mt-6 text-sm font-medium text-gray-900">
+                621 users
+              </span>
+            </div>
+          </div>
+          <svg class="h-5 w-5 text-indigo-600" x-description="Not Checked: &quot;invisible&quot;
+
+Heroicon name: solid/check-circle" :class="{ 'invisible': !(value === 'Newsletter'), 'undefined': (value === 'Newsletter') }" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+</svg>
+          <div class="absolute -inset-px rounded-lg border-2 pointer-events-none" aria-hidden="true" x-description="Active: &quot;border&quot;, Not Active: &quot;border-2&quot;	Checked: &quot;border-indigo-500&quot;, Not Checked: &quot;border-transparent&quot;" :class="{ 'border': (active === 'Newsletter'), 'border-2': !(active === 'Newsletter'), 'border-indigo-500': (value === 'Newsletter'), 'border-transparent': !(value === 'Newsletter') }"></div>
+        </label>
+      
+        <label x-radio-group-option="" class="relative bg-white border rounded-lg shadow-sm p-4 flex cursor-pointer focus:outline-none" x-description="Checked: &quot;border-transparent&quot;, Not Checked: &quot;border-gray-300&quot;	Active: &quot;ring-2 ring-indigo-500&quot;" :class="{ 'border-transparent': (value === 'Existing Customers'), 'border-gray-300': !(value === 'Existing Customers'), 'ring-2 ring-indigo-500': (active === 'Existing Customers'), 'undefined': !(active === 'Existing Customers') }">
+<input type="radio" x-model="value" name="project-type" value="Existing Customers" class="sr-only" aria-labelledby="project-type-1-label" aria-describedby="project-type-1-description-0 project-type-1-description-1">
+          <div class="flex-1 flex">
+            <div class="flex flex-col">
+              <span id="project-type-1-label" class="block text-sm font-medium text-gray-900">
+                Existing Customers
+              </span>
+              <span id="project-type-1-description-0" class="mt-1 flex items-center text-sm text-gray-500">
+                Last message sent 2 weeks ago
+              </span>
+              <span id="project-type-1-description-1" class="mt-6 text-sm font-medium text-gray-900">
+                1200 users
+              </span>
+            </div>
+          </div>
+          <svg class="h-5 w-5 text-indigo-600" x-description="Not Checked: &quot;invisible&quot;
+
+Heroicon name: solid/check-circle" :class="{ 'invisible': !(value === 'Existing Customers'), 'undefined': (value === 'Existing Customers') }" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+</svg>
+          <div class="absolute -inset-px rounded-lg border-2 pointer-events-none" aria-hidden="true" x-description="Active: &quot;border&quot;, Not Active: &quot;border-2&quot;	Checked: &quot;border-indigo-500&quot;, Not Checked: &quot;border-transparent&quot;" :class="{ 'border': (active === 'Existing Customers'), 'border-2': !(active === 'Existing Customers'), 'border-indigo-500': (value === 'Existing Customers'), 'border-transparent': !(value === 'Existing Customers') }"></div>
+        </label>
+      
+        <label x-radio-group-option="" class="relative bg-white border rounded-lg shadow-sm p-4 flex cursor-pointer focus:outline-none" x-description="Checked: &quot;border-transparent&quot;, Not Checked: &quot;border-gray-300&quot;	Active: &quot;ring-2 ring-indigo-500&quot;" :class="{ 'border-transparent': (value === 'Trial Users'), 'border-gray-300': !(value === 'Trial Users'), 'ring-2 ring-indigo-500': (active === 'Trial Users'), 'undefined': !(active === 'Trial Users') }">
+<input type="radio" x-model="value" name="project-type" value="Trial Users" class="sr-only" aria-labelledby="project-type-2-label" aria-describedby="project-type-2-description-0 project-type-2-description-1">
+          <div class="flex-1 flex">
+            <div class="flex flex-col">
+              <span id="project-type-2-label" class="block text-sm font-medium text-gray-900">
+                Trial Users
+              </span>
+              <span id="project-type-2-description-0" class="mt-1 flex items-center text-sm text-gray-500">
+                Last message sent 4 days ago
+              </span>
+              <span id="project-type-2-description-1" class="mt-6 text-sm font-medium text-gray-900">
+                2740 users
+              </span>
+            </div>
+          </div>
+          <svg class="h-5 w-5 text-indigo-600" x-description="Not Checked: &quot;invisible&quot;
+
+Heroicon name: solid/check-circle" :class="{ 'invisible': !(value === 'Trial Users'), 'undefined': (value === 'Trial Users') }" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+</svg>
+          <div class="absolute -inset-px rounded-lg border-2 pointer-events-none" aria-hidden="true" x-description="Active: &quot;border&quot;, Not Active: &quot;border-2&quot;	Checked: &quot;border-indigo-500&quot;, Not Checked: &quot;border-transparent&quot;" :class="{ 'border': (active === 'Trial Users'), 'border-2': !(active === 'Trial Users'), 'border-indigo-500': (value === 'Trial Users'), 'border-transparent': !(value === 'Trial Users') }"></div>
+        </label>
+      
+    </div>
+  </fieldset>
+
+  </div>
