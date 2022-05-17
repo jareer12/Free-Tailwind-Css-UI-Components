@@ -1,0 +1,8 @@
+#tailwinds
+#tailwindsui
+#tail
+#winds
+#wind
+#css
+#tailwindscss
+#tailwindcss

@@ -1,8 +1,9 @@
-# TailwnidsUI Cracked
- Tailwinds UI cracked version with all the paid UIs in it.
+# [TailwnidsUI Cracked](https://tailwindui.com)
 
-## Guide
+## Quick Search Pattern
 
-check the `html` and `react` folder for source code. more coming soon.
-
-UI Preview [here](https://tailwindui.com/#product-application-ui)
+```yaml
+Github: https://github.com/jareer12/TailwindsUI-Cracked/tree/main/html/components/marketing/sections/heroes
+TailwindsUI: https://tailwindui.com/components/marketing/sections/heroes
+Similiar: "components/marketing/sections/heroes"
+```
