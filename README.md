@@ -1,6 +1,6 @@
 # [Tailwind Css Cracked](https://tailwindui.com)
 
-Watch and start this repo for quick use and updates.
+Watch and start this repo for quick use and updates. Also try [JaysUI](https://github.com/jareer12/JaysUI), [TailwindsMarkdown](https://github.com/jareer12/TailwindsMarkdown) & [Tailwind Css Templates](https://github.com/jareer12/TailwindsTemplates)
 
 ## Quick Search Pattern
 
